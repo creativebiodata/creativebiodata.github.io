@@ -4,94 +4,127 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  background: linear-gradient(to bottom, #EAF6F6, #C7D2FE); /* Soft gradient for modern look */
-  color: #333; /* Neutral text color for contrast */
+  background: #f4f4f4;
+  color: #333;
 }
 
 /* Header Styles */
 header {
-  padding: 20px;
-  background-color: #01497C; /* Deep blue for professionalism */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #01497C;
+  color: #fff;
 }
 
-header h1 {
+header .brand h1 {
   font-family: "Dancing Script", cursive;
-  font-size: 3.5em;
   margin: 0;
-  color: #80CED7; /* Teal for accent */
+}
+
+header .menu button {
+  padding: 10px 15px;
+  font-size: 1em;
+  background: #80CED7;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 /* About Section */
 #about {
-  margin: 30px auto;
+  margin: 20px auto;
   max-width: 800px;
-  font-size: 1.2em;
-  color: #333; /* Neutral color */
-  line-height: 1.6;
 }
 
 /* Biodata Samples Section */
 #samples {
-  margin: 40px auto;
-  max-width: 1200px; /* Restricts gallery width for better alignment */
+  margin: 30px auto;
+  max-width: 1200px;
 }
 
-#samples h2 {
-  font-size: 2em;
-  color: #01497C; /* Matching header color */
-  margin-bottom: 20px;
-}
-
-/* Grid for Sample Gallery */
 .sample-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusts for 3 or 2 columns */
-  gap: 15px; /* Reduced spacing for compact look */
-  justify-content: center; /* Centers the grid */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.sample-item {
+  position: relative;
+}
+
+.sample-item img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.sample-item:hover img {
+  transform: scale(1.05);
+}
+
+.price-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #01497C;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  border-radius: 5px;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
   align-items: center;
 }
 
-.sample-gallery img {
-  max-width: 100%;
-  border: 4px solid #80CED7; /* Teal border for style */
+.modal-content {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  max-width: 500px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow for depth */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
 
-.sample-gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* More prominent shadow on hover */
+.modal-content img {
+  width: 100%;
+  margin-bottom: 15px;
 }
 
-/* Footer Styles */
-footer {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #01497C; /* Same as header for consistency */
+#close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.modal-info p {
+  margin: 10px 0;
+}
+
+.modal-actions a {
+  margin: 5px;
+  padding: 10px 15px;
+  background: #80CED7;
   color: #fff;
-  font-size: 0.9em;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
-footer p {
-  margin: 0;
-}
-
-/* Responsive Design for Mobile View */
-@media (max-width: 768px) {
-  #about {
-    font-size: 1em;
-  }
-
-  #samples h2 {
-    font-size: 1.5em;
-  }
-
-  .sample-gallery {
-    grid-template-columns: repeat(2, 1fr); /* 2 images per row on smaller screens */
-  }
-
-  .sample-gallery img {
-    margin: 0 auto; /* Center images */
-  }
+.modal-actions a:hover {
+  background: #01497C;
 }
