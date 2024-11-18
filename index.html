@@ -3,78 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creative Biodata</title>
+  <title>Marriage Biodata Generator</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
   <header>
-    <div class="brand">
-      <h1>Creative Biodata</h1>
-    </div>
-    <div class="menu">
-      <button id="menu-button">Menu</button>
-    </div>
+    <h1>Marriage Biodata Generator</h1>
   </header>
   <main>
-    <section id="about">
-      <p>Welcome to Creative Biodata, where we craft beautiful and professional biodatas tailored for your special moments.</p>
+    <section id="form-section">
+      <form id="biodata-form">
+        <!-- Personal Information -->
+        <h2>Personal Information</h2>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+
+        <label for="birth-time">Time of Birth:</label>
+        <input type="time" id="birth-time" name="birth-time">
+
+        <label for="birth-place">Place of Birth:</label>
+        <input type="text" id="birth-place" name="birth-place">
+
+        <label for="height">Height:</label>
+        <input type="text" id="height" name="height" placeholder="e.g., 5 ft 5 in">
+
+        <label for="skin-tone">Skin Tone:</label>
+        <input type="text" id="skin-tone" name="skin-tone">
+
+        <label for="blood-group">Blood Group:</label>
+        <input type="text" id="blood-group" name="blood-group">
+
+        <!-- Family Details -->
+        <h2>Family Details</h2>
+        <label for="father-name">Father's Name:</label>
+        <input type="text" id="father-name" name="father-name">
+
+        <label for="father-occupation">Father's Occupation:</label>
+        <input type="text" id="father-occupation" name="father-occupation">
+
+        <label for="mother-name">Mother's Name:</label>
+        <input type="text" id="mother-name" name="mother-name">
+
+        <label for="mother-occupation">Mother's Occupation:</label>
+        <input type="text" id="mother-occupation" name="mother-occupation">
+
+        <label for="siblings">Siblings:</label>
+        <textarea id="siblings" name="siblings" rows="2" placeholder="List siblings with details"></textarea>
+
+        <!-- Relatives -->
+        <h2>Relatives</h2>
+        <label for="relatives">Relatives (Names and Details):</label>
+        <textarea id="relatives" name="relatives" rows="4" placeholder="Add relative details"></textarea>
+
+        <!-- Contact Information -->
+        <h2>Contact Information</h2>
+        <label for="address">Permanent Address:</label>
+        <textarea id="address" name="address" rows="2"></textarea>
+
+        <label for="contact-number">Contact Number:</label>
+        <input type="text" id="contact-number" name="contact-number">
+
+        <!-- Profile Picture -->
+        <label for="profile-pic">Profile Picture:</label>
+        <input type="file" id="profile-pic" accept="image/*">
+
+        <button type="button" id="generate">Generate Biodata</button>
+      </form>
     </section>
-    <section id="samples">
-      <h2>Our Biodata Samples</h2>
-      <div class="sample-gallery">
-        <div class="sample-item">
-          <img src="image1.png" alt="Sample Biodata 1" data-price="₹49">
-          <span class="price-tag">₹49</span>
-        </div>
-        <div class="sample-item">
-          <img src="image2.png" alt="Sample Biodata 2" data-price="₹49">
-          <span class="price-tag">₹49</span>
-        </div>
-        <div class="sample-item">
-          <img src="image3.png" alt="Sample Biodata 3" data-price="₹99">
-          <span class="price-tag">₹99</span>
-        </div>
-        <div class="sample-item">
-          <img src="image4.png" alt="Sample Biodata 4" data-price="₹99">
-          <span class="price-tag">₹99</span>
-        </div>
-        <div class="sample-item">
-          <img src="image5.png" alt="Sample Biodata 5" data-price="₹99">
-          <span class="price-tag">₹99</span>
-        </div>
-        <div class="sample-item">
-          <img src="image6.png" alt="Sample Biodata 6" data-price="₹99">
-          <span class="price-tag">₹99</span>
-        </div>
-        <div class="sample-item">
-          <img src="image5.png" alt="Sample Biodata 5" data-price="₹99">
-          <span class="price-tag">₹99</span>
-        </div>
-        <div class="sample-item">
-          <img src="image6.png" alt="Sample Biodata 6" data-price="₹99">
-          <span class="price-tag">₹99</span>
-        </div>
+
+    <section id="output-section" style="display:none;">
+      <div id="biodata-preview" class="a4-page">
+        <!-- Dynamically generated biodata preview -->
       </div>
+      <button id="download-pdf">Download PDF</button>
+      <button id="download-image">Download as Image</button>
     </section>
   </main>
-  <footer>
-    <p>&copy; 2024 Creative Biodata. All rights reserved.</p>
-  </footer>
-
-  <!-- Zoom Modal -->
-  <div id="zoom-modal" class="modal">
-    <div class="modal-content">
-      <span id="close-modal">&times;</span>
-      <img id="zoom-image" src="" alt="Zoomed Biodata">
-      <div class="modal-info">
-        <p id="zoom-price"></p>
-        <p>Biodata will be available in JPG and PDF formats.</p>
-        <div class="modal-actions">
-          <a id="whatsapp-share" href="#" target="_blank">Contact Us on WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <script src="script.js"></script>
 </body>
 </html>
