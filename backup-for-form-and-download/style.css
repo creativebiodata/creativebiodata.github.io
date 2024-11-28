@@ -1,0 +1,72 @@
+/* General Styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1.5rem;
+}
+
+form {
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+}
+
+form label {
+  text-align: left;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+form input, form textarea, button {
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#biodata-preview {
+  border: 1px solid #ddd;
+  padding: 2rem;
+  margin: 2rem auto;
+  width: 210mm;
+  height: 297mm; /* A4 size */
+  background: white;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.6;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#biodata-preview h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+#biodata-preview img {
+  float: right;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-top: -10px;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marriage Biodata Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Marriage Biodata Generator</h1>
+  </header>
+  <main>
+    <section id="form-section">
+      <form id="biodata-form">
+        <!-- Personal Information -->
+        <h2>Personal Information</h2>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+
+        <label for="birth-time">Time of Birth:</label>
+        <input type="time" id="birth-time" name="birth-time">
+
+        <label for="birth-place">Place of Birth:</label>
+        <input type="text" id="birth-place" name="birth-place">
+
+        <label for="height">Height:</label>
+        <input type="text" id="height" name="height" placeholder="e.g., 5 ft 5 in">
+
+        <label for="skin-tone">Skin Tone:</label>
+        <input type="text" id="skin-tone" name="skin-tone">
+
+        <label for="blood-group">Blood Group:</label>
+        <input type="text" id="blood-group" name="blood-group">
+
+        <!-- Family Details -->
+        <h2>Family Details</h2>
+        <label for="father-name">Father's Name:</label>
+        <input type="text" id="father-name" name="father-name">
+
+        <label for="father-occupation">Father's Occupation:</label>
+        <input type="text" id="father-occupation" name="father-occupation">
+
+        <label for="mother-name">Mother's Name:</label>
+        <input type="text" id="mother-name" name="mother-name">
+
+        <label for="mother-occupation">Mother's Occupation:</label>
+        <input type="text" id="mother-occupation" name="mother-occupation">
+
+        <label for="siblings">Siblings:</label>
+        <textarea id="siblings" name="siblings" rows="2" placeholder="List siblings with details"></textarea>
+
+        <!-- Relatives -->
+        <h2>Relatives</h2>
+        <label for="relatives">Relatives (Names and Details):</label>
+        <textarea id="relatives" name="relatives" rows="4" placeholder="Add relative details"></textarea>
+
+        <!-- Contact Information -->
+        <h2>Contact Information</h2>
+        <label for="address">Permanent Address:</label>
+        <textarea id="address" name="address" rows="2"></textarea>
+
+        <label for="contact-number">Contact Number:</label>
+        <input type="text" id="contact-number" name="contact-number">
+
+        <!-- Profile Picture -->
+        <label for="profile-pic">Profile Picture:</label>
+        <input type="file" id="profile-pic" accept="image/*">
+
+        <button type="button" id="generate">Generate Biodata</button>
+      </form>
+    </section>
+
+    <section id="output-section" style="display:none;">
+      <div id="biodata-preview" class="a4-page">
+        <!-- Dynamically generated biodata preview -->
+      </div>
+      <button id="download-pdf">Download PDF</button>
+      <button id="download-image">Download as Image</button>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
