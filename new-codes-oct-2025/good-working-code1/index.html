@@ -3,98 +3,119 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Marathi Matrimonial Biodata Generator</title>
-  <!-- Marathi Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+  <title>✨ Marathi Biodata Studio</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
   <!-- Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
-<body>
-  <header>
-    <h1>मराठी विवाह बायोडाटा जनरेटर</h1>
-    <p>Marathi Matrimonial Biodata Generator</p>
-  </header>
+<body class="dark-mode">
+  <!-- Theme Toggle -->
+  <button id="theme-toggle" class="theme-toggle">
+    <i class="fas fa-moon"></i>
+  </button>
 
-  <main>
-    <!-- Input Form -->
-    <section id="form-section">
-      <form id="biodata-form">
-        <!-- Personal Info -->
-        <h2>व्यक्तिगत माहिती (Personal Information)</h2>
-        <label>पूर्ण नाव (Full Name):</label>
-        <input type="text" id="name" placeholder="कु. मानिका अभिमन्यू पाटील" />
+  <div class="container">
+    <!-- Hero -->
+    <header class="hero">
+      <h1>✨ Marathi Biodata Studio</h1>
+      <p>Create stunning, traditional biodata in seconds — no design skills needed!</p>
+    </header>
 
-        <label>जन्म तारीख (DOB):</label>
-        <input type="date" id="dob" />
-
-        <label>जन्म वेळ (Birth Time):</label>
-        <input type="time" id="birth-time" />
-
-        <label>जन्म ठिकाण (Birth Place):</label>
-        <input type="text" id="birth-place" placeholder="अमरावती" />
-
-        <label>उंची (Height):</label>
-        <input type="text" id="height" placeholder="5 फूट 5 इंच" />
-
-        <label>रक्त गट (Blood Group):</label>
-        <input type="text" id="blood-group" placeholder="O+" />
-
-        <!-- Education -->
-        <label>शिक्षण (Education):</label>
-        <input type="text" id="education" placeholder="B.E. (Computer Science)" />
-
-        <!-- Family -->
-        <h2>कौटुंबिक माहिती (Family Information)</h2>
-        <label>वडिलांचे नाव:</label>
-        <input type="text" id="father-name" placeholder="श्री. अभिमन्यू शरदराव पाटील" />
-        <label>वडिलांचा व्यवसाय:</label>
-        <input type="text" id="father-occupation" placeholder="धंधी" />
-        <label>आईचे नाव:</label>
-        <input type="text" id="mother-name" placeholder="श्री. करुणा अभिमन्यू पाटील" />
-        <label>आजोबा:</label>
-        <input type="text" id="grandfather" placeholder="श्री. शरदराव शंकरदाव पाटील" />
-        <label>आजी:</label>
-        <input type="text" id="grandmother" placeholder="श्री. विजय शरदराव पाटील" />
-
-        <!-- Maternal Uncle -->
-        <label>मामा:</label>
-        <input type="text" id="mama" placeholder="श्री. अनिल पांडुरंग जाधव" />
-        <label>मामा संपर्क:</label>
-        <input type="text" id="mama-contact" placeholder="98XXXXXXX" />
-
-        <!-- Photo & Shape -->
-        <h2>प्रोफाइल फोटो (Profile Photo)</h2>
-        <label>फोटो अपलोड करा:</label>
-        <input type="file" id="profile-pic" accept="image/*" />
-        <div class="photo-controls">
-          <label>आकार (Shape):</label>
-          <select id="photo-shape">
-            <option value="circle">वर्तुळ (Circle)</option>
-            <option value="rectangle">चौरस (Rectangle)</option>
-            <option value="rounded">गोलाकार कोपरे (Rounded)</option>
-          </select>
-          <button type="button" id="remove-photo">फोटो काढा</button>
+    <main class="app-grid">
+      <!-- Form Panel -->
+      <section class="panel glass" id="form-panel">
+        <div class="panel-header">
+          <h2><i class="fas fa-user-edit"></i> Your Details</h2>
+          <button id="use-sample" class="btn btn-sm btn-outline">Use Sample</button>
         </div>
 
-        <!-- Generate -->
-        <button type="button" id="generate">बायोडाटा तयार करा</button>
-      </form>
-    </section>
+        <form id="biodata-form">
+          <!-- Personal -->
+          <details open>
+            <summary>👤 Personal Info</summary>
+            <input type="text" id="name" placeholder="कु. मानिका अभिमन्यू पाटील" />
+            <div class="grid-2">
+              <input type="date" id="dob" />
+              <input type="time" id="birth-time" />
+            </div>
+            <input type="text" id="birth-place" placeholder="जन्म ठिकाण (e.g., अमरावती)" />
+            <div class="grid-2">
+              <input type="text" id="height" placeholder="उंची (e.g., 5'5\")" />
+              <input type="text" id="blood-group" placeholder="रक्त गट (e.g., O+)" />
+            </div>
+            <input type="text" id="education" placeholder="शिक्षण (e.g., B.E. Computer Science)" />
+          </details>
 
-    <!-- Output Preview -->
-    <section id="output-section" style="display: none;">
-      <div id="biodata-preview" class="a4-page">
-        <!-- Preview will be injected here -->
-      </div>
-      <div class="export-buttons">
-        <button id="download-pdf">PDF डाउनलोड करा</button>
-        <button id="download-image">इमेज डाउनलोड करा</button>
-        <button id="back-to-form">फॉर्मवर परत जा</button>
-      </div>
-    </section>
-  </main>
+          <!-- Family -->
+          <details>
+            <summary>👨‍👩‍👧 Family</summary>
+            <input type="text" id="father-name" placeholder="वडिलांचे नाव" />
+            <input type="text" id="father-occupation" placeholder="वडिलांचा व्यवसाय" />
+            <input type="text" id="mother-name" placeholder="आईचे नाव" />
+            <input type="text" id="grandfather" placeholder="आजोबा" />
+            <input type="text" id="mama" placeholder="मामा" />
+            <input type="text" id="mama-contact" placeholder="मामा संपर्क क्रमांक" />
+          </details>
+
+          <!-- Photo -->
+          <details>
+            <summary>🖼️ Profile Photo</summary>
+            <div class="photo-upload">
+              <input type="file" id="profile-pic" accept="image/*" hidden />
+              <label for="profile-pic" class="upload-btn">
+                <i class="fas fa-cloud-upload-alt"></i> Upload Photo
+              </label>
+              <div class="photo-preview" id="photo-preview">
+                <img id="preview-img" src="" alt="Preview" style="display:none;">
+                <span id="no-photo">No photo</span>
+              </div>
+              <div class="photo-controls">
+                <select id="photo-shape">
+                  <option value="circle">.Circle</option>
+                  <option value="rounded">.Rounded</option>
+                  <option value="rectangle">.Rectangle</option>
+                </select>
+                <button type="button" id="remove-photo" class="btn-icon">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </details>
+
+          <button type="button" id="generate" class="btn btn-primary">
+            <i class="fas fa-bolt"></i> Generate Biodata
+          </button>
+        </form>
+      </section>
+
+      <!-- Preview Panel -->
+      <section class="panel glass" id="preview-panel">
+        <div class="panel-header">
+          <h2><i class="fas fa-eye"></i> Live Preview</h2>
+        </div>
+        <div id="biodata-preview" class="biodata-canvas">
+          <!-- Preview injected here -->
+          <div class="placeholder">
+            <i class="fas fa-file-alt"></i>
+            <p>Your biodata will appear here</p>
+          </div>
+        </div>
+        <div class="export-bar">
+          <button id="download-pdf" class="btn btn-outline">
+            <i class="fas fa-file-pdf"></i> PDF
+          </button>
+          <button id="download-image" class="btn btn-outline">
+            <i class="fas fa-image"></i> PNG
+          </button>
+        </div>
+      </section>
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>

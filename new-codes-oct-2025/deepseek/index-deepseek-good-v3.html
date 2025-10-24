@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>✨ Marathi Marriage Biodata Studio</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ===== CODE PROTECTION ===== */
+    body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-touch-callout: none;
+    }
+    body * {
+      -webkit-user-select: none !important;
+      user-select: none !important;
+    }
+
+    /* ===== VARIABLES ===== */
+    :root {
+      --primary: #FF6B35;
+      --secondary: #F7931E;
+      --accent: #FFD166;
+      --dark-bg: #121212;
+      --light-bg: #f8f9fa;
+      --card-bg-dark: rgba(30, 30, 30, 0.7);
+      --card-bg-light: rgba(255, 255, 255, 0.8);
+      --text-dark: #212529;
+      --text-light: #f8f9fa;
+      --border-radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.3);
+      --transition: all 0.3s ease;
+    }
+
+    /* ===== BASE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: var(--text-light);
+      min-height: 100vh;
+      padding: 20px;
+      transition: var(--transition);
+    }
+
+    body.light-mode {
+      background: linear-gradient(135deg, #f5f7fa, #e4edf9);
+      color: var(--text-dark);
+    }
+
+    /* ===== THEME TOGGLE ===== */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      backdrop-filter: blur(10px);
+      color: white;
+      cursor: pointer;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+    .theme-toggle:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    .theme-label {
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .theme-toggle:hover + .theme-label {
+      opacity: 1;
+    }
+
+    /* ===== CONTAINER ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    /* ===== APP GRID ===== */
+    .app-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    @media (max-width: 900px) {
+      .app-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== PANELS ===== */
+    .panel {
+      border-radius: var(--border-radius);
+      padding: 25px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    body.dark-mode .panel {
+      background: var(--card-bg-dark);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    body.light-mode .panel {
+      background: var(--card-bg-light);
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    /* ===== FORM STYLES ===== */
+    input, select, textarea, button {
+      width: 100%;
+      padding: 12px 16px;
+      margin: 8px 0;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(0,0,0,0.2);
+      color: white;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    body.light-mode input,
+    body.light-mode select,
+    body.light-mode textarea {
+      background: white;
+      color: var(--text-dark);
+      border: 1px solid #ddd;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(247, 147, 30, 0.3);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 20px 0 10px;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 10px;
+      transition: var(--transition);
+    }
+    .section-header:hover {
+      background: rgba(255,255,255,0.05);
+    }
+    .section-header h3 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.2rem;
+    }
+    .section-header i.chevron {
+      transition: transform 0.3s;
+    }
+    .section-content {
+      display: none;
+    }
+    .section-content.active {
+      display: block;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: white;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--secondary);
+      color: var(--secondary);
+    }
+    .btn-small {
+      padding: 8px 12px;
+      font-size: 0.85rem;
+    }
+
+    /* ===== PHOTO UPLOAD ===== */
+    .photo-upload {
+      text-align: center;
+    }
+    .upload-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: rgba(255,255,255,0.1);
+      border: 2px dashed var(--accent);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .photo-preview {
+      width: 120px;
+      height: 120px;
+      margin: 15px auto;
+      border-radius: 50%;
+      overflow: hidden;
+      background: rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+    }
+    .photo-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .god-image-preview {
+      width: 80px;
+      height: 80px;
+      margin: 10px auto;
+      overflow: hidden;
+      background: rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+    }
+    .god-image-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* ===== PREVIEW ===== */
+    .a4-page {
+      width: 210mm;
+      min-height: 297mm;
+      background: #1e1e1e;
+      color: white;
+      padding: 20mm;
+      margin: 20px auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      position: relative;
+      font-size: 14px;
+      line-height: 1.6;
+      font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+    body.light-mode .a4-page {
+      background: white;
+      color: black;
+    }
+
+    .religious-header {
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--accent);
+      font-size: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .god-image {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .biodata-name {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 25px;
+      font-weight: 600;
+      color: var(--secondary);
+    }
+
+    .info-item {
+      margin: 10px 0;
+    }
+    .info-label {
+      font-weight: 600;
+      color: var(--secondary);
+      display: inline-block;
+      width: 160px;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 20px 0 10px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .export-bar {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    /* ===== TOAST NOTIFICATION ===== */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 20px;
+      background: var(--primary);
+      color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* ===== FORM GRID ===== */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* ===== CUSTOM FIELDS ===== */
+    .custom-field {
+      display: flex;
+      gap: 10px;
+      margin: 10px 0;
+    }
+    .custom-field input {
+      margin: 0;
+    }
+    .remove-field {
+      background: #ff4757;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      width: 40px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .add-field-btn {
+      background: var(--accent);
+      color: #333;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin: 10px 0;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .a4-page {
+        padding: 15mm;
+        width: calc(100vw - 40px);
+      }
+      .export-bar { flex-direction: column; }
+      .form-grid { grid-template-columns: 1fr; }
+      .custom-field { flex-direction: column; }
+    }
+  </style>
+</head>
+<body class="dark-mode" oncontextmenu="return false;">
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" id="theme-toggle">
+    <i class="fas fa-moon"></i>
+  </button>
+  <div class="theme-label">Toggle Theme</div>
+
+  <div class="container">
+    <header class="hero">
+      <h1>✨ Marathi Marriage Biodata Studio</h1>
+      <p>Create stunning, traditional biodata in seconds</p>
+    </header>
+
+    <main class="app-grid">
+      <!-- Form Panel -->
+      <section class="panel" id="form-panel">
+        <h2><i class="fas fa-user-edit"></i> Your Details</h2>
+
+        <form id="biodata-form">
+          <!-- Gender Selection -->
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+              <option value="female">Female (कुमारी)</option>
+              <option value="male">Male (कुमार)</option>
+            </select>
+          </div>
+
+          <!-- Religious Header Customization -->
+          <div class="section-header" data-section="religious">
+            <h3><i class="fas fa-pray"></i> Religious Header</h3>
+            <i class="fas fa-chevron-down chevron"></i>
+          </div>
+          <div class="section-content active" id="religious-content">
+            <input type="text" id="religious-text" placeholder="Religious Text" value="श्री गणेशाय नमः | जय श्री राम">
+            
+            <!-- God Image Upload -->
+            <div class="photo-upload">
+              <input type="file" id="god-image" accept="image/*" hidden />
+              <label for="god-image" class="upload-btn">
+                <i class="fas fa-cloud-upload-alt"></i> Upload God Image
+              </label>
+              <div class="god-image-preview" id="god-image-preview">
+                <span id="no-god-image">No image</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Personal Info (Visible by default) -->
+          <div class="section-header" data-section="personal">
+            <h3><i class="fas fa-user"></i> Personal Information</h3>
+            <i class="fas fa-chevron-down chevron"></i>
+          </div>
+          <div class="section-content active" id="personal-content">
+            <input type="text" id="name" placeholder="Full Name (e.g., मानिका अभिमन्यू पाटील)" />
+            <div class="form-grid">
+              <input type="date" id="dob" />
+              <input type="time" id="birth-time" />
+            </div>
+            <input type="text" id="birth-place" placeholder="जन्म ठिकाण (e.g., अमरावती)" />
+            <div class="form-grid">
+              <input type="text" id="height" placeholder="उंची (e.g., 5'5\")" />
+              <input type="text" id="blood-group" placeholder="रक्त गट (e.g., O+)" />
+            </div>
+            <div class="form-grid">
+              <input type="text" id="weight" placeholder="वजन (e.g., 55 kg)" />
+              <input type="text" id="complexion" placeholder="वर्ण (e.g., गोरा)" />
+            </div>
+            <input type="text" id="education" placeholder="शिक्षण (e.g., B.E. Computer Science)" />
+            <input type="text" id="profession" placeholder="व्यवसाय (e.g., Software Engineer)" />
+            <input type="text" id="income" placeholder="वार्षिक उत्पन्न (e.g., 8 लाख)" />
+            
+            <!-- Horoscope Details inside Personal Information -->
+            <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed rgba(255,255,255,0.2);">
+              <h4 style="color: var(--accent); margin-bottom: 10px;"><i class="fas fa-star"></i> Horoscope Details</h4>
+              <div class="form-grid">
+                <input type="text" id="rashi" placeholder="राशी (e.g., मिथुन)" />
+                <input type="text" id="nakshatra" placeholder="नक्षत्र (e.g., आर्द्रा)" />
+              </div>
+              <div class="form-grid">
+                <input type="text" id="gan" placeholder="गण (e.g., मनुष्य)" />
+                <input type="text" id="mangalik" placeholder="मंगळिक (e.g., होय/नाही)" />
+              </div>
+            </div>
+            
+            <button type="button" class="add-field-btn" data-section="personal">
+              <i class="fas fa-plus"></i> Add Custom Field
+            </button>
+            <div id="personal-custom-fields"></div>
+          </div>
+
+          <!-- Family (Collapsed by default) -->
+          <div class="section-header" data-section="family">
+            <h3><i class="fas fa-home"></i> Family Details</h3>
+            <i class="fas fa-chevron-right chevron"></i>
+          </div>
+          <div class="section-content" id="family-content">
+            <input type="text" id="father-name" placeholder="वडिलांचे नाव" />
+            <input type="text" id="father-occupation" placeholder="वडिलांचा व्यवसाय" />
+            <input type="text" id="mother-name" placeholder="आईचे नाव" />
+            <input type="text" id="mother-occupation" placeholder="आईचा व्यवसाय" />
+            <input type="text" id="grandfather" placeholder="आजोबा" />
+            <input type="text" id="grandmother" placeholder="आजी" />
+            <input type="text" id="mama" placeholder="मामा" />
+            <input type="text" id="mama-contact" placeholder="मामा संपर्क क्रमांक" />
+            <textarea id="siblings" placeholder="भावंडांची माहिती" rows="3"></textarea>
+            
+            <button type="button" class="add-field-btn" data-section="family">
+              <i class="fas fa-plus"></i> Add Custom Field
+            </button>
+            <div id="family-custom-fields"></div>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="section-header" data-section="contact">
+            <h3><i class="fas fa-address-card"></i> Contact Information</h3>
+            <i class="fas fa-chevron-right chevron"></i>
+          </div>
+          <div class="section-content" id="contact-content">
+            <input type="text" id="phone" placeholder="मोबाईल क्रमांक" />
+            <input type="email" id="email" placeholder="ईमेल" />
+            <textarea id="address" placeholder="पत्ता" rows="3"></textarea>
+            
+            <button type="button" class="add-field-btn" data-section="contact">
+              <i class="fas fa-plus"></i> Add Custom Field
+            </button>
+            <div id="contact-custom-fields"></div>
+          </div>
+
+          <!-- Expectations -->
+          <div class="section-header" data-section="expectations">
+            <h3><i class="fas fa-heart"></i> Partner Expectations</h3>
+            <i class="fas fa-chevron-right chevron"></i>
+          </div>
+          <div class="section-content" id="expectations-content">
+            <textarea id="expectations" placeholder="वराच्या अपेक्षा" rows="3"></textarea>
+            <textarea id="hobbies" placeholder="आवडी/हौबी" rows="2"></textarea>
+            
+            <button type="button" class="add-field-btn" data-section="expectations">
+              <i class="fas fa-plus"></i> Add Custom Field
+            </button>
+            <div id="expectations-custom-fields"></div>
+          </div>
+
+          <!-- Photo (Collapsed by default) -->
+          <div class="section-header" data-section="photo">
+            <h3><i class="fas fa-camera"></i> Profile Photo</h3>
+            <i class="fas fa-chevron-right chevron"></i>
+          </div>
+          <div class="section-content" id="photo-content">
+            <div class="photo-upload">
+              <input type="file" id="profile-pic" accept="image/*" hidden />
+              <label for="profile-pic" class="upload-btn">
+                <i class="fas fa-cloud-upload-alt"></i> Upload Photo
+              </label>
+              
+              <div class="photo-shape-selector">
+                <div class="shape-option active" data-shape="circular">
+                  <i class="fas fa-circle"></i> Circular
+                </div>
+                <div class="shape-option" data-shape="rectangular">
+                  <i class="fas fa-square"></i> Rectangular
+                </div>
+                <div class="shape-option" data-shape="original">
+                  <i class="fas fa-image"></i> Original
+                </div>
+              </div>
+              
+              <div class="photo-preview circular" id="photo-preview">
+                <span id="no-photo">No photo</span>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" id="generate" class="btn btn-primary">
+            <i class="fas fa-bolt"></i> Generate Biodata
+          </button>
+        </form>
+      </section>
+
+      <!-- Preview Panel -->
+      <section class="panel" id="preview-panel">
+        <h2><i class="fas fa-eye"></i> Live Preview</h2>
+        <div class="a4-page" id="biodata-preview">
+          <div class="religious-header">
+            <div id="god-image-preview-preview"></div>
+            <div id="religious-text-preview">श्री गणेशाय नमः | जय श्री राम</div>
+          </div>
+          <div class="biodata-name">Your biodata will appear here</div>
+        </div>
+        <div class="export-bar">
+          <button id="download-pdf" class="btn btn-outline">
+            <i class="fas fa-file-pdf"></i> PDF
+          </button>
+          <button id="download-image" class="btn btn-outline">
+            <i class="fas fa-image"></i> PNG
+          </button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script>
+    // === CODE PROTECTION ===
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'F12' || 
+          (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+          (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+          (e.ctrlKey && e.key === 'u')) {
+        e.preventDefault();
+        showToast('This action is disabled');
+        return false;
+      }
+    });
+
+    // === TOAST NOTIFICATION ===
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // === THEME TOGGLE ===
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      const icon = document.querySelector('#theme-toggle i');
+      icon.className = document.body.classList.contains('light-mode') 
+        ? 'fas fa-sun' 
+        : 'fas fa-moon';
+    });
+
+    // === COLLAPSIBLE SECTIONS ===
+    document.querySelectorAll('.section-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const sectionId = header.getAttribute('data-section');
+        const content = document.getElementById(`${sectionId}-content`);
+        const chevron = header.querySelector('.chevron');
+        
+        content.classList.toggle('active');
+        if (content.classList.contains('active')) {
+          chevron.className = 'fas fa-chevron-down chevron';
+        } else {
+          chevron.className = 'fas fa-chevron-right chevron';
+        }
+      });
+    });
+
+    // === PHOTO SHAPE SELECTOR ===
+    let selectedShape = 'circular';
+    document.querySelectorAll('.shape-option').forEach(option => {
+      option.addEventListener('click', (e) => {
+        document.querySelectorAll('.shape-option').forEach(opt => {
+          opt.classList.remove('active');
+        });
+        e.target.classList.add('active');
+        selectedShape = e.target.getAttribute('data-shape');
+        
+        const preview = document.getElementById('photo-preview');
+        preview.className = `photo-preview ${selectedShape}`;
+      });
+    });
+
+    // === CUSTOM FIELDS ===
+    document.querySelectorAll('.add-field-btn').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const section = e.target.getAttribute('data-section');
+        const container = document.getElementById(`${section}-custom-fields`);
+        
+        const fieldId = `custom-${section}-${Date.now()}`;
+        const fieldHTML = `
+          <div class="custom-field" id="${fieldId}">
+            <input type="text" placeholder="Field Name" class="custom-field-name">
+            <input type="text" placeholder="Field Value" class="custom-field-value">
+            <button type="button" class="remove-field" onclick="document.getElementById('${fieldId}').remove()">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        `;
+        
+        container.insertAdjacentHTML('beforeend', fieldHTML);
+      });
+    });
+
+    // === IMAGE UPLOADS ===
+    let currentPhotoURL = null;
+    let currentGodImageURL = null;
+    
+    // Profile Photo
+    const photoInput = document.getElementById('profile-pic');
+    const photoPreview = document.getElementById('photo-preview');
+    const noPhoto = document.getElementById('no-photo');
+
+    photoInput.addEventListener('change', (e) => {
+      if (e.target.files[0]) {
+        // Revoke previous URL to prevent memory leaks
+        if (currentPhotoURL) {
+          URL.revokeObjectURL(currentPhotoURL);
+        }
+        currentPhotoURL = URL.createObjectURL(e.target.files[0]);
+        noPhoto.style.display = 'none';
+        photoPreview.innerHTML = `<img src="${currentPhotoURL}" alt="Profile Photo">`;
+        showToast('Profile photo uploaded successfully');
+      }
+    });
+
+    // God Image
+    const godImageInput = document.getElementById('god-image');
+    const godImagePreview = document.getElementById('god-image-preview');
+    const noGodImage = document.getElementById('no-god-image');
+
+    godImageInput.addEventListener('change', (e) => {
+      if (e.target.files[0]) {
+        // Revoke previous URL to prevent memory leaks
+        if (currentGodImageURL) {
+          URL.revokeObjectURL(currentGodImageURL);
+        }
+        currentGodImageURL = URL.createObjectURL(e.target.files[0]);
+        noGodImage.style.display = 'none';
+        godImagePreview.innerHTML = `<img src="${currentGodImageURL}" alt="God Image">`;
+        showToast('God image uploaded successfully');
+      }
+    });
+
+    // === GENERATE BIODATA ===
+    document.getElementById('generate').addEventListener('click', () => {
+      const gender = document.getElementById('gender').value;
+      const genderPrefix = gender === 'female' ? 'कु.' : 'कु.';
+      const religiousText = document.getElementById('religious-text').value;
+      
+      // Collect standard form data
+      const data = {
+        gender: gender,
+        name: document.getElementById('name').value,
+        dob: document.getElementById('dob').value,
+        birthTime: document.getElementById('birth-time').value,
+        birthPlace: document.getElementById('birth-place').value,
+        height: document.getElementById('height').value,
+        weight: document.getElementById('weight').value,
+        complexion: document.getElementById('complexion').value,
+        bloodGroup: document.getElementById('blood-group').value,
+        education: document.getElementById('education').value,
+        profession: document.getElementById('profession').value,
+        income: document.getElementById('income').value,
+        fatherName: document.getElementById('father-name').value,
+        fatherOccupation: document.getElementById('father-occupation').value,
+        motherName: document.getElementById('mother-name').value,
+        motherOccupation: document.getElementById('mother-occupation').value,
+        grandfather: document.getElementById('grandfather').value,
+        grandmother: document.getElementById('grandmother').value,
+        mama: document.getElementById('mama').value,
+        mamaContact: document.getElementById('mama-contact').value,
+        siblings: document.getElementById('siblings').value,
+        rashi: document.getElementById('rashi').value,
+        nakshatra: document.getElementById('nakshatra').value,
+        gan: document.getElementById('gan').value,
+        mangalik: document.getElementById('mangalik').value,
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+        address: document.getElementById('address').value,
+        hobbies: document.getElementById('hobbies').value,
+        expectations: document.getElementById('expectations').value
+      };
+
+      // Collect custom fields
+      const customFields = {
+        personal: collectCustomFields('personal'),
+        family: collectCustomFields('family'),
+        contact: collectCustomFields('contact'),
+        expectations: collectCustomFields('expectations')
+      };
+
+      const hasPhoto = currentPhotoURL !== null;
+      const hasGodImage = currentGodImageURL !== null;
+
+      // Build biodata HTML
+      let html = `
+        <div class="religious-header">
+          ${hasGodImage ? `<img src="${currentGodImageURL}" class="god-image" alt="God Image">` : ''}
+          <div>${religiousText}</div>
+        </div>
+        
+        <div style="text-align: center; margin-bottom: 20px;">
+          <h2 style="color: var(--secondary); margin-bottom: 5px;">विवाह बायोडाटा</h2>
+          <div style="font-size: 1.2rem; color: var(--primary);">${genderPrefix} ${data.name || 'नाव'}</div>
+        </div>
+      `;
+
+      // Personal Information Section (including Horoscope)
+      if (hasValue(data.dob) || hasValue(data.birthTime) || hasValue(data.birthPlace) || 
+          hasValue(data.height) || hasValue(data.weight) || hasValue(data.complexion) || 
+          hasValue(data.bloodGroup) || hasValue(data.education) || hasValue(data.profession) || 
+          hasValue(data.income) || hasValue(data.rashi) || hasValue(data.nakshatra) || 
+          hasValue(data.gan) || hasValue(data.mangalik) || customFields.personal.length > 0) {
+        
+        html += `<div class="section-title">वैयक्तिक माहिती</div>`;
+        
+        // Add profile photo with proper styling
+        if (hasPhoto) {
+          const photoStyle = selectedShape === 'circular' ? 
+            'width:120px;height:120px;object-fit:cover;border-radius:50%;float:right;margin:0 0 15px 15px;border:2px solid white;' :
+            selectedShape === 'rectangular' ?
+            'width:120px;height:150px;object-fit:cover;border-radius:12px;float:right;margin:0 0 15px 15px;border:2px solid white;' :
+            'max-width:120px;max-height:150px;object-fit:contain;float:right;margin:0 0 15px 15px;border:2px solid white;';
+          
+          html += `<img src="${currentPhotoURL}" style="${photoStyle}">`;
+        }
+        
+        html += buildInfoItems([
+          { label: 'जन्म तारीख', value: data.dob, format: formatDate },
+          { label: 'जन्म वेळ', value: data.birthTime },
+          { label: 'जन्म ठिकाण', value: data.birthPlace },
+          { label: 'उंची', value: data.height },
+          { label: 'वजन', value: data.weight },
+          { label: 'वर्ण', value: data.complexion },
+          { label: 'रक्त गट', value: data.bloodGroup },
+          { label: 'शिक्षण', value: data.education },
+          { label: 'व्यवसाय', value: data.profession },
+          { label: 'वार्षिक उत्पन्न', value: data.income }
+        ]);
+        
+        // Horoscope details
+        if (hasValue(data.rashi) || hasValue(data.nakshatra) || hasValue(data.gan) || hasValue(data.mangalik)) {
+          html += `<div style="margin-top: 15px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.3);">`;
+          html += `<div style="font-weight: 600; color: var(--accent); margin-bottom: 8px;">ज्योतिष माहिती</div>`;
+          html += buildInfoItems([
+            { label: 'राशी', value: data.rashi },
+            { label: 'नक्षत्र', value: data.nakshatra },
+            { label: 'गण', value: data.gan },
+            { label: 'मंगळिक', value: data.mangalik }
+          ]);
+          html += `</div>`;
+        }
+        
+        // Add custom personal fields
+        customFields.personal.forEach(field => {
+          html += `<div class="info-item"><span class="info-label">${field.name}:</span> ${field.value}</div>`;
+        });
+      }
+
+      // Family Information Section
+      if (hasValue(data.fatherName) || hasValue(data.fatherOccupation) || hasValue(data.motherName) || 
+          hasValue(data.motherOccupation) || hasValue(data.grandfather) || hasValue(data.grandmother) || 
+          hasValue(data.mama) || hasValue(data.mamaContact) || hasValue(data.siblings) || 
+          customFields.family.length > 0) {
+        
+        html += `<div class="section-title">कौटुंबिक माहिती</div>`;
+        html += buildInfoItems([
+          { label: 'वडिलांचे नाव', value: data.fatherName },
+          { label: 'वडिलांचा व्यवसाय', value: data.fatherOccupation },
+          { label: 'आईचे नाव', value: data.motherName },
+          { label: 'आईचा व्यवसाय', value: data.motherOccupation },
+          { label: 'आजोबा', value: data.grandfather },
+          { label: 'आजी', value: data.grandmother },
+          { label: 'मामा', value: data.mama },
+          { label: 'मामा संपर्क', value: data.mamaContact },
+          { label: 'भावंडे', value: data.siblings, multiline: true }
+        ]);
+        
+        // Add custom family fields
+        customFields.family.forEach(field => {
+          html += `<div class="info-item"><span class="info-label">${field.name}:</span> ${field.value}</div>`;
+        });
+      }
+
+      // Contact Information Section
+      if (hasValue(data.phone) || hasValue(data.email) || hasValue(data.address) || customFields.contact.length > 0) {
+        
+        html += `<div class="section-title">संपर्क माहिती</div>`;
+        html += buildInfoItems([
+          { label: 'मोबाईल क्रमांक', value: data.phone },
+          { label: 'ईमेल', value: data.email },
+          { label: 'पत्ता', value: data.address, multiline: true }
+        ]);
+        
+        // Add custom contact fields
+        customFields.contact.forEach(field => {
+          html += `<div class="info-item"><span class="info-label">${field.name}:</span> ${field.value}</div>`;
+        });
+      }
+
+      // Expectations Section
+      if (hasValue(data.expectations) || hasValue(data.hobbies) || customFields.expectations.length > 0) {
+        
+        html += `<div class="section-title">अपेक्षा आणि आवडी</div>`;
+        html += buildInfoItems([
+          { label: 'वराच्या अपेक्षा', value: data.expectations, multiline: true },
+          { label: 'आवडी/हौबी', value: data.hobbies, multiline: true }
+        ]);
+        
+        // Add custom expectations fields
+        customFields.expectations.forEach(field => {
+          html += `<div class="info-item"><span class="info-label">${field.name}:</span> ${field.value}</div>`;
+        });
+      }
+
+      // Update the preview
+      const previewElement = document.getElementById('biodata-preview');
+      previewElement.innerHTML = html;
+      showToast('Biodata generated successfully!');
+    });
+
+    // Helper functions
+    function hasValue(value) {
+      return value && value.trim() !== '';
+    }
+
+    function formatDate(dateString) {
+      if (!dateString) return '';
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-GB');
+    }
+
+    function buildInfoItems(items) {
+      let html = '';
+      items.forEach(item => {
+        if (hasValue(item.value)) {
+          const formattedValue = item.format ? item.format(item.value) : item.value;
+          if (item.multiline) {
+            html += `<div class="info-item"><span class="info-label">${item.label}:</span><br>${formattedValue.replace(/\n/g, '<br>')}</div>`;
+          } else {
+            html += `<div class="info-item"><span class="info-label">${item.label}:</span> ${formattedValue}</div>`;
+          }
+        }
+      });
+      return html;
+    }
+
+    function collectCustomFields(section) {
+      const fields = [];
+      const container = document.getElementById(`${section}-custom-fields`);
+      const customFields = container.querySelectorAll('.custom-field');
+      
+      customFields.forEach(field => {
+        const name = field.querySelector('.custom-field-name').value;
+        const value = field.querySelector('.custom-field-value').value;
+        
+        if (hasValue(name) && hasValue(value)) {
+          fields.push({ name, value });
+        }
+      });
+      
+      return fields;
+    }
+
+    // === EXPORT FUNCTIONS ===
+    function exportBiodata(format) {
+      const preview = document.getElementById('biodata-preview');
+      if (preview.innerHTML.includes('will appear')) {
+        showToast('Please generate biodata first!');
+        return;
+      }
+
+      const isDark = document.body.classList.contains('dark-mode');
+      const originalStyles = {
+        backgroundColor: preview.style.backgroundColor,
+        width: preview.style.width,
+        height: preview.style.height
+      };
+
+      // Set A4 dimensions for export
+      preview.style.width = '210mm';
+      preview.style.height = '297mm';
+      preview.style.backgroundColor = isDark ? '#1e1e1e' : 'white';
+
+      // Use higher scale for better quality
+      html2canvas(preview, { 
+        scale: 3, // Increased scale for better quality
+        backgroundColor: isDark ? '#1e1e1e' : 'white',
+        useCORS: true,
+        logging: false,
+        width: 794, // 210mm at 96 DPI
+        height: 1123, // 297mm at 96 DPI
+        onclone: function(clonedDoc) {
+          const clonedPreview = clonedDoc.getElementById('biodata-preview');
+          clonedPreview.style.width = '210mm';
+          clonedPreview.style.height = '297mm';
+          clonedPreview.style.backgroundColor = isDark ? '#1e1e1e' : 'white';
+        }
+      }).then(canvas => {
+        // Restore original styles
+        preview.style.backgroundColor = originalStyles.backgroundColor;
+        preview.style.width = originalStyles.width;
+        preview.style.height = originalStyles.height;
+
+        if (format === 'pdf') {
+          const { jsPDF } = window.jspdf;
+          const pdf = new jsPDF('p', 'mm', 'a4');
+          const imgData = canvas.toDataURL('image/jpeg', 0.95); // Use JPEG for better quality
+          
+          // Calculate dimensions to fit A4 exactly
+          const pdfWidth = 210;
+          const pdfHeight = 297;
+          const imgWidth = canvas.width;
+          const imgHeight = canvas.height;
+          
+          // Fit to page while maintaining aspect ratio
+          const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+          const imgWidthPdf = imgWidth * ratio;
+          const imgHeightPdf = imgHeight * ratio;
+          const x = (pdfWidth - imgWidthPdf) / 2;
+          const y = (pdfHeight - imgHeightPdf) / 2;
+          
+          pdf.addImage(imgData, 'JPEG', x, y, imgWidthPdf, imgHeightPdf);
+          pdf.save('marathi_marriage_biodata.pdf');
+          showToast('High-quality PDF downloaded successfully!');
+        } else {
+          // Create a new canvas with exact A4 dimensions and high quality
+          const a4Canvas = document.createElement('canvas');
+          const ctx = a4Canvas.getContext('2d');
+          a4Canvas.width = 2480; // Higher resolution for better quality (300 DPI)
+          a4Canvas.height = 3508; // Higher resolution for better quality (300 DPI)
+          
+          // Fill background
+          ctx.fillStyle = isDark ? '#1e1e1e' : 'white';
+          ctx.fillRect(0, 0, a4Canvas.width, a4Canvas.height);
+          
+          // Draw the captured content with high quality
+          ctx.drawImage(canvas, 0, 0, a4Canvas.width, a4Canvas.height);
+          
+          const link = document.createElement('a');
+          link.download = 'marathi_marriage_biodata.jpg';
+          link.href = a4Canvas.toDataURL('image/jpeg', 0.95); // Use JPEG for better quality
+          link.click();
+          showToast('High-quality image downloaded successfully!');
+        }
+      }).catch(error => {
+        console.error('Export error:', error);
+        showToast('Error generating file. Please try again.');
+      });
+    }
+
+    document.getElementById('download-pdf').addEventListener('click', () => exportBiodata('pdf'));
+    document.getElementById('download-image').addEventListener('click', () => exportBiodata('image'));
+
+    // Add photo shape selector styles
+    const style = document.createElement('style');
+    style.textContent = `
+      .photo-shape-selector {
+        display: flex;
+        gap: 10px;
+        margin: 10px 0;
+        justify-content: center;
+      }
+      .shape-option {
+        padding: 8px 12px;
+        border: 2px solid transparent;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: var(--transition);
+        background: rgba(255,255,255,0.1);
+      }
+      .shape-option.active {
+        border-color: var(--secondary);
+        background: rgba(247, 147, 30, 0.1);
+      }
+      .photo-preview.rectangular {
+        border-radius: 12px;
+      }
+      .photo-preview.original {
+        border-radius: 0;
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
