@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>✨ Marathi Marriage Biodata Studio</title>
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -293,9 +293,9 @@
       margin: 20px auto;
       box-shadow: 0 0 20px rgba(0,0,0,0.5);
       position: relative;
-      font-size: 14px;
-      line-height: 1.6;
-      font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+      font-size: 13px;
+      line-height: 1.5;
+      font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
       overflow: hidden;
     }
     body.light-mode .a4-page {
@@ -305,13 +305,13 @@
 
     .religious-header {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       color: var(--accent);
       font-size: 1.1rem;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 15px;
+      gap: 10px;
     }
 
     .god-image {
@@ -322,28 +322,28 @@
 
     .biodata-name {
       text-align: center;
-      font-size: 1.5rem;
-      margin-bottom: 25px;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
       font-weight: 600;
       color: var(--secondary);
     }
 
     .info-item {
-      margin: 10px 0;
+      margin: 8px 0;
     }
     .info-label {
       font-weight: 600;
       color: var(--secondary);
       display: inline-block;
-      width: 160px;
+      width: 150px;
     }
 
     .section-title {
       font-size: 1.2rem;
       font-weight: 700;
       color: var(--primary);
-      margin: 20px 0 10px;
-      padding-bottom: 5px;
+      margin: 15px 0 8px;
+      padding-bottom: 4px;
       border-bottom: 2px solid var(--accent);
     }
 
@@ -414,6 +414,17 @@
       margin: 10px 0;
     }
 
+    .sibling-item, .relative-item {
+      display: flex;
+      gap: 10px;
+      margin: 8px 0;
+      align-items: center;
+    }
+
+    .sibling-item input, .relative-item input {
+      margin: 0;
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 600px) {
       .a4-page {
@@ -423,6 +434,54 @@
       .export-bar { flex-direction: column; }
       .form-grid { grid-template-columns: 1fr; }
       .custom-field { flex-direction: column; }
+      .sibling-item, .relative-item { flex-direction: column; }
+    }
+
+    /* ===== PHOTO SHAPE SELECTOR ===== */
+    .photo-shape-selector {
+      display: flex;
+      gap: 10px;
+      margin: 10px 0;
+      justify-content: center;
+    }
+    .shape-option {
+      padding: 8px 12px;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: var(--transition);
+      background: rgba(255,255,255,0.1);
+    }
+    .shape-option.active {
+      border-color: var(--secondary);
+      background: rgba(247, 147, 30, 0.1);
+    }
+    .photo-preview.rectangular {
+      border-radius: 12px;
+    }
+    .photo-preview.original {
+      border-radius: 0;
+    }
+
+    /* ===== PHOTO SIZE SELECTOR ===== */
+    .photo-size-selector {
+      display: flex;
+      gap: 10px;
+      margin: 10px 0;
+      justify-content: center;
+    }
+    .size-option {
+      padding: 6px 10px;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: var(--transition);
+      background: rgba(255,255,255,0.1);
+      font-size: 0.8rem;
+    }
+    .size-option.active {
+      border-color: var(--secondary);
+      background: rgba(247, 147, 30, 0.1);
     }
   </style>
 </head>
@@ -454,12 +513,15 @@
             </select>
           </div>
 
-          <!-- God Image Upload -->
-          <div class="section-header" data-section="god-image">
-            <h3><i class="fas fa-pray"></i> God Image</h3>
+          <!-- Religious Header Customization -->
+          <div class="section-header" data-section="religious">
+            <h3><i class="fas fa-pray"></i> Religious Header</h3>
             <i class="fas fa-chevron-down chevron"></i>
           </div>
-          <div class="section-content active" id="god-image-content">
+          <div class="section-content active" id="religious-content">
+            <input type="text" id="religious-text" placeholder="Religious Text" value="श्री गणेशाय नमः | जय श्री राम">
+            
+            <!-- God Image Upload -->
             <div class="photo-upload">
               <input type="file" id="god-image" accept="image/*" hidden />
               <label for="god-image" class="upload-btn">
@@ -495,6 +557,19 @@
             <input type="text" id="profession" placeholder="व्यवसाय (e.g., Software Engineer)" />
             <input type="text" id="income" placeholder="वार्षिक उत्पन्न (e.g., 8 लाख)" />
             
+            <!-- Horoscope Details inside Personal Information -->
+            <div style="margin-top: 15px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.2);">
+              <h4 style="color: var(--accent); margin-bottom: 8px;"><i class="fas fa-star"></i> Horoscope Details</h4>
+              <div class="form-grid">
+                <input type="text" id="rashi" placeholder="राशी (e.g., मिथुन)" />
+                <input type="text" id="nakshatra" placeholder="नक्षत्र (e.g., आर्द्रा)" />
+              </div>
+              <div class="form-grid">
+                <input type="text" id="gan" placeholder="गण (e.g., मनुष्य)" />
+                <input type="text" id="mangalik" placeholder="मंगळिक (e.g., होय/नाही)" />
+              </div>
+            </div>
+            
             <button type="button" class="add-field-btn" data-section="personal">
               <i class="fas fa-plus"></i> Add Custom Field
             </button>
@@ -513,9 +588,74 @@
             <input type="text" id="mother-occupation" placeholder="आईचा व्यवसाय" />
             <input type="text" id="grandfather" placeholder="आजोबा" />
             <input type="text" id="grandmother" placeholder="आजी" />
-            <input type="text" id="mama" placeholder="मामा" />
-            <input type="text" id="mama-contact" placeholder="मामा संपर्क क्रमांक" />
-            <textarea id="siblings" placeholder="भावंडांची माहिती" rows="3"></textarea>
+            
+            <!-- Bhau Section -->
+            <div style="margin-top: 15px;">
+              <h4 style="color: var(--accent); margin-bottom: 8px;">भाऊ (Brothers)</h4>
+              <div id="bhau-container">
+                <div class="sibling-item">
+                  <input type="text" placeholder="भाऊचे नाव" class="bhau-name">
+                  <input type="text" placeholder="वय आणि तपशील" class="bhau-details">
+                  <button type="button" class="remove-field" onclick="this.parentElement.remove()">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <button type="button" class="add-field-btn" onclick="addSibling('bhau')">
+                <i class="fas fa-plus"></i> Add Bhau
+              </button>
+            </div>
+            
+            <!-- Bahin Section -->
+            <div style="margin-top: 15px;">
+              <h4 style="color: var(--accent); margin-bottom: 8px;">बहीण (Sisters)</h4>
+              <div id="bahin-container">
+                <div class="sibling-item">
+                  <input type="text" placeholder="बहिणीचे नाव" class="bahin-name">
+                  <input type="text" placeholder="वय आणि तपशील" class="bahin-details">
+                  <button type="button" class="remove-field" onclick="this.parentElement.remove()">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <button type="button" class="add-field-btn" onclick="addSibling('bahin')">
+                <i class="fas fa-plus"></i> Add Bahin
+              </button>
+            </div>
+            
+            <!-- Kaka Section -->
+            <div style="margin-top: 15px;">
+              <h4 style="color: var(--accent); margin-bottom: 8px;">काका (Uncles)</h4>
+              <div id="kaka-container">
+                <div class="relative-item">
+                  <input type="text" placeholder="काकांचे नाव" class="kaka-name">
+                  <input type="text" placeholder="संपर्क क्रमांक" class="kaka-contact">
+                  <button type="button" class="remove-field" onclick="this.parentElement.remove()">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <button type="button" class="add-field-btn" onclick="addRelative('kaka')">
+                <i class="fas fa-plus"></i> Add Kaka
+              </button>
+            </div>
+            
+            <!-- Mama Section -->
+            <div style="margin-top: 15px;">
+              <h4 style="color: var(--accent); margin-bottom: 8px;">मामा (Maternal Uncles)</h4>
+              <div id="mama-container">
+                <div class="relative-item">
+                  <input type="text" placeholder="मामांचे नाव" class="mama-name">
+                  <input type="text" placeholder="संपर्क क्रमांक" class="mama-contact">
+                  <button type="button" class="remove-field" onclick="this.parentElement.remove()">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <button type="button" class="add-field-btn" onclick="addRelative('mama')">
+                <i class="fas fa-plus"></i> Add Mama
+              </button>
+            </div>
             
             <button type="button" class="add-field-btn" data-section="family">
               <i class="fas fa-plus"></i> Add Custom Field
@@ -523,43 +663,35 @@
             <div id="family-custom-fields"></div>
           </div>
 
-          <!-- Horoscope Details -->
-          <div class="section-header" data-section="horoscope">
-            <h3><i class="fas fa-star"></i> Horoscope Details</h3>
-            <i class="fas fa-chevron-right chevron"></i>
-          </div>
-          <div class="section-content" id="horoscope-content">
-            <div class="form-grid">
-              <input type="text" id="rashi" placeholder="राशी (e.g., मिथुन)" />
-              <input type="text" id="nakshatra" placeholder="नक्षत्र (e.g., आर्द्रा)" />
-            </div>
-            <div class="form-grid">
-              <input type="text" id="gan" placeholder="गण (e.g., मनुष्य)" />
-              <input type="text" id="mangalik" placeholder="मंगळिक (e.g., होय/नाही)" />
-            </div>
-            
-            <button type="button" class="add-field-btn" data-section="horoscope">
-              <i class="fas fa-plus"></i> Add Custom Field
-            </button>
-            <div id="horoscope-custom-fields"></div>
-          </div>
-
-          <!-- Contact & Expectations -->
+          <!-- Contact Information -->
           <div class="section-header" data-section="contact">
-            <h3><i class="fas fa-address-card"></i> Contact & Expectations</h3>
+            <h3><i class="fas fa-address-card"></i> Contact Information</h3>
             <i class="fas fa-chevron-right chevron"></i>
           </div>
           <div class="section-content" id="contact-content">
             <input type="text" id="phone" placeholder="मोबाईल क्रमांक" />
             <input type="email" id="email" placeholder="ईमेल" />
-            <textarea id="address" placeholder="पत्ता" rows="3"></textarea>
-            <textarea id="hobbies" placeholder="आवडी/हौबी" rows="2"></textarea>
-            <textarea id="expectations" placeholder="वराच्या अपेक्षा" rows="3"></textarea>
+            <textarea id="address" placeholder="पत्ता" rows="2"></textarea>
             
             <button type="button" class="add-field-btn" data-section="contact">
               <i class="fas fa-plus"></i> Add Custom Field
             </button>
             <div id="contact-custom-fields"></div>
+          </div>
+
+          <!-- Expectations -->
+          <div class="section-header" data-section="expectations">
+            <h3><i class="fas fa-heart"></i> Partner Expectations</h3>
+            <i class="fas fa-chevron-right chevron"></i>
+          </div>
+          <div class="section-content" id="expectations-content">
+            <textarea id="expectations" placeholder="वराच्या अपेक्षा" rows="2"></textarea>
+            <textarea id="hobbies" placeholder="आवडी/हौबी" rows="2"></textarea>
+            
+            <button type="button" class="add-field-btn" data-section="expectations">
+              <i class="fas fa-plus"></i> Add Custom Field
+            </button>
+            <div id="expectations-custom-fields"></div>
           </div>
 
           <!-- Photo (Collapsed by default) -->
@@ -573,7 +705,32 @@
               <label for="profile-pic" class="upload-btn">
                 <i class="fas fa-cloud-upload-alt"></i> Upload Photo
               </label>
-              <div class="photo-preview" id="photo-preview">
+              
+              <div class="photo-shape-selector">
+                <div class="shape-option active" data-shape="circular">
+                  <i class="fas fa-circle"></i> Circular
+                </div>
+                <div class="shape-option" data-shape="rectangular">
+                  <i class="fas fa-square"></i> Rectangular
+                </div>
+                <div class="shape-option" data-shape="original">
+                  <i class="fas fa-image"></i> Original
+                </div>
+              </div>
+
+              <div class="photo-size-selector">
+                <div class="size-option active" data-size="small">
+                  <i class="fas fa-compress-alt"></i> Small
+                </div>
+                <div class="size-option" data-size="medium">
+                  <i class="fas fa-expand-alt"></i> Medium
+                </div>
+                <div class="size-option" data-size="large">
+                  <i class="fas fa-expand"></i> Large
+                </div>
+              </div>
+              
+              <div class="photo-preview circular" id="photo-preview">
                 <span id="no-photo">No photo</span>
               </div>
             </div>
@@ -591,7 +748,7 @@
         <div class="a4-page" id="biodata-preview">
           <div class="religious-header">
             <div id="god-image-preview-preview"></div>
-            <div>श्री गणेशाय नमः | जय श्री राम</div>
+            <div id="religious-text-preview">श्री गणेशाय नमः | जय श्री राम</div>
           </div>
           <div class="biodata-name">Your biodata will appear here</div>
         </div>
@@ -660,6 +817,33 @@
       });
     });
 
+    // === PHOTO SHAPE SELECTOR ===
+    let selectedShape = 'circular';
+    document.querySelectorAll('.shape-option').forEach(option => {
+      option.addEventListener('click', (e) => {
+        document.querySelectorAll('.shape-option').forEach(opt => {
+          opt.classList.remove('active');
+        });
+        e.target.classList.add('active');
+        selectedShape = e.target.getAttribute('data-shape');
+        
+        const preview = document.getElementById('photo-preview');
+        preview.className = `photo-preview ${selectedShape}`;
+      });
+    });
+
+    // === PHOTO SIZE SELECTOR ===
+    let selectedSize = 'small';
+    document.querySelectorAll('.size-option').forEach(option => {
+      option.addEventListener('click', (e) => {
+        document.querySelectorAll('.size-option').forEach(opt => {
+          opt.classList.remove('active');
+        });
+        e.target.classList.add('active');
+        selectedSize = e.target.getAttribute('data-size');
+      });
+    });
+
     // === CUSTOM FIELDS ===
     document.querySelectorAll('.add-field-btn').forEach(button => {
       button.addEventListener('click', (e) => {
@@ -681,6 +865,35 @@
       });
     });
 
+    // === SIBLINGS AND RELATIVES MANAGEMENT ===
+    function addSibling(type) {
+      const container = document.getElementById(`${type}-container`);
+      const siblingHTML = `
+        <div class="sibling-item">
+          <input type="text" placeholder="${type === 'bhau' ? 'भाऊचे नाव' : 'बहिणीचे नाव'}" class="${type}-name">
+          <input type="text" placeholder="वय आणि तपशील" class="${type}-details">
+          <button type="button" class="remove-field" onclick="this.parentElement.remove()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      `;
+      container.insertAdjacentHTML('beforeend', siblingHTML);
+    }
+
+    function addRelative(type) {
+      const container = document.getElementById(`${type}-container`);
+      const relativeHTML = `
+        <div class="relative-item">
+          <input type="text" placeholder="${type === 'kaka' ? 'काकांचे नाव' : 'मामांचे नाव'}" class="${type}-name">
+          <input type="text" placeholder="संपर्क क्रमांक" class="${type}-contact">
+          <button type="button" class="remove-field" onclick="this.parentElement.remove()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      `;
+      container.insertAdjacentHTML('beforeend', relativeHTML);
+    }
+
     // === IMAGE UPLOADS ===
     let currentPhotoURL = null;
     let currentGodImageURL = null;
@@ -692,6 +905,10 @@
 
     photoInput.addEventListener('change', (e) => {
       if (e.target.files[0]) {
+        // Revoke previous URL to prevent memory leaks
+        if (currentPhotoURL) {
+          URL.revokeObjectURL(currentPhotoURL);
+        }
         currentPhotoURL = URL.createObjectURL(e.target.files[0]);
         noPhoto.style.display = 'none';
         photoPreview.innerHTML = `<img src="${currentPhotoURL}" alt="Profile Photo">`;
@@ -706,6 +923,10 @@
 
     godImageInput.addEventListener('change', (e) => {
       if (e.target.files[0]) {
+        // Revoke previous URL to prevent memory leaks
+        if (currentGodImageURL) {
+          URL.revokeObjectURL(currentGodImageURL);
+        }
         currentGodImageURL = URL.createObjectURL(e.target.files[0]);
         noGodImage.style.display = 'none';
         godImagePreview.innerHTML = `<img src="${currentGodImageURL}" alt="God Image">`;
@@ -717,6 +938,7 @@
     document.getElementById('generate').addEventListener('click', () => {
       const gender = document.getElementById('gender').value;
       const genderPrefix = gender === 'female' ? 'कु.' : 'कु.';
+      const religiousText = document.getElementById('religious-text').value;
       
       // Collect standard form data
       const data = {
@@ -738,59 +960,80 @@
         motherOccupation: document.getElementById('mother-occupation').value,
         grandfather: document.getElementById('grandfather').value,
         grandmother: document.getElementById('grandmother').value,
-        mama: document.getElementById('mama').value,
-        mamaContact: document.getElementById('mama-contact').value,
-        siblings: document.getElementById('siblings').value,
-        rashi: document.getElementById('rashi').value,
-        nakshatra: document.getElementById('nakshatra').value,
-        gan: document.getElementById('gan').value,
-        mangalik: document.getElementById('mangalik').value,
         phone: document.getElementById('phone').value,
         email: document.getElementById('email').value,
         address: document.getElementById('address').value,
         hobbies: document.getElementById('hobbies').value,
-        expectations: document.getElementById('expectations').value
+        expectations: document.getElementById('expectations').value,
+        rashi: document.getElementById('rashi').value,
+        nakshatra: document.getElementById('nakshatra').value,
+        gan: document.getElementById('gan').value,
+        mangalik: document.getElementById('mangalik').value
+      };
+
+      // Collect siblings and relatives
+      const siblings = {
+        bhau: collectSiblings('bhau'),
+        bahin: collectSiblings('bahin')
+      };
+
+      const relatives = {
+        kaka: collectRelatives('kaka'),
+        mama: collectRelatives('mama')
       };
 
       // Collect custom fields
       const customFields = {
         personal: collectCustomFields('personal'),
         family: collectCustomFields('family'),
-        horoscope: collectCustomFields('horoscope'),
-        contact: collectCustomFields('contact')
+        contact: collectCustomFields('contact'),
+        expectations: collectCustomFields('expectations')
       };
 
       const hasPhoto = currentPhotoURL !== null;
       const hasGodImage = currentGodImageURL !== null;
 
-      // Build biodata HTML
+      // Build biodata HTML with compact layout
       let html = `
         <div class="religious-header">
           ${hasGodImage ? `<img src="${currentGodImageURL}" class="god-image" alt="God Image">` : ''}
-          <div>श्री गणेशाय नमः | जय श्री राम</div>
+          <div>${religiousText}</div>
         </div>
         
-        <div style="text-align: center; margin-bottom: 20px;">
-          <h2 style="color: var(--secondary); margin-bottom: 5px;">विवाह बायोडाटा</h2>
-          <div style="font-size: 1.2rem; color: var(--primary);">${genderPrefix} ${data.name || 'नाव'}</div>
-        </div>
+        <div class="biodata-name">${genderPrefix} ${data.name || 'नाव'}</div>
       `;
 
-      // Personal Information Section
+      // Personal Information Section (including Horoscope)
       if (hasValue(data.dob) || hasValue(data.birthTime) || hasValue(data.birthPlace) || 
           hasValue(data.height) || hasValue(data.weight) || hasValue(data.complexion) || 
           hasValue(data.bloodGroup) || hasValue(data.education) || hasValue(data.profession) || 
-          hasValue(data.income) || customFields.personal.length > 0) {
+          hasValue(data.income) || hasValue(data.rashi) || hasValue(data.nakshatra) || 
+          hasValue(data.gan) || hasValue(data.mangalik) || customFields.personal.length > 0) {
         
         html += `<div class="section-title">वैयक्तिक माहिती</div>`;
         
+        // Add profile photo with proper styling and size
         if (hasPhoto) {
-          html += `<img src="${currentPhotoURL}" style="width:120px;height:120px;object-fit:cover;border-radius:50%;float:right;margin:0 0 15px 15px;border:2px solid white;">`;
+          const sizeStyle = selectedSize === 'small' ? 
+            'width:80px;height:80px;' : 
+            selectedSize === 'medium' ? 
+            'width:100px;height:100px;' : 
+            'width:120px;height:120px;';
+            
+          const shapeStyle = selectedShape === 'circular' ? 
+            'border-radius:50%;' :
+            selectedShape === 'rectangular' ?
+            'border-radius:8px;' :
+            'border-radius:0;';
+          
+          const photoStyle = `${sizeStyle} ${shapeStyle} object-fit:cover;float:right;margin:0 0 10px 10px;border:2px solid white;`;
+          
+          html += `<img src="${currentPhotoURL}" style="${photoStyle}">`;
         }
         
         html += buildInfoItems([
           { label: 'जन्म तारीख', value: data.dob, format: formatDate },
-          { label: 'जन्म वेळ', value: data.birthTime },
+          { label: 'जन्म वेळ', value: data.birthTime, format: formatTime },
           { label: 'जन्म ठिकाण', value: data.birthPlace },
           { label: 'उंची', value: data.height },
           { label: 'वजन', value: data.weight },
@@ -798,7 +1041,11 @@
           { label: 'रक्त गट', value: data.bloodGroup },
           { label: 'शिक्षण', value: data.education },
           { label: 'व्यवसाय', value: data.profession },
-          { label: 'वार्षिक उत्पन्न', value: data.income }
+          { label: 'वार्षिक उत्पन्न', value: data.income },
+          { label: 'राशी', value: data.rashi },
+          { label: 'नक्षत्र', value: data.nakshatra },
+          { label: 'गण', value: data.gan },
+          { label: 'मंगळिक', value: data.mangalik }
         ]);
         
         // Add custom personal fields
@@ -807,29 +1054,11 @@
         });
       }
 
-      // Horoscope Information Section
-      if (hasValue(data.rashi) || hasValue(data.nakshatra) || hasValue(data.gan) || 
-          hasValue(data.mangalik) || customFields.horoscope.length > 0) {
-        
-        html += `<div class="section-title">ज्योतिष माहिती</div>`;
-        html += buildInfoItems([
-          { label: 'राशी', value: data.rashi },
-          { label: 'नक्षत्र', value: data.nakshatra },
-          { label: 'गण', value: data.gan },
-          { label: 'मंगळिक', value: data.mangalik }
-        ]);
-        
-        // Add custom horoscope fields
-        customFields.horoscope.forEach(field => {
-          html += `<div class="info-item"><span class="info-label">${field.name}:</span> ${field.value}</div>`;
-        });
-      }
-
       // Family Information Section
       if (hasValue(data.fatherName) || hasValue(data.fatherOccupation) || hasValue(data.motherName) || 
           hasValue(data.motherOccupation) || hasValue(data.grandfather) || hasValue(data.grandmother) || 
-          hasValue(data.mama) || hasValue(data.mamaContact) || hasValue(data.siblings) || 
-          customFields.family.length > 0) {
+          siblings.bhau.length > 0 || siblings.bahin.length > 0 || relatives.kaka.length > 0 || 
+          relatives.mama.length > 0 || customFields.family.length > 0) {
         
         html += `<div class="section-title">कौटुंबिक माहिती</div>`;
         html += buildInfoItems([
@@ -838,11 +1067,53 @@
           { label: 'आईचे नाव', value: data.motherName },
           { label: 'आईचा व्यवसाय', value: data.motherOccupation },
           { label: 'आजोबा', value: data.grandfather },
-          { label: 'आजी', value: data.grandmother },
-          { label: 'मामा', value: data.mama },
-          { label: 'मामा संपर्क', value: data.mamaContact },
-          { label: 'भावंडे', value: data.siblings, multiline: true }
+          { label: 'आजी', value: data.grandmother }
         ]);
+        
+        // Bhau section - aligned like other fields
+        if (siblings.bhau.length > 0) {
+          const bhauText = siblings.bhau.length === 1 ? 
+            siblings.bhau[0].name + (siblings.bhau[0].details ? ` (${siblings.bhau[0].details})` : '') :
+            siblings.bhau.map((bhau, index) => 
+              `${index + 1}. ${bhau.name}${bhau.details ? ` (${bhau.details})` : ''}`
+            ).join(', ');
+          
+          html += `<div class="info-item"><span class="info-label">भाऊ:</span> ${bhauText}</div>`;
+        }
+        
+        // Bahin section - aligned like other fields
+        if (siblings.bahin.length > 0) {
+          const bahinText = siblings.bahin.length === 1 ? 
+            siblings.bahin[0].name + (siblings.bahin[0].details ? ` (${siblings.bahin[0].details})` : '') :
+            siblings.bahin.map((bahin, index) => 
+              `${index + 1}. ${bahin.name}${bahin.details ? ` (${bahin.details})` : ''}`
+            ).join(', ');
+          
+          const label = siblings.bahin.length === 1 ? 'बहीण' : 'बहिणी';
+          html += `<div class="info-item"><span class="info-label">${label}:</span> ${bahinText}</div>`;
+        }
+        
+        // Kaka section - aligned like other fields
+        if (relatives.kaka.length > 0) {
+          const kakaText = relatives.kaka.length === 1 ? 
+            relatives.kaka[0].name + (relatives.kaka[0].contact ? ` - ${relatives.kaka[0].contact}` : '') :
+            relatives.kaka.map((kaka, index) => 
+              `${index + 1}. ${kaka.name}${kaka.contact ? ` - ${kaka.contact}` : ''}`
+            ).join(', ');
+          
+          html += `<div class="info-item"><span class="info-label">काका:</span> ${kakaText}</div>`;
+        }
+        
+        // Mama section - aligned like other fields
+        if (relatives.mama.length > 0) {
+          const mamaText = relatives.mama.length === 1 ? 
+            relatives.mama[0].name + (relatives.mama[0].contact ? ` - ${relatives.mama[0].contact}` : '') :
+            relatives.mama.map((mama, index) => 
+              `${index + 1}. ${mama.name}${mama.contact ? ` - ${mama.contact}` : ''}`
+            ).join(', ');
+          
+          html += `<div class="info-item"><span class="info-label">मामा:</span> ${mamaText}</div>`;
+        }
         
         // Add custom family fields
         customFields.family.forEach(field => {
@@ -850,17 +1121,14 @@
         });
       }
 
-      // Contact & Expectations Section
-      if (hasValue(data.phone) || hasValue(data.email) || hasValue(data.address) || 
-          hasValue(data.hobbies) || hasValue(data.expectations) || customFields.contact.length > 0) {
+      // Contact Information Section
+      if (hasValue(data.phone) || hasValue(data.email) || hasValue(data.address) || customFields.contact.length > 0) {
         
-        html += `<div class="section-title">संपर्क माहिती आणि अपेक्षा</div>`;
+        html += `<div class="section-title">संपर्क माहिती</div>`;
         html += buildInfoItems([
           { label: 'मोबाईल क्रमांक', value: data.phone },
           { label: 'ईमेल', value: data.email },
-          { label: 'पत्ता', value: data.address, multiline: true },
-          { label: 'आवडी/हौबी', value: data.hobbies, multiline: true },
-          { label: 'वराच्या अपेक्षा', value: data.expectations, multiline: true }
+          { label: 'पत्ता', value: data.address, multiline: true }
         ]);
         
         // Add custom contact fields
@@ -869,7 +1137,24 @@
         });
       }
 
-      document.getElementById('biodata-preview').innerHTML = html;
+      // Expectations Section
+      if (hasValue(data.expectations) || hasValue(data.hobbies) || customFields.expectations.length > 0) {
+        
+        html += `<div class="section-title">अपेक्षा आणि आवडी</div>`;
+        html += buildInfoItems([
+          { label: 'वराच्या अपेक्षा', value: data.expectations, multiline: true },
+          { label: 'आवडी/हौबी', value: data.hobbies, multiline: true }
+        ]);
+        
+        // Add custom expectations fields
+        customFields.expectations.forEach(field => {
+          html += `<div class="info-item"><span class="info-label">${field.name}:</span> ${field.value}</div>`;
+        });
+      }
+
+      // Update the preview
+      const previewElement = document.getElementById('biodata-preview');
+      previewElement.innerHTML = html;
       showToast('Biodata generated successfully!');
     });
 
@@ -884,13 +1169,22 @@
       return date.toLocaleDateString('en-GB');
     }
 
+    function formatTime(timeString) {
+      if (!timeString) return '';
+      const [hours, minutes] = timeString.split(':');
+      const hour = parseInt(hours);
+      const ampm = hour >= 12 ? 'PM' : 'AM';
+      const formattedHour = hour % 12 || 12;
+      return `${formattedHour}:${minutes} ${ampm}`;
+    }
+
     function buildInfoItems(items) {
       let html = '';
       items.forEach(item => {
         if (hasValue(item.value)) {
           const formattedValue = item.format ? item.format(item.value) : item.value;
           if (item.multiline) {
-            html += `<div class="info-item"><span class="info-label">${item.label}:</span><br>${formattedValue}</div>`;
+            html += `<div class="info-item"><span class="info-label">${item.label}:</span><br>${formattedValue.replace(/\n/g, '<br>')}</div>`;
           } else {
             html += `<div class="info-item"><span class="info-label">${item.label}:</span> ${formattedValue}</div>`;
           }
@@ -916,6 +1210,40 @@
       return fields;
     }
 
+    function collectSiblings(type) {
+      const siblings = [];
+      const container = document.getElementById(`${type}-container`);
+      const siblingElements = container.querySelectorAll('.sibling-item');
+      
+      siblingElements.forEach(element => {
+        const name = element.querySelector(`.${type}-name`).value;
+        const details = element.querySelector(`.${type}-details`).value;
+        
+        if (hasValue(name)) {
+          siblings.push({ name, details });
+        }
+      });
+      
+      return siblings;
+    }
+
+    function collectRelatives(type) {
+      const relatives = [];
+      const container = document.getElementById(`${type}-container`);
+      const relativeElements = container.querySelectorAll('.relative-item');
+      
+      relativeElements.forEach(element => {
+        const name = element.querySelector(`.${type}-name`).value;
+        const contact = element.querySelector(`.${type}-contact`).value;
+        
+        if (hasValue(name)) {
+          relatives.push({ name, contact });
+        }
+      });
+      
+      return relatives;
+    }
+
     // === EXPORT FUNCTIONS ===
     function exportBiodata(format) {
       const preview = document.getElementById('biodata-preview');
@@ -936,13 +1264,20 @@
       preview.style.height = '297mm';
       preview.style.backgroundColor = isDark ? '#1e1e1e' : 'white';
 
+      // Use higher scale for better quality
       html2canvas(preview, { 
-        scale: 2,
+        scale: 3, // Increased scale for better quality
         backgroundColor: isDark ? '#1e1e1e' : 'white',
         useCORS: true,
         logging: false,
         width: 794, // 210mm at 96 DPI
-        height: 1123 // 297mm at 96 DPI
+        height: 1123, // 297mm at 96 DPI
+        onclone: function(clonedDoc) {
+          const clonedPreview = clonedDoc.getElementById('biodata-preview');
+          clonedPreview.style.width = '210mm';
+          clonedPreview.style.height = '297mm';
+          clonedPreview.style.backgroundColor = isDark ? '#1e1e1e' : 'white';
+        }
       }).then(canvas => {
         // Restore original styles
         preview.style.backgroundColor = originalStyles.backgroundColor;
@@ -952,41 +1287,43 @@
         if (format === 'pdf') {
           const { jsPDF } = window.jspdf;
           const pdf = new jsPDF('p', 'mm', 'a4');
-          const imgData = canvas.toDataURL('image/png');
+          const imgData = canvas.toDataURL('image/jpeg', 0.95); // Use JPEG for better quality
           
-          // Calculate dimensions to fit A4
+          // Calculate dimensions to fit A4 exactly
           const pdfWidth = 210;
           const pdfHeight = 297;
           const imgWidth = canvas.width;
           const imgHeight = canvas.height;
+          
+          // Fit to page while maintaining aspect ratio
           const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
           const imgWidthPdf = imgWidth * ratio;
           const imgHeightPdf = imgHeight * ratio;
           const x = (pdfWidth - imgWidthPdf) / 2;
           const y = (pdfHeight - imgHeightPdf) / 2;
           
-          pdf.addImage(imgData, 'PNG', x, y, imgWidthPdf, imgHeightPdf);
+          pdf.addImage(imgData, 'JPEG', x, y, imgWidthPdf, imgHeightPdf);
           pdf.save('marathi_marriage_biodata.pdf');
-          showToast('PDF downloaded successfully!');
+          showToast('High-quality PDF downloaded successfully!');
         } else {
-          // Create a new canvas with exact A4 dimensions
+          // Create a new canvas with exact A4 dimensions and high quality
           const a4Canvas = document.createElement('canvas');
           const ctx = a4Canvas.getContext('2d');
-          a4Canvas.width = 794; // 210mm at 96 DPI
-          a4Canvas.height = 1123; // 297mm at 96 DPI
+          a4Canvas.width = 2480; // Higher resolution for better quality (300 DPI)
+          a4Canvas.height = 3508; // Higher resolution for better quality (300 DPI)
           
           // Fill background
           ctx.fillStyle = isDark ? '#1e1e1e' : 'white';
           ctx.fillRect(0, 0, a4Canvas.width, a4Canvas.height);
           
-          // Draw the captured content
+          // Draw the captured content with high quality
           ctx.drawImage(canvas, 0, 0, a4Canvas.width, a4Canvas.height);
           
           const link = document.createElement('a');
-          link.download = 'marathi_marriage_biodata.png';
-          link.href = a4Canvas.toDataURL('image/png');
+          link.download = 'marathi_marriage_biodata.jpg';
+          link.href = a4Canvas.toDataURL('image/jpeg', 0.95); // Use JPEG for better quality
           link.click();
-          showToast('Image downloaded successfully!');
+          showToast('High-quality image downloaded successfully!');
         }
       }).catch(error => {
         console.error('Export error:', error);
