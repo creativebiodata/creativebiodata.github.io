@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marathi Matrimonial Biodata Generator</title>
+  <!-- Marathi Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>मराठी विवाह बायोडाटा जनरेटर</h1>
+    <p>Marathi Matrimonial Biodata Generator</p>
+  </header>
+
+  <main>
+    <!-- Input Form -->
+    <section id="form-section">
+      <form id="biodata-form">
+        <!-- Personal Info -->
+        <h2>व्यक्तिगत माहिती (Personal Information)</h2>
+        <label>पूर्ण नाव (Full Name):</label>
+        <input type="text" id="name" placeholder="कु. मानिका अभिमन्यू पाटील" />
+
+        <label>जन्म तारीख (DOB):</label>
+        <input type="date" id="dob" />
+
+        <label>जन्म वेळ (Birth Time):</label>
+        <input type="time" id="birth-time" />
+
+        <label>जन्म ठिकाण (Birth Place):</label>
+        <input type="text" id="birth-place" placeholder="अमरावती" />
+
+        <label>उंची (Height):</label>
+        <input type="text" id="height" placeholder="5 फूट 5 इंच" />
+
+        <label>रक्त गट (Blood Group):</label>
+        <input type="text" id="blood-group" placeholder="O+" />
+
+        <!-- Education -->
+        <label>शिक्षण (Education):</label>
+        <input type="text" id="education" placeholder="B.E. (Computer Science)" />
+
+        <!-- Family -->
+        <h2>कौटुंबिक माहिती (Family Information)</h2>
+        <label>वडिलांचे नाव:</label>
+        <input type="text" id="father-name" placeholder="श्री. अभिमन्यू शरदराव पाटील" />
+        <label>वडिलांचा व्यवसाय:</label>
+        <input type="text" id="father-occupation" placeholder="धंधी" />
+        <label>आईचे नाव:</label>
+        <input type="text" id="mother-name" placeholder="श्री. करुणा अभिमन्यू पाटील" />
+        <label>आजोबा:</label>
+        <input type="text" id="grandfather" placeholder="श्री. शरदराव शंकरदाव पाटील" />
+        <label>आजी:</label>
+        <input type="text" id="grandmother" placeholder="श्री. विजय शरदराव पाटील" />
+
+        <!-- Maternal Uncle -->
+        <label>मामा:</label>
+        <input type="text" id="mama" placeholder="श्री. अनिल पांडुरंग जाधव" />
+        <label>मामा संपर्क:</label>
+        <input type="text" id="mama-contact" placeholder="98XXXXXXX" />
+
+        <!-- Photo & Shape -->
+        <h2>प्रोफाइल फोटो (Profile Photo)</h2>
+        <label>फोटो अपलोड करा:</label>
+        <input type="file" id="profile-pic" accept="image/*" />
+        <div class="photo-controls">
+          <label>आकार (Shape):</label>
+          <select id="photo-shape">
+            <option value="circle">वर्तुळ (Circle)</option>
+            <option value="rectangle">चौरस (Rectangle)</option>
+            <option value="rounded">गोलाकार कोपरे (Rounded)</option>
+          </select>
+          <button type="button" id="remove-photo">फोटो काढा</button>
+        </div>
+
+        <!-- Generate -->
+        <button type="button" id="generate">बायोडाटा तयार करा</button>
+      </form>
+    </section>
+
+    <!-- Output Preview -->
+    <section id="output-section" style="display: none;">
+      <div id="biodata-preview" class="a4-page">
+        <!-- Preview will be injected here -->
+      </div>
+      <div class="export-buttons">
+        <button id="download-pdf">PDF डाउनलोड करा</button>
+        <button id="download-image">इमेज डाउनलोड करा</button>
+        <button id="back-to-form">फॉर्मवर परत जा</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

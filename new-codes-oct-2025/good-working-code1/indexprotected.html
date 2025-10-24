@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Marriage Biodata Generator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* General Styling */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(to right, #4CAF50, #2E7D32);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+      background-size: cover;
+    }
+
+    header h1 {
+      position: relative;
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      position: relative;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1400px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      gap: 2rem;
+    }
+
+    .form-container, .preview-container {
+      flex: 1;
+      min-width: 300px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      padding: 2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .form-container:hover, .preview-container:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      color: #2E7D32;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #E8F5E9;
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      color: #388E3C;
+      margin: 1.5rem 0 1rem;
+      font-size: 1.2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #555;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: #4CAF50;
+      box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    }
+
+    .profile-pic-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .profile-pic-preview {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #4CAF50;
+      display: none;
+    }
+
+    button {
+      padding: 0.9rem 1.5rem;
+      background: linear-gradient(to right, #4CAF50, #2E7D32);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #43A047, #1B5E20);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .button-group button {
+      flex: 1;
+    }
+
+    #download-pdf {
+      background: linear-gradient(to right, #FF5722, #D84315);
+    }
+
+    #download-pdf:hover {
+      background: linear-gradient(to right, #F4511E, #BF360C);
+    }
+
+    #download-image {
+      background: linear-gradient(to right, #2196F3, #1565C0);
+    }
+
+    #download-image:hover {
+      background: linear-gradient(to right, #1E88E5, #0D47A1);
+    }
+
+    /* Biodata Preview Styling */
+    .a4-page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 25mm;
+      background: white;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      position: relative;
+      font-family: 'Georgia', serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .biodata-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #4CAF50;
+    }
+
+    .biodata-header h2 {
+      font-size: 2.2rem;
+      color: #2E7D32;
+      margin-bottom: 0.5rem;
+    }
+
+    .biodata-header p {
+      font-size: 1.1rem;
+      color: #666;
+    }
+
+    .profile-section {
+      display: flex;
+      margin-bottom: 2rem;
+      gap: 2rem;
+    }
+
+    .profile-img-container {
+      flex-shrink: 0;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 180px;
+      object-fit: cover;
+      border: 3px solid #4CAF50;
+      border-radius: 8px;
+    }
+
+    .personal-info {
+      flex: 1;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .info-item {
+      margin-bottom: 0.8rem;
+    }
+
+    .info-label {
+      font-weight: bold;
+      color: #2E7D32;
+      display: inline-block;
+      width: 140px;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      color: #2E7D32;
+      margin: 1.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #E8F5E9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+      background: #2E7D32;
+      color: white;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 1rem 1.5rem;
+      background: #4CAF50;
+      color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      
+      .a4-page {
+        width: 100%;
+        padding: 15mm;
+      }
+      
+      .profile-section {
+        flex-direction: column;
+      }
+      
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Code Protection Styles */
+    .no-select {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .no-context {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Watermark */
+    .watermark {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.03;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><text x="50%" y="50%" font-family="Arial" font-size="20" text-anchor="middle" dominant-baseline="middle" fill="%23000">Marriage Biodata Generator</text></svg>');
+      background-repeat: repeat;
+    }
+  </style>
+</head>
+<body class="no-select no-context" oncontextmenu="return false;">
+  <div class="watermark"></div>
+  
+  <header>
+    <h1><i class="fas fa-heart"></i> Marriage Biodata Generator</h1>
+    <p>Create beautiful, professional biodatas for marriage purposes</p>
+  </header>
+
+  <div class="container">
+    <section class="form-container">
+      <h2><i class="fas fa-user-edit"></i> Personal Information</h2>
+      <form id="biodata-form">
+        <div class="form-group">
+          <label for="name"><i class="fas fa-signature"></i> Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="dob"><i class="fas fa-birthday-cake"></i> Date of Birth</label>
+          <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <div class="form-group">
+          <label for="birth-time"><i class="fas fa-clock"></i> Time of Birth</label>
+          <input type="time" id="birth-time" name="birth-time">
+        </div>
+
+        <div class="form-group">
+          <label for="birth-place"><i class="fas fa-map-marker-alt"></i> Place of Birth</label>
+          <input type="text" id="birth-place" name="birth-place" placeholder="City, State, Country">
+        </div>
+
+        <div class="info-grid">
+          <div class="form-group">
+            <label for="height"><i class="fas fa-ruler-vertical"></i> Height</label>
+            <input type="text" id="height" name="height" placeholder="e.g., 5 ft 5 in">
+          </div>
+
+          <div class="form-group">
+            <label for="weight"><i class="fas fa-weight"></i> Weight</label>
+            <input type="text" id="weight" name="weight" placeholder="e.g., 65 kg">
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="form-group">
+            <label for="skin-tone"><i class="fas fa-palette"></i> Skin Tone</label>
+            <select id="skin-tone" name="skin-tone">
+              <option value="">Select</option>
+              <option value="Fair">Fair</option>
+              <option value="Wheatish">Wheatish</option>
+              <option value="Wheatish Brown">Wheatish Brown</option>
+              <option value="Dark">Dark</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="blood-group"><i class="fas fa-tint"></i> Blood Group</label>
+            <select id="blood-group" name="blood-group">
+              <option value="">Select</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="religion"><i class="fas fa-pray"></i> Religion</label>
+          <input type="text" id="religion" name="religion" placeholder="e.g., Hindu, Muslim, Christian">
+        </div>
+
+        <div class="form-group">
+          <label for="caste"><i class="fas fa-users"></i> Caste/Community</label>
+          <input type="text" id="caste" name="caste" placeholder="Your caste or community">
+        </div>
+
+        <div class="form-group">
+          <label for="education"><i class="fas fa-graduation-cap"></i> Education</label>
+          <input type="text" id="education" name="education" placeholder="Highest qualification">
+        </div>
+
+        <div class="form-group">
+          <label for="profession"><i class="fas fa-briefcase"></i> Profession</label>
+          <input type="text" id="profession" name="profession" placeholder="Your current profession">
+        </div>
+
+        <div class="form-group">
+          <label for="income"><i class="fas fa-money-bill-wave"></i> Annual Income</label>
+          <input type="text" id="income" name="income" placeholder="Approximate annual income">
+        </div>
+
+        <h3><i class="fas fa-home"></i> Family Details</h3>
+
+        <div class="info-grid">
+          <div class="form-group">
+            <label for="father-name">Father's Name</label>
+            <input type="text" id="father-name" name="father-name" placeholder="Father's full name">
+          </div>
+
+          <div class="form-group">
+            <label for="father-occupation">Father's Occupation</label>
+            <input type="text" id="father-occupation" name="father-occupation" placeholder="Father's profession">
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="form-group">
+            <label for="mother-name">Mother's Name</label>
+            <input type="text" id="mother-name" name="mother-name" placeholder="Mother's full name">
+          </div>
+
+          <div class="form-group">
+            <label for="mother-occupation">Mother's Occupation</label>
+            <input type="text" id="mother-occupation" name="mother-occupation" placeholder="Mother's profession">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="siblings">Siblings</label>
+          <textarea id="siblings" name="siblings" rows="3" placeholder="List siblings with age and marital status"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="family-details">Family Background</label>
+          <textarea id="family-details" name="family-details" rows="3" placeholder="Additional family information"></textarea>
+        </div>
+
+        <h3><i class="fas fa-address-card"></i> Contact Information</h3>
+
+        <div class="form-group">
+          <label for="address">Permanent Address</label>
+          <textarea id="address" name="address" rows="2" placeholder="Your complete address"></textarea>
+        </div>
+
+        <div class="info-grid">
+          <div class="form-group">
+            <label for="contact-number">Contact Number</label>
+            <input type="text" id="contact-number" name="contact-number" placeholder="Mobile number">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Your email address">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="hobbies">Hobbies & Interests</label>
+          <textarea id="hobbies" name="hobbies" rows="2" placeholder="Your hobbies and interests"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="partner-expectations">Partner Expectations</label>
+          <textarea id="partner-expectations" name="partner-expectations" rows="3" placeholder="What you're looking for in a partner"></textarea>
+        </div>
+
+        <div class="profile-pic-container">
+          <div>
+            <label for="profile-pic"><i class="fas fa-camera"></i> Profile Picture</label>
+            <input type="file" id="profile-pic" accept="image/*">
+          </div>
+          <img id="profile-pic-preview" class="profile-pic-preview" src="" alt="Profile Preview">
+        </div>
+
+        <button type="button" id="generate">
+          <i class="fas fa-file-alt"></i> Generate Biodata
+        </button>
+      </form>
+    </section>
+
+    <section class="preview-container">
+      <h2><i class="fas fa-eye"></i> Biodata Preview</h2>
+      <div id="biodata-preview" class="a4-page">
+        <div class="biodata-header">
+          <h2>Marriage Biodata</h2>
+          <p>Fill the form to generate your biodata</p>
+        </div>
+      </div>
+      
+      <div class="button-group">
+        <button id="download-pdf">
+          <i class="fas fa-file-pdf"></i> Download PDF
+        </button>
+        <button id="download-image">
+          <i class="fas fa-file-image"></i> Download Image
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <footer>
+    <p>&copy; 2023 Marriage Biodata Generator. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  
+  <script>
+    // Code protection measures
+    document.addEventListener('keydown', function(e) {
+      // Disable F12, Ctrl+Shift+I, Ctrl+Shift+C, Ctrl+U
+      if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+        (e.ctrlKey && e.shiftKey && e.key === 'C') ||
+        (e.ctrlKey && e.key === 'u')
+      ) {
+        e.preventDefault();
+        showToast('This function is disabled');
+      }
+    });
+
+    // Disable right-click
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      showToast('Right-click is disabled');
+    });
+
+    // Obfuscate and protect code by wrapping in IIFE
+    (function() {
+      // Toast notification function
+      function showToast(message) {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.classList.add('show');
+        
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 3000);
+      }
+
+      // Profile picture preview
+      document.getElementById('profile-pic').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        const preview = document.getElementById('profile-pic-preview');
+        
+        if (file) {
+          const reader = new FileReader();
+          
+          reader.onload = function(e) {
+            preview.src = e.target.result;
+            preview.style.display = 'block';
+          };
+          
+          reader.readAsDataURL(file);
+        } else {
+          preview.style.display = 'none';
+        }
+      });
+
+      // Generate biodata
+      document.getElementById('generate').addEventListener('click', function() {
+        const formData = {
+          name: document.getElementById('name').value,
+          dob: document.getElementById('dob').value,
+          birthTime: document.getElementById('birth-time').value,
+          birthPlace: document.getElementById('birth-place').value,
+          height: document.getElementById('height').value,
+          weight: document.getElementById('weight').value,
+          skinTone: document.getElementById('skin-tone').value,
+          bloodGroup: document.getElementById('blood-group').value,
+          religion: document.getElementById('religion').value,
+          caste: document.getElementById('caste').value,
+          education: document.getElementById('education').value,
+          profession: document.getElementById('profession').value,
+          income: document.getElementById('income').value,
+          fatherName: document.getElementById('father-name').value,
+          fatherOccupation: document.getElementById('father-occupation').value,
+          motherName: document.getElementById('mother-name').value,
+          motherOccupation: document.getElementById('mother-occupation').value,
+          siblings: document.getElementById('siblings').value,
+          familyDetails: document.getElementById('family-details').value,
+          address: document.getElementById('address').value,
+          contactNumber: document.getElementById('contact-number').value,
+          email: document.getElementById('email').value,
+          hobbies: document.getElementById('hobbies').value,
+          partnerExpectations: document.getElementById('partner-expectations').value,
+          profilePic: document.getElementById('profile-pic').files[0]
+        };
+
+        // Validate required fields
+        if (!formData.name || !formData.dob) {
+          showToast('Please fill in required fields (Name and Date of Birth)');
+          return;
+        }
+
+        const preview = document.getElementById('biodata-preview');
+        
+        // Format date for display
+        const formattedDob = formData.dob ? new Date(formData.dob).toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        }) : '';
+
+        // Build Biodata HTML
+        let biodataHTML = `
+          <div class="biodata-header">
+            <h2>${formData.name || ''}</h2>
+            <p>Marriage Biodata</p>
+          </div>
+          
+          <div class="profile-section">
+            <div class="profile-img-container">
+              ${formData.profilePic ? `<img src="${URL.createObjectURL(formData.profilePic)}" class="profile-img" alt="Profile Picture">` : '<div class="profile-img" style="background:#f0f0f0;display:flex;align-items:center;justify-content:center;color:#888;">No Image</div>'}
+            </div>
+            
+            <div class="personal-info">
+              <div class="info-grid">
+                <div class="info-item">
+                  <span class="info-label">Date of Birth:</span>
+                  <span>${formattedDob}</span>
+                </div>
+                
+                <div class="info-item">
+                  <span class="info-label">Time of Birth:</span>
+                  <span>${formData.birthTime || 'Not specified'}</span>
+                </div>
+                
+                <div class="info-item">
+                  <span class="info-label">Place of Birth:</span>
+                  <span>${formData.birthPlace || 'Not specified'}</span>
+                </div>
+                
+                <div class="info-item">
+                  <span class="info-label">Height:</span>
+                  <span>${formData.height || 'Not specified'}</span>
+                </div>
+                
+                <div class="info-item">
+                  <span class="info-label">Weight:</span>
+                  <span>${formData.weight || 'Not specified'}</span>
+                </div>
+                
+                <div class="info-item">
+                  <span class="info-label">Skin Tone:</span>
+                  <span>${formData.skinTone || 'Not specified'}</span>
+                </div>
+                
+                <div class="info-item">
+                  <span class="info-label">Blood Group:</span>
+                  <span>${formData.bloodGroup || 'Not specified'}</span>
+                </div>
+                
+                <div class="info-item">
+                  <span class="info-label">Religion:</span>
+                  <span>${formData.religion || 'Not specified'}</span>
+                </div>
+                
+                <div class="info-item">
+                  <span class="info-label">Caste/Community:</span>
+                  <span>${formData.caste || 'Not specified'}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="section-title">Education & Career</div>
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="info-label">Education:</span>
+              <span>${formData.education || 'Not specified'}</span>
+            </div>
+            
+            <div class="info-item">
+              <span class="info-label">Profession:</span>
+              <span>${formData.profession || 'Not specified'}</span>
+            </div>
+            
+            <div class="info-item">
+              <span class="info-label">Annual Income:</span>
+              <span>${formData.income || 'Not specified'}</span>
+            </div>
+          </div>
+          
+          <div class="section-title">Family Details</div>
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="info-label">Father's Name:</span>
+              <span>${formData.fatherName || 'Not specified'}</span>
+            </div>
+            
+            <div class="info-item">
+              <span class="info-label">Father's Occupation:</span>
+              <span>${formData.fatherOccupation || 'Not specified'}</span>
+            </div>
+            
+            <div class="info-item">
+              <span class="info-label">Mother's Name:</span>
+              <span>${formData.motherName || 'Not specified'}</span>
+            </div>
+            
+            <div class="info-item">
+              <span class="info-label">Mother's Occupation:</span>
+              <span>${formData.motherOccupation || 'Not specified'}</span>
+            </div>
+          </div>
+          
+          ${formData.siblings ? `
+          <div class="info-item">
+            <span class="info-label">Siblings:</span>
+            <span>${formData.siblings}</span>
+          </div>
+          ` : ''}
+          
+          ${formData.familyDetails ? `
+          <div class="info-item">
+            <span class="info-label">Family Background:</span>
+            <span>${formData.familyDetails}</span>
+          </div>
+          ` : ''}
+          
+          <div class="section-title">Contact Information</div>
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="info-label">Contact Number:</span>
+              <span>${formData.contactNumber || 'Not specified'}</span>
+            </div>
+            
+            <div class="info-item">
+              <span class="info-label">Email Address:</span>
+              <span>${formData.email || 'Not specified'}</span>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <span class="info-label">Permanent Address:</span>
+            <span>${formData.address || 'Not specified'}</span>
+          </div>
+          
+          ${formData.hobbies ? `
+          <div class="section-title">Hobbies & Interests</div>
+          <div class="info-item">
+            <span>${formData.hobbies}</span>
+          </div>
+          ` : ''}
+          
+          ${formData.partnerExpectations ? `
+          <div class="section-title">Partner Expectations</div>
+          <div class="info-item">
+            <span>${formData.partnerExpectations}</span>
+          </div>
+          ` : ''}
+        `;
+
+        preview.innerHTML = biodataHTML;
+        showToast('Biodata generated successfully!');
+      });
+
+      // Download PDF
+      document.getElementById('download-pdf').addEventListener('click', async function() {
+        const preview = document.getElementById('biodata-preview');
+        
+        if (preview.innerHTML.includes('Fill the form')) {
+          showToast('Please generate biodata first');
+          return;
+        }
+
+        const { jsPDF } = window.jspdf;
+        
+        try {
+          const canvas = await html2canvas(preview, { 
+            scale: 2,
+            useCORS: true,
+            logging: false
+          });
+          
+          const imgData = canvas.toDataURL('image/png');
+          const pdf = new jsPDF('p', 'mm', 'a4');
+          const pdfWidth = pdf.internal.pageSize.getWidth();
+          const pdfHeight = pdf.internal.pageSize.getHeight();
+          const imgWidth = canvas.width;
+          const imgHeight = canvas.height;
+          const ratio = imgHeight / imgWidth;
+          const pdfImgHeight = pdfWidth * ratio;
+          
+          pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfImgHeight);
+          pdf.save('marriage-biodata.pdf');
+          showToast('PDF downloaded successfully!');
+        } catch (error) {
+          console.error('Error generating PDF:', error);
+          showToast('Error generating PDF. Please try again.');
+        }
+      });
+
+      // Download as Image
+      document.getElementById('download-image').addEventListener('click', function() {
+        const preview = document.getElementById('biodata-preview');
+        
+        if (preview.innerHTML.includes('Fill the form')) {
+          showToast('Please generate biodata first');
+          return;
+        }
+
+        html2canvas(preview, { 
+          scale: 2,
+          useCORS: true,
+          logging: false
+        }).then(canvas => {
+          const imgData = canvas.toDataURL('image/png');
+          const a = document.createElement('a');
+          a.href = imgData;
+          a.download = 'marriage-biodata.png';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          showToast('Image downloaded successfully!');
+        }).catch(error => {
+          console.error('Error generating image:', error);
+          showToast('Error generating image. Please try again.');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
