@@ -1,1 +1,4 @@
-# I will write README once complete design as per my requirements.
+# Responsive-Website-Design
+This is the source code for the design of the complete website series on GTCoding YouTube channel.
+
+Here is the demo: https://godsont.github.io/Responsive-Website-Design/

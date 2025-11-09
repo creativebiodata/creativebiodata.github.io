@@ -1,1922 +1,1592 @@
-index.html
+about.html
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Universal responsive website template for any business or personal use">
-    <meta name="keywords" content="responsive, template, website, business, portfolio">
-    <meta name="author" content="Your Name">
-
-    <!-- Preload critical resources -->
-    <link rel="preload" href="style.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-        as="style">
-
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://kit.fontawesome.com">
-
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/c13c5f9a3a.js" crossorigin="anonymous"></script>
-
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Main Styles -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
-
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
-
-    <title>Universal - Responsive Website Template</title>
-
-    <style>
-        /* ===== CRITICAL CSS ===== */
-        /* Above-the-fold styles only */
-
-        /* Base layout */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #e9ecef;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-decoration: none;
-            color: #2b2d42;
-        }
-
-        /* Hero section - most critical */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 80px 2rem 2rem;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .hero-title {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            color: #2b2d42;
-        }
-
-        .hero-description {
-            font-size: 1.25rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-            color: #6c757d;
-            max-width: 600px;
-        }
-
-        /* Ensure content is visible while fonts load */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-
-        .fonts-loaded body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>GTCoding</title>
 </head>
 
 <body>
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div id="slideout-menu">
+      <ul>
+          <li>
+              <a href="index.html">Home</a>
+          </li>
+          <li>
+              <a href="blogslist.html">Blog</a>
+          </li>
+          <li>
+              <a href="blogslist.html">Projects</a>
+          </li>
+          <li>
+              <a href="about.html">About</a>
+          </li>
+          <li>
+              <input type="text" placeholder="Search Here">
+          </li>
+      </ul>
+  </div>
 
-    <!-- Header & Navigation -->
-    <header class="header">
-        <nav class="nav" role="navigation">
-            <div class="nav-brand">
-                <a href="index.html" class="logo">
-                    <span class="logo-icon">🚀</span>
-                    <span class="logo-text">CreativeBiodata</span>
-                </a>
-            </div>
-            <div class="nav-menu" id="nav-menu">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link active" aria-current="page">Home</a>
+  <nav>
+      <div id="logo-img">
+          <a href="#">
+              <img src="img/logo.png" alt="GTCoding Logo">
+          </a>
+      </div>
+      <div id="menu-icon">
+          <i class="fas fa-bars"></i>
+      </div>
+      <ul>
+          <li>
+              <a href="index.html">Home</a>
+          </li>
+          <li>
+              <a href="blogslist.html">Blog</a>
+          </li>
+          <li>
+              <a href="blogslist.html">Projects</a>
+          </li>
+          <li>
+              <a class="active" href="about.html">About</a>
+          </li>
+          <li>
+              <div id="search-icon">
+                  <i class="fas fa-search"></i>
+              </div>
+          </li>
+      </ul>
+  </nav>
+
+  <div id="searchbox">
+      <input type="text" placeholder="Search Here">
+  </div>
+
+  <main>
+
+    <h2 class="page-heading">About GTCoding</h2>
+    <div id="post-container">
+      <section id="blogpost">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/1.jpg" alt="Card Image">
+          </div>
+          <div class="card-description">
+            <h3>The Introduction</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique omnis fugiat sapiente corrupti iure vitae
+              tempora magnam laboriosam eligendi voluptatem? Quisquam similique officia eum? Ullam ex iste in officia eveniet
+              blanditiis quae iure ducimus explicabo dicta molestias, reiciendis quidem unde.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique omnis fugiat sapiente corrupti iure vitae
+              tempora magnam laboriosam eligendi voluptatem? Quisquam similique officia eum? Ullam ex iste in officia eveniet
+              blanditiis quae iure ducimus explicabo dicta molestias, reiciendis quidem unde.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique omnis fugiat sapiente corrupti iure vitae
+              tempora magnam laboriosam eligendi voluptatem? Quisquam similique officia eum? Ullam ex iste in officia eveniet
+              blanditiis quae iure ducimus explicabo dicta molestias, reiciendis quidem unde.</p>
+          </div>
+        </div>
+
+      </section>
+
+      <aside id="sidebar">
+        <h3>Sidebar Heading</h3>
+        <p>Sidebar 1</p>
+      </aside>
+    </div>
+
+    <footer>
+        <div id="left-footer">
+            <h3>Quick Links</h3>
+            <p>
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="pages/templates.html" class="nav-link">Templates</a>
+                    <li>
+                        <a href="about.html">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="pages/services.html" class="nav-link">Services</a>
+                    <li>
+                        <a href="#">Privacy Policy</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="pages/about.html" class="nav-link">About</a>
+                    <li>
+                        <a href="blogslist.html">Blogs</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="pages/contact.html" class="nav-link">Contact</a>
+                    <li>
+                        <a href="blogslist.html">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
                     </li>
                 </ul>
-                <div class="nav-actions">
-                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-                        <i class="fas fa-moon" aria-hidden="true"></i>
-                    </button>
-                    <button class="btn btn-primary">Get Started</button>
-                </div>
-            </div>
-            <div class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-label="Toggle navigation menu">
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <span class="hero-badge">Trusted by Families</span>
-                    <h1 class="hero-title">
-                        Create Your Perfect
-                        <span class="text-gradient">Marriage Biodata</span>
-                        In Minutes
-                    </h1>
-                    <p class="hero-description">
-                        A secure, elegant, and easy-to-use biodata generator for individuals and families.
-                        Professionally formatted, fully customizable, and ready to share with prospective matches.
-                    </p>
-                    <div class="hero-actions">
-                        <button class="btn btn-primary btn-large">
-                            Create Your Biodata
-                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                        </button>
-                        <button class="btn btn-secondary btn-large">
-                            <i class="fas fa-file-alt" aria-hidden="true"></i>
-                            View Sample
-                        </button>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Customizable</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">5★</span>
-                            <span class="stat-label">Rated Templates</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">10,000+</span>
-                            <span class="stat-label">Users Satisfied</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="hero-image">
-                        <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            srcset="https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80 400w, 
-                                    https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 800w"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
-                            alt="Modern website dashboard interface showing responsive design" loading="eager"
-                            width="600" height="400">
-                    </div>
-                    <div class="floating-elements">
-                        <div class="floating-card card-1">
-                            <i class="fas fa-edit"></i>
-                            <span>Easy to Fill</span>
-                        </div>
-                        <div class="floating-card card-2">
-                            <i class="fas fa-paint-brush"></i>
-                            <span>Beautiful Designs</span>
-                        </div>
-                        <div class="floating-card card-3">
-                            <i class="fas fa-share-alt"></i>
-                            <span>Share Instantly</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </p>
         </div>
-    </section>
 
-    <!-- Features Section -->
-    <section class="features" id="main-content">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Why Choose Us</span>
-                <h2 class="section-title">Perfect Biodata, Every Time</h2>
-                <p class="section-description">
-                    Create a professional, culturally appropriate marriage biodata in minutes — no design skills needed.
-                </p>
-            </div>
-            <div class="features-grid">
-                <!-- Card 1 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-file-alt" aria-hidden="true"></i>
-                    </div>
-                    <h3>Ready-Made Templates</h3>
-                    <p>Choose from elegant, traditional, and modern biodata layouts.</p>
-                    <ul class="feature-list">
-                        <li>Hindu, Muslim, Christian styles</li>
-                        <li>Regional language support</li>
-                        <li>Print & digital optimized</li>
-                    </ul>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-lock" aria-hidden="true"></i>
-                    </div>
-                    <h3>100% Private</h3>
-                    <p>Your data never leaves your device. Nothing is stored or shared.</p>
-                    <ul class="feature-list">
-                        <li>No account required</li>
-                        <li>No cloud storage</li>
-                        <li>GDPR-compliant</li>
-                    </ul>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-download" aria-hidden="true"></i>
-                    </div>
-                    <h3>Instant PDF & Image</h3>
-                    <p>Download high-quality PDF or share as image on WhatsApp.</p>
-                    <ul class="feature-list">
-                        <li>One-click export</li>
-                        <li>Print-ready format</li>
-                        <li>Mobile-friendly image</li>
-                    </ul>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-edit" aria-hidden="true"></i>
-                    </div>
-                    <h3>Easy to Fill</h3>
-                    <p>Simple form with smart fields — complete in under 2 minutes.</p>
-                    <ul class="feature-list">
-                        <li>Auto-suggestions</li>
-                        <li>Save & resume later</li>
-                        <li>Real-time preview</li>
-                    </ul>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt" aria-hidden="true"></i>
-                    </div>
-                    <h3>Works on Mobile</h3>
-                    <p>Fully responsive — create your biodata from any phone or tablet.</p>
-                    <ul class="feature-list">
-                        <li>No app install needed</li>
-                        <li>Works offline</li>
-                        <li>Fast on slow networks</li>
-                    </ul>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-heart" aria-hidden="true"></i>
-                    </div>
-                    <h3>Trusted by Families</h3>
-                    <p>Used by thousands of families across India, Middle East, and beyond.</p>
-                    <ul class="feature-list">
-                        <li>Culturally sensitive</li>
-                        <li>Family-approved format</li>
-                        <li>Free forever</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Create Your Biodata?</h2>
-                <p>Join thousands of families who’ve found their perfect match with our biodata tool</p>
-                <div class="cta-actions">
-                    <button class="btn btn-primary btn-large">Create Your Biodata</button>
-                    <button class="btn btn-secondary btn-large">View Sample</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-brand">
-                        <a href="index.html" class="logo">
-                            <span class="logo-icon">🚀</span>
-                            <span class="logo-text">Creative Biodata</span>
+        <div id="right-footer">
+            <h3>Follow us on</h3>
+            <div id="social-media-footer">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-facebook"></i>
                         </a>
-                        <p class="footer-description">
-                            Create beautiful, culturally thoughtful marriage biodatas in minutes. Trusted by thousands of families across India and beyond.
-                        </p>
-                        <div class="social-links">
-                            <a href="https://www.telegram.me/creativebiodata" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
-                            <a href="https://www.instagram.com/creativebiodata" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.youtube.com/@creativebiodata" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                            <a href="https://www.x.com/creativebiodata" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.pinterest.com/creativebiodata" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
-                            <a href="https://www.facebook.com/creativebiodata" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="pages/templates.html">Templates</a></li>
-                        <li><a href="pages/services.html">Services</a></li>
-                        <li><a href="pages/about.html">About</a></li>
-                        <li><a href="pages/contact.html">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Resources</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">Tutorials</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Legal</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">License</a></li>
-                    </ul>
-                </div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2025 Creative Biodata. All rights reserved.</p>
-                <div class="footer-meta">
-                    <span>Made with <i class="fas fa-heart" style="color: #e25555;"></i> for the web</span>
-                </div>
-            </div>
+            <p>This website is developed by GTCoding</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="main.js" defer></script>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
+================================================================================
+
+blogpost.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>GTCoding</title>
+</head>
+
+<body>
+  <div id="slideout-menu">
+      <ul>
+          <li>
+              <a href="index.html">Home</a>
+          </li>
+          <li>
+              <a  href="blogslist.html">Blog</a>
+          </li>
+          <li>
+              <a href="blogslist.html">Projects</a>
+          </li>
+          <li>
+              <a href="about.html">About</a>
+          </li>
+          <li>
+              <input type="text" placeholder="Search Here">
+          </li>
+      </ul>
+  </div>
+
+  <nav>
+      <div id="logo-img">
+          <a href="#">
+              <img src="img/logo.png" alt="GTCoding Logo">
+          </a>
+      </div>
+      <div id="menu-icon">
+          <i class="fas fa-bars"></i>
+      </div>
+      <ul>
+          <li>
+              <a href="index.html">Home</a>
+          </li>
+          <li>
+              <a class="active" href="blogslist.html">Blog</a>
+          </li>
+          <li>
+              <a href="blogslist.html">Projects</a>
+          </li>
+          <li>
+              <a href="about.html">About</a>
+          </li>
+          <li>
+              <div id="search-icon">
+                  <i class="fas fa-search"></i>
+              </div>
+          </li>
+      </ul>
+  </nav>
+
+  <div id="searchbox">
+      <input type="text" placeholder="Search Here">
+  </div>
+
+  <main>
+
+    <h2 class="page-heading">Blog Post Heading</h2>
+    <div id="post-container">
+      <section id="blogpost">
+        <div class="card">
+          <div class="card-meta-blogpost">
+            Posted by Admin on 01/01/2018 in
+            <a href="#">Web Dev</a>
+          </div>
+          <div class="card-image">
+            <img src="img/1.jpg" alt="Card Image">
+          </div>
+          <div class="card-description">
+            <h3>The Introduction</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique omnis fugiat sapiente corrupti iure vitae
+              tempora magnam laboriosam eligendi voluptatem? Quisquam similique officia eum? Ullam ex iste in officia eveniet
+              blanditiis quae iure ducimus explicabo dicta molestias, reiciendis quidem unde.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique omnis fugiat sapiente corrupti iure vitae
+              tempora magnam laboriosam eligendi voluptatem? Quisquam similique officia eum? Ullam ex iste in officia eveniet
+              blanditiis quae iure ducimus explicabo dicta molestias, reiciendis quidem unde.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique omnis fugiat sapiente corrupti iure vitae
+              tempora magnam laboriosam eligendi voluptatem? Quisquam similique officia eum? Ullam ex iste in officia eveniet
+              blanditiis quae iure ducimus explicabo dicta molestias, reiciendis quidem unde.</p>
+          </div>
+        </div>
+
+        <div id="comments-section">
+          Comments Section
+        </div>
+      </section>
+
+      <aside id="sidebar">
+        <h3>Sidebar Heading</h3>
+        <p>Sidebar 1</p>
+      </aside>
+    </div>
+
+    <footer>
+        <div id="left-footer">
+            <h3>Quick Links</h3>
+            <p>
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="blogslist.html">Blogs</a>
+                    </li>
+                    <li>
+                        <a href="blogslist.html">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </p>
+        </div>
+
+        <div id="right-footer">
+            <h3>Follow us on</h3>
+            <div id="social-media-footer">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p>This website is developed by GTCoding</p>
+        </div>
+    </footer>
+
+  </main>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
+================================================================================
+
+blogslist.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>GTCoding</title>
+</head>
+
+<body>
+  <div id="slideout-menu">
+      <ul>
+          <li>
+              <a href="index.html">Home</a>
+          </li>
+          <li>
+              <a href="blogslist.html">Blog</a>
+          </li>
+          <li>
+              <a href="blogslist.html">Projects</a>
+          </li>
+          <li>
+              <a href="about.html">About</a>
+          </li>
+          <li>
+              <input type="text" placeholder="Search Here">
+          </li>
+      </ul>
+  </div>
+
+  <nav>
+      <div id="logo-img">
+          <a href="#">
+              <img src="img/logo.png" alt="GTCoding Logo">
+          </a>
+      </div>
+      <div id="menu-icon">
+          <i class="fas fa-bars"></i>
+      </div>
+      <ul>
+          <li>
+              <a href="index.html">Home</a>
+          </li>
+          <li>
+              <a class="active" href="blogslist.html">Blog</a>
+          </li>
+          <li>
+              <a href="blogslist.html">Projects</a>
+          </li>
+          <li>
+              <a href="about.html">About</a>
+          </li>
+          <li>
+              <div id="search-icon">
+                  <i class="fas fa-search"></i>
+              </div>
+          </li>
+      </ul>
+  </nav>
+
+  <div id="searchbox">
+      <input type="text" placeholder="Search Here">
+  </div>
+
+  <main>
+    <h2 class="page-heading">Blogs</h2>
+
+    <section>
+      <div class="card">
+        <div class="card-image">
+          <a href="blogpost.html">
+            <img src="img/1.jpg" alt="Card Image">
+          </a>
+        </div>
+
+        <div class="card-description">
+          <a href="blogpost.html">
+            <h3>The Blog Title Here</h3>
+          </a>
+          <div class="card-meta">
+            Posted by Admin on 23/01/2018 in
+            <a href="#">Web Dev</a>
+          </div>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur eligendi sit accusamus tempora
+            cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio nulla.
+          </p>
+          <a href="blogpost.html" class="btn-readmore">Read more</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <a href="#">
+            <img src="img/2.jpg" alt="Card Image">
+          </a>
+        </div>
+
+        <div class="card-description">
+          <a href="#">
+            <h3>The Blog Title Here</h3>
+          </a>
+          <div class="card-meta">
+            Posted by Admin on 23/01/2018 in
+            <a href="#">Web Dev</a>
+          </div>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur eligendi sit accusamus tempora
+            cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio nulla.
+          </p>
+          <a href="#" class="btn-readmore">Read more</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <a href="blogpost.html">
+            <img src="img/1.jpg" alt="Card Image">
+          </a>
+        </div>
+
+        <div class="card-description">
+          <a href="blogpost.html">
+            <h3>The Blog Title Here</h3>
+          </a>
+          <div class="card-meta">
+            Posted by Admin on 23/01/2018 in
+            <a href="#">Web Dev</a>
+          </div>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur eligendi sit accusamus tempora
+            cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio nulla.
+          </p>
+          <a href="blogpost.html" class="btn-readmore">Read more</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <a href="#">
+            <img src="img/2.jpg" alt="Card Image">
+          </a>
+        </div>
+
+        <div class="card-description">
+          <a href="#">
+            <h3>The Blog Title Here</h3>
+          </a>
+          <div class="card-meta">
+            Posted by Admin on 23/01/2018 in
+            <a href="#">Web Dev</a>
+          </div>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur eligendi sit accusamus tempora
+            cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio nulla.
+          </p>
+          <a href="#" class="btn-readmore">Read more</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <a href="blogpost.html">
+            <img src="img/1.jpg" alt="Card Image">
+          </a>
+        </div>
+
+        <div class="card-description">
+          <a href="blogpost.html">
+            <h3>The Blog Title Here</h3>
+          </a>
+          <div class="card-meta">
+            Posted by Admin on 23/01/2018 in
+            <a href="#">Web Dev</a>
+          </div>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur eligendi sit accusamus tempora
+            cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio nulla.
+          </p>
+          <a href="blogpost.html" class="btn-readmore">Read more</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <a href="#">
+            <img src="img/2.jpg" alt="Card Image">
+          </a>
+        </div>
+
+        <div class="card-description">
+          <a href="#">
+            <h3>The Blog Title Here</h3>
+          </a>
+          <div class="card-meta">
+            Posted by Admin on 23/01/2018 in
+            <a href="#">Web Dev</a>
+          </div>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur eligendi sit accusamus tempora
+            cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio nulla.
+          </p>
+          <a href="#" class="btn-readmore">Read more</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="pagination">
+      <a href="#">Prev</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">6</a>
+      <a href="#">Next</a>
+    </div>
+
+    <footer>
+        <div id="left-footer">
+            <h3>Quick Links</h3>
+            <p>
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="blogslist.html">Blogs</a>
+                    </li>
+                    <li>
+                        <a href="blogslist.html">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </p>
+        </div>
+
+        <div id="right-footer">
+            <h3>Follow us on</h3>
+            <div id="social-media-footer">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p>This website is developed by GTCoding</p>
+        </div>
+    </footer>
+
+  </main>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
+================================================================================
+
+CNAME
+creativebiodata.com
+================================================================================
+
+index.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/c13c5f9a3a.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&family=Roboto+Slab&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Creative Marriage Biodata</title>
+</head>
+
+<body>
+    <div id="slideout-menu">
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="blogslist.html">Templates</a>
+            </li>
+            <li>
+                <a href="blogslist.html">Projects</a>
+            </li>
+            <li>
+                <a href="about.html">About</a>
+            </li>
+            <li>
+                <input type="text" placeholder="Search Here">
+            </li>
+        </ul>
+    </div>
+
+    <nav>
+        <div id="logo-img">
+            <a href="#">
+                <img src="img/logo.png" alt="Creative Biodata Logo">
+            </a>
+        </div>
+        <div id="menu-icon">
+            <span class="material-icons">menu</span>
+        </div>
+        <ul>
+            <li>
+                <a class="active" href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="blogslist.html">Templates</a>
+            </li>
+            <li>
+                <a href="blogslist.html">Projects</a>
+            </li>
+            <li>
+                <a href="about.html">About</a>
+            </li>
+            <li>
+                <div id="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="searchbox">
+        <input type="text" placeholder="Search Here">
+    </div>
+
+    <div id="banner">
+        <h1>Personalize</h1>
+        <h3>Design Your Perfect Biodata</h3>
+    </div>
+
+    <main>
+        <a href="blogslist.html">
+            <h2 class="section-heading">All Blogs</h2>
+        </a>
+
+        <section>
+            <div class="card">
+                <div class="card-image">
+                    <a href="blogpost.html">
+                        <img src="img/1.jpg" alt="Card Image">
+                    </a>
+                </div>
+
+                <div class="card-description">
+                    <a href="blogpost.html">
+                        <h3>The Blog Title Here</h3>
+                    </a>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur
+                        eligendi sit accusamus tempora
+                        cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio
+                        nulla.
+                    </p>
+                    <a href="blogpost.html" class="btn-readmore">Read more</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <a href="blogpost.html">
+                        <img src="img/2.jpg" alt="Card Image">
+                    </a>
+                </div>
+
+                <div class="card-description">
+                    <a href="blogpost.html">
+                        <h3>The Blog Title Here</h3>
+                    </a>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur
+                        eligendi sit accusamus tempora
+                        cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio
+                        nulla.
+                    </p>
+                    <a href="blogpost.html" class="btn-readmore">Read more</a>
+                </div>
+            </div>
+        </section>
+
+        <a href="blogslist.html">
+            <h2 class="section-heading">All Projects</h2>
+        </a>
+
+        <section>
+            <div class="card">
+                <div class="card-image">
+                    <a href="blogpost.html">
+                        <img src="img/3.jpg" alt="Card Image">
+                    </a>
+                </div>
+
+                <div class="card-description">
+                    <a href="blogpost.html">
+                        <h3>The Project Title Here</h3>
+                    </a>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur
+                        eligendi sit accusamus tempora
+                        cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio
+                        nulla.
+                    </p>
+                    <a href="blogpost.html" class="btn-readmore">Read more</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <a href="blogpost.html">
+                        <img src="img/4.jpg" alt="Card Image">
+                    </a>
+                </div>
+
+                <div class="card-description">
+                    <a href="blogpost.html">
+                        <h3>The Project Title Here</h3>
+                    </a>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur
+                        eligendi sit accusamus tempora
+                        cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio
+                        nulla.
+                    </p>
+                    <a href="blogpost.html" class="btn-readmore">Read more</a>
+                </div>
+            </div>
+        </section>
+
+        <h2 class="section-heading">Source Code</h2>
+
+        <section id="section-source">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum neque qui delectus ad dolor blanditiis
+                perferendis praesentium
+                consectetur aut sed provident obcaecati aspernatur perspiciatis, dolores nobis pariatur ipsum vel
+                corrupti!
+            </p>
+            <a href="#" class="btn-readmore">GitHub Profile</a>
+        </section>
+
+        <footer>
+            <div id="left-footer">
+                <h3>Direct Links</h3>
+                <p>
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="blogslist.html">Blogs</a>
+                    </li>
+                    <li>
+                        <a href="blogslist.html">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+                </p>
+            </div>
+
+            <div id="right-footer">
+                <h3>Discover More</h3>
+                <div id="social-media-footer">
+                    <ul>
+                        <li><a href="https://www.telegram.me/creativebiodata"><i
+                                    class="fa-brands fa-telegram"></i></span></a></li>
+                        <li><a href="https://www.instagram.com/creativebiodata"><i
+                                    class="fa-brands fa-instagram"></i></span></a></li>
+                        <li><a href="https://www.youtube.com/@creativebiodata"><i
+                                    class="fa-brands fa-youtube"></i></span></a></li>
+                        <li><a href="https://www.twitter.com/creativebiodata"><i
+                                    class="fa-brands fa-x-twitter"></i></span></a></li>
+                        <li><a href="https://www.facebook.com/creativebiodata"><i
+                                    class="fa-brands fa-facebook"></i></span></a></li>
+                        <li><a href="https://www.pinterest.com/creativebiodata"><i
+                                    class="fa-brands fa-pinterest"></i></span></a></li>
+                    </ul>
+                </div>
+                <p>Crafted with <span style="color: red;"><i class="fa-solid fa-heart"></i></span> by PARAM</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="main.js"></script>
 </body>
 
 </html>
 ================================================================================
 
 main.js
-// Universal Website Template - Main JavaScript
-class UniversalWebsite {
-    constructor() {
-        this.init();
-    }
+const menuIcon = document.getElementById("menu-icon");
+const slideoutMenu = document.getElementById("slideout-menu");
+const searchIcon = document.getElementById("search-icon");
+const searchBox = document.getElementById("searchbox");
 
-    init() {
-        this.setupEventListeners();
-        this.setupTheme();
-        this.setupNavigation();
-        this.setupAnimations();
-        this.setupPerformanceMonitoring();
-        this.handleAccessibility();
-        this.updateFooterYear();
-        this.registerServiceWorker();
-    }
-
-    // Event Listeners
-    setupEventListeners() {
-        // Theme toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle?.addEventListener('click', () => this.toggleTheme());
-
-        // Mobile navigation toggle
-        const navToggle = document.getElementById('nav-toggle');
-        const navMenu = document.getElementById('nav-menu');
-
-        const toggleMenu = () => {
-            navToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            const isExpanded = navToggle.classList.contains('active');
-            navToggle.setAttribute('aria-expanded', isExpanded);
-        };
-
-        navToggle?.addEventListener('click', toggleMenu);
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (
-                navMenu?.classList.contains('active') &&
-                !navToggle?.contains(e.target) &&
-                !navMenu?.contains(e.target)
-            ) {
-                navToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-
-        // Close on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && navMenu?.classList.contains('active')) {
-                navToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(link => {
-            link.addEventListener('click', this.smoothScroll.bind(this));
-        });
-    }
-
-    // Theme Management
-    setupTheme() {
-        const savedTheme = localStorage.getItem('theme') ||
-            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        this.updateThemeIcon(savedTheme);
-    }
-
-    toggleTheme() {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        this.updateThemeIcon(newTheme);
-        this.announceToScreenReader(`Theme changed to ${newTheme} mode`);
-    }
-
-    updateThemeIcon(theme) {
-        const themeToggle = document.getElementById('theme-toggle');
-        if (!themeToggle) return;
-
-        const icon = themeToggle.querySelector('i');
-        if (theme === 'dark') {
-            icon.className = 'fas fa-sun';
-            themeToggle.setAttribute('aria-label', 'Switch to light mode');
-        } else {
-            icon.className = 'fas fa-moon';
-            themeToggle.setAttribute('aria-label', 'Switch to dark mode');
-        }
-    }
-
-    // Navigation: Highlight active section
-    setupNavigation() {
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        if (sections.length === 0 || navLinks.length === 0) return;
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.getAttribute('id');
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        link.removeAttribute('aria-current');
-                        if (link.getAttribute('href') === `#${id}`) {
-                            link.classList.add('active');
-                            link.setAttribute('aria-current', 'page');
-                        }
-                    });
-                }
-            });
-        }, {
-            threshold: 0.5,
-            rootMargin: '-20% 0px -20% 0px'
-        });
-
-        sections.forEach(section => observer.observe(section));
-    }
-
-    // Scroll Animations
-    setupAnimations() {
-        const animateOnScroll = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
-                    this.trackEvent('element_view', {
-                        element: entry.target.tagName,
-                        id: entry.target.id || 'unknown'
-                    });
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '50px'
-        });
-
-        document.querySelectorAll('.feature-card, .hero-content, .section-header').forEach(el => {
-            el.classList.add('animate-on-scroll');
-            animateOnScroll.observe(el);
-        });
-    }
-
-    // Performance Monitoring
-    setupPerformanceMonitoring() {
-        // Core Web Vitals
-        if ('PerformanceObserver' in window) {
-            const observer = new PerformanceObserver((list) => {
-                list.getEntries().forEach(entry => {
-                    if (entry.name === 'LCP') {
-                        this.trackEvent('web_vital', {
-                            metric: 'LCP',
-                            value: Math.round(entry.value),
-                            rating: entry.value < 2500 ? 'good' : entry.value < 4000 ? 'needs_improvement' : 'poor'
-                        });
-                    }
-                });
-            });
-            observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
-        }
-
-        // Page load time (note: performance.timing is deprecated but still works)
-        window.addEventListener('load', () => {
-            // Use modern Navigation Timing API if available
-            const navEntry = performance.getEntriesByType('navigation')[0];
-            const loadTime = navEntry ? navEntry.duration : 
-                performance.timing.loadEventEnd - performance.timing.navigationStart;
-
-            console.log(`Page load time: ${Math.round(loadTime)}ms`);
-            this.trackEvent('page_load', {
-                load_time: Math.round(loadTime),
-                connection: navigator.connection?.effectiveType || 'unknown'
-            });
-        });
-    }
-
-    // Accessibility Enhancements
-    handleAccessibility() {
-        // Keyboard navigation indicator
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Tab') {
-                document.body.classList.add('keyboard-navigation');
-            }
-        });
-
-        document.addEventListener('mousedown', () => {
-            document.body.classList.remove('keyboard-navigation');
-        });
-
-        // Reduced motion
-        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-        const toggleReducedMotion = (e) => {
-            document.documentElement.classList.toggle('reduced-motion', e.matches);
-        };
-        toggleReducedMotion(reducedMotion);
-        reducedMotion.addEventListener('change', toggleReducedMotion);
-    }
-
-    // Smooth Scroll Utility
-    smoothScroll(e) {
-        e.preventDefault();
-        const targetId = e.currentTarget.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        if (!targetElement) return;
-
-        const header = document.querySelector('.header');
-        const headerHeight = header ? header.offsetHeight : 0;
-        const targetPosition = targetElement.offsetTop - headerHeight - 20;
-
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-        });
-
-        history.pushState(null, null, targetId);
-    }
-
-    // Auto-update footer year
-    updateFooterYear() {
-        const footerYear = document.getElementById('footer-year');
-        if (footerYear) {
-            const year = new Date().getFullYear();
-            footerYear.innerHTML = `&copy; ${year} Universal Template. All rights reserved.`;
-        }
-    }
-
-    // Screen reader announcements
-    announceToScreenReader(message) {
-        let announcer = document.getElementById('screen-reader-announcer');
-        if (!announcer) {
-            announcer = document.createElement('div');
-            announcer.id = 'screen-reader-announcer';
-            announcer.setAttribute('aria-live', 'polite');
-            announcer.setAttribute('aria-atomic', 'true');
-            announcer.style.cssText = `
-                position: absolute;
-                left: -10000px;
-                width: 1px;
-                height: 1px;
-                overflow: hidden;
-            `;
-            document.body.appendChild(announcer);
-        }
-        announcer.textContent = message;
-    }
-
-    // Analytics placeholder
-    trackEvent(action, data) {
-        console.log('Event tracked:', action, data);
-        // In production, integrate with GA4, Plausible, etc.
-    }
-
-    // Register Service Worker
-    registerServiceWorker() {
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(reg => console.log('SW registered:', reg.scope))
-                    .catch(err => console.warn('SW registration failed:', err));
-            });
-        }
-    }
-}
-
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    new UniversalWebsite();
+searchIcon.addEventListener('click', function () {
+  if (searchBox.style.top == '72px') {
+    searchBox.style.top = '24px';
+    searchBox.style.pointerEvents = 'none';
+  } else {
+    searchBox.style.top = '72px';
+    searchBox.style.pointerEvents = 'auto';
+  }
 });
 
-// For module environments (optional)
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = UniversalWebsite;
-}
-================================================================================
-
-manifest.json
-{
-  "name": "Universal Website Template",
-  "short_name": "Universal",
-  "description": "A fully responsive website template for any business or personal use",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#4361ee",
-  "orientation": "portrait-primary",
-  "scope": "/",
-  "lang": "en",
-  "categories": ["business", "productivity"],
-  "icons": [
-    {
-      "src": "assets/icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "assets/icons/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
-  ]
-}
+menuIcon.addEventListener('click', function () {
+  if (slideoutMenu.style.opacity == "1") {
+    slideoutMenu.style.opacity = '0';
+    slideoutMenu.style.pointerEvents = 'none';
+  } else {
+    slideoutMenu.style.opacity = '1';
+    slideoutMenu.style.pointerEvents = 'auto';
+  }
+})
 ================================================================================
 
 README.md
-# I will write README once complete design as per my requirements.
+# Responsive-Website-Design
+This is the source code for the design of the complete website series on GTCoding YouTube channel.
+
+Here is the demo: https://godsont.github.io/Responsive-Website-Design/
+
 ================================================================================
 
 style.css
-/* ===== CSS Variables ===== */
-:root {
-  /* Colors */
-  --primary-color: #4361ee;
-  --primary-dark: #3a56d4;
-  --primary-light: #4895ef;
-  --secondary-color: #f72585;
-  --accent-color: #4cc9f0;
-  
-  /* Neutral Colors */
-  --text-primary: #2b2d42;
-  --text-secondary: #6c757d;
-  --text-light: #8d99ae;
-  --bg-light: #ffffff;
-  --bg-dark: #1a1a1a;
-  --bg-card: #ffffff;
-  --border-color: #e9ecef;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-  
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-light));
-  --gradient-secondary: linear-gradient(135deg, var(--secondary-color), #b5179e);
-  
-  /* Typography */
-  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: 'Playfair Display', serif;
-  
-  /* Spacing */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
-  --space-3xl: 4rem;
-  
-  /* Border Radius */
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-2xl: 1.5rem;
-  
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 var(--shadow-color);
-  --shadow-md: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
-  --shadow-lg: 0 10px 15px -3px var(--shadow-color), 0 4px 6px -2px var(--shadow-color);
-  --shadow-xl: 0 20px 25px -5px var(--shadow-color), 0 10px 10px -5px var(--shadow-color);
-  
-  /* Transitions */
-  --transition-fast: 0.15s ease;
-  --transition-normal: 0.3s ease;
-  --transition-slow: 0.5s ease;
-  
-  /* Layout */
-  --container-width: 1200px;
-  --header-height: 80px;
-  --section-spacing: 5rem;
-}
-
-/* ===== Dark Theme ===== */
-[data-theme="dark"] {
-  --text-primary: #ffffff;
-  --text-secondary: #b0b0b0;
-  --text-light: #8d99ae;
-  --bg-light: #1a1a1a;
-  --bg-card: #2d2d2d;
-  --border-color: #404040;
-  --shadow-color: rgba(0, 0, 0, 0.3);
-}
-
-/* ===== Reset & Base Styles ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
-
 body {
-  font-family: var(--font-primary);
-  line-height: 1.6;
-  color: var(--text-primary);
-  background-color: var(--bg-light);
-  overflow-x: hidden;
-  transition: background-color var(--transition-normal), color var(--transition-normal);
-}
-
-/* ===== Accessibility ===== */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 6px;
-  background: var(--primary-color);
-  color: white;
-  padding: 8px 16px;
-  text-decoration: none;
-  border-radius: var(--radius-md);
-  z-index: 1000;
-  transition: var(--transition-normal);
-}
-
-.skip-link:focus {
-  top: 6px;
-}
-
-/* ===== Typography ===== */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: var(--space-md);
+  font-family: "Roboto", sans-serif;
+  margin: 0;
 }
 
 h1 {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-}
-
-h2 {
-  font-size: clamp(2rem, 4vw, 2.5rem);
-}
-
-h3 {
-  font-size: clamp(1.5rem, 3vw, 1.75rem);
+  padding: 8px;
+  background: rgba(255, 0, 0, 0.8);
+  border-radius: 8px;
+  margin: 0;
+  font-size: 64px;
+  font-family: "Roboto Slab", serif;
 }
 
 p {
-  margin-bottom: var(--space-md);
-  color: var(--text-secondary);
+  line-height: 1.5;
 }
 
-.text-gradient {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* ===== Layout ===== */
-.container {
-  max-width: var(--container-width);
+main {
   margin: 0 auto;
-  padding: 0 var(--space-lg);
 }
 
-/* ===== Header & Navigation ===== */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-color);
-  z-index: 1000;
-  transition: var(--transition-normal);
-}
-[data-theme="dark"] .header {
-  background: rgba(26, 26, 26, 0.95);
-}
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: var(--header-height);
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 0 var(--space-lg);
-}
-.logo {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  font-weight: 700;
-  font-size: 1.25rem;
+a {
   text-decoration: none;
-  color: var(--text-primary);
+  color: black;
 }
-.logo-icon {
-  font-size: 1.5rem;
+
+a:hover {
+  text-decoration: underline;
 }
-.nav-menu {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xl);
-}
-.nav-list {
-  display: flex;
-  list-style: none;
-  gap: var(--space-lg);
-}
-.nav-link {
-  text-decoration: none;
-  color: var(--text-secondary);
-  font-weight: 500;
-  padding: var(--space-sm) var(--space-md);
-  border-radius: var(--radius-md);
-  transition: var(--transition-normal);
-  position: relative;
-}
-.nav-link:hover,
-.nav-link.active {
-  color: var(--primary-color);
-}
-.nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 4px;
-  background: var(--primary-color);
-  border-radius: 50%;
-}
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-}
-.theme-toggle {
-  background: none;
+
+/* Inputs */
+
+input,
+textarea {
+  height: 32px;
+  padding: 0 16px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 20px;
   border: none;
-  font-size: 1.25rem;
-  color: var(--text-secondary);
-  cursor: pointer;
-  padding: var(--space-sm);
-  border-radius: var(--radius-md);
-  transition: var(--transition-normal);
+  box-shadow: inset 8px 3px 18px -4px rgba(0, 0, 0, 0.4);
 }
-.theme-toggle:hover {
-  color: var(--primary-color);
-  background: var(--border-color);
+
+input:focus,
+textarea:focus {
+  outline: none;
 }
-.nav-toggle {
-  display: none;
+
+/* Banner */
+
+#banner {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
-  cursor: pointer;
-  padding: var(--space-sm);
-}
-.hamburger-bar {
-  width: 25px;
-  height: 3px;
-  background: var(--text-primary);
-  margin: 3px 0;
-  transition: var(--transition-normal);
-  border-radius: 2px;
-}
-
-/* Mobile menu toggle animation */
-.nav-toggle.active .hamburger-bar:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-.nav-toggle.active .hamburger-bar:nth-child(2) {
-  opacity: 0;
-}
-.nav-toggle.active .hamburger-bar:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* Mobile menu panel */
-@media (max-width: 768px) {
-  .nav-menu {
-    position: fixed;
-    top: var(--header-height);
-    left: -100%;
-    width: 100%;
-    height: calc(100vh - var(--header-height));
-    background: var(--bg-light);
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: var(--space-2xl);
-    transition: var(--transition-normal);
-    overflow-y: auto;
-  }
-  .nav-menu.active {
-    left: 0;
-  }
-  .nav-list {
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-  }
-  .nav-actions {
-    flex-direction: column;
-    width: 100%;
-    margin-top: var(--space-xl);
-  }
-  .nav-toggle {
-    display: flex;
-  }
-  .hero {
-    padding-top: calc(var(--header-height) + var(--space-3xl));
-  }
-
-  .hero-text {
-    margin-top: var(--space-lg);
-  }
-
-  .hero-badge {
-    margin-top: var(--space-md);
-  }
-  .hero-image {
-    transform: none;
-  }
-}
-
-/* ===== Buttons ===== */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-md) var(--space-lg);
-  border: none;
-  border-radius: var(--radius-md);
-  font-weight: 500;
-  text-decoration: none;
-  cursor: pointer;
-  transition: var(--transition-normal);
-  font-family: inherit;
-  font-size: 0.875rem;
-  line-height: 1;
-}
-
-.btn-primary {
-  background: var(--gradient-primary);
+  background: rgba(0, 0, 0, 0.2) url("img/3.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-blend-mode: overlay;
   color: white;
-  box-shadow: var(--shadow-md);
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+#banner h3 {
+  background: black;
+  border-radius: 8px;
+  padding: 0 24px;
+  font-size: 24px;
 }
 
-.btn-secondary {
-  background: transparent;
-  color: var(--text-primary);
-  border: 2px solid var(--border-color);
-}
+/* Search Box */
 
-.btn-secondary:hover {
-  border-color: var(--primary-color);
-  color: var(--primary-color);
-}
-
-.btn-large {
-  padding: var(--space-lg) var(--space-xl);
-  font-size: 1rem;
-}
-
-/* ===== Hero Section ===== */
-.hero {
-  padding: calc(var(--header-height) + var(--space-3xl)) 0 var(--space-3xl);
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-[data-theme="dark"] .hero {
-  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-}
-
-.hero-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3xl);
-  align-items: center;
-}
-
-.hero-badge {
-  display: inline-block;
-  background: var(--gradient-primary);
-  color: white;
-  padding: var(--space-xs) var(--space-md);
-  border-radius: var(--radius-xl);
-  font-size: 0.875rem;
-  font-weight: 500;
-  margin-bottom: var(--space-lg);
-  margin-top: 1rem;
-}
-
-.hero-title {
-  margin-bottom: var(--space-lg);
-}
-
-.hero-description {
-  font-size: 1.125rem;
-  margin-bottom: var(--space-2xl);
-  color: var(--text-secondary);
-  max-width: 600px;
-}
-
-.hero-actions {
-  display: flex;
-  gap: var(--space-md);
-  margin-bottom: var(--space-2xl);
-  flex-wrap: wrap;
-}
-
-.hero-stats {
-  display: flex;
-  gap: var(--space-2xl);
-}
-
-.stat {
-  text-align: center;
-}
-
-.stat-number {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary-color);
-}
-
-.stat-label {
-  font-size: 0.875rem;
-  color: var(--text-light);
-}
-
-.hero-visual {
-  position: relative;
-}
-
-.hero-image {
-  border-radius: var(--radius-2xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-xl);
-  transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
-  transition: var(--transition-normal);
-}
-
-.hero-image:hover {
-  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
-}
-
-.hero-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.hero-image:hover img {
-  transform: scale(1.05);
-}
-
-.floating-elements {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+#searchbox {
+  position: fixed;
+  right: 0;
+  top: 24px;
+  width: 500px;
   pointer-events: none;
+  z-index: 50;
+  transition: 0.4s;
 }
 
-.floating-card {
-  position: absolute;
-  background: var(--bg-card);
-  padding: var(--space-md);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  font-size: 0.875rem;
-  font-weight: 500;
-  animation: float 3s ease-in-out infinite;
-  pointer-events: auto;
-  cursor: pointer;
-  transition: var(--transition-normal);
-  border: 1px solid var(--border-color);
+#searchbox input {
+  height: 48px;
+  width: 100%;
 }
 
-.floating-card:hover {
-  transform: scale(1.05);
-  box-shadow: var(--shadow-xl);
-}
+/* Navigation */
 
-.card-1 {
-  top: 10%;
-  left: -10%;
-  animation-delay: 0s;
-}
-
-.card-2 {
-  top: 50%;
-  right: -5%;
-  animation-delay: 1s;
-}
-
-.card-3 {
-  bottom: 20%;
-  left: -5%;
-  animation-delay: 2s;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-/* ===== Features Section ===== */
-.features {
-  padding: var(--section-spacing) 0;
-}
-
-.section-header {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto var(--space-3xl);
-}
-
-.section-subtitle {
-  display: inline-block;
-  color: var(--primary-color);
-  font-weight: 500;
-  margin-bottom: var(--space-md);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.section-title {
-  margin-bottom: var(--space-lg);
-}
-
-.section-description {
-  font-size: 1.125rem;
-  color: var(--text-secondary);
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: var(--space-2xl);
-}
-
-.feature-card {
-  background: var(--bg-card);
-  padding: var(--space-2xl);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-color);
-  transition: var(--transition-normal);
-  text-align: center;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-}
-
-.feature-icon {
-  width: 80px;
-  height: 80px;
-  background: var(--gradient-primary);
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--space-lg);
-  color: white;
-  font-size: 2rem;
-}
-
-.feature-card h3 {
-  margin-bottom: var(--space-md);
-}
-
-.feature-list {
-  list-style: none;
-  text-align: left;
-  margin-top: var(--space-lg);
-}
-
-.feature-list li {
-  padding: var(--space-sm) 0;
-  color: var(--text-secondary);
-  position: relative;
-  padding-left: var(--space-lg);
-}
-
-.feature-list li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--primary-color);
-  font-weight: bold;
-}
-
-/* ===== CTA Section ===== */
-.cta {
-  padding: var(--section-spacing) 0;
-  background: var(--gradient-primary);
-  color: white;
-  text-align: center;
-}
-
-.cta-content h2 {
-  color: white;
-  margin-bottom: var(--space-lg);
-}
-
-.cta-content p {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.125rem;
-  margin-bottom: var(--space-2xl);
-}
-
-.cta-actions {
-  display: flex;
-  gap: var(--space-md);
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.cta .btn-secondary {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  border-color: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-}
-
-.cta .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.5);
-}
-
-/* ===== Footer ===== */
-.footer {
-  background: var(--bg-card);
-  border-top: 1px solid var(--border-color);
-  padding: var(--space-3xl) 0 var(--space-lg);
-}
-
-.footer-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: var(--space-2xl);
-  margin-bottom: var(--space-2xl);
-}
-
-.footer-section h3 {
-  margin-bottom: var(--space-lg);
-  font-size: 1.125rem;
-}
-
-.footer-description {
-  margin-bottom: var(--space-lg);
-  color: var(--text-secondary);
-}
-
-.social-links {
-  display: flex;
-  gap: var(--space-md);
-}
-
-.social-links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: var(--border-color);
-  border-radius: var(--radius-md);
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: var(--transition-normal);
-}
-
-.social-links a:hover {
-  background: var(--primary-color);
-  color: white;
-  transform: translateY(-2px);
-}
-
-.footer-links {
-  list-style: none;
-}
-
-.footer-links li {
-  margin-bottom: var(--space-sm);
-}
-
-.footer-links a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: var(--transition-normal);
-}
-
-.footer-links a:hover {
-  color: var(--primary-color);
-}
-
-.footer-bottom {
-  padding-top: var(--space-lg);
-  border-top: 1px solid var(--border-color);
+nav {
+  height: 72px;
+  background: #BF303C;
+  width: 100%;
+  margin: 0;
+  position: fixed;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 20px;
   display: flex;
   justify-content: space-between;
+  padding: 0 16px 0 0;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+nav a {
+  padding: 0 32px;
+  color: #eee;
+  transition: 0.4s;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: red;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
   align-items: center;
+  height: 100%;
+  margin: 0;
+}
+
+.active {
+  color: #ffb5d1;
+}
+
+#logo-img {
+  display: flex;
+  height: 100%;
+  background: #731224;
+  padding: 0 32px;
+  align-items: center;
+  color: white;
+  transition: 0.4s;
+}
+
+#logo-img img {
+  height: 100px;
+}
+
+#logo-img:hover {
+  background: #6e091b;
+}
+
+#menu-icon {
+  height: 100%;
+  font-size: 28px;
+  padding: 0 4px;
+  color: #eee;
+  display: none;
+  align-items: center;
+}
+
+/* Search Icon */
+
+#search-icon {
+  color: white;
+  padding: 0 32px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#search-icon:hover {
+  color: red;
+}
+
+/* Slideout Menu */
+
+#slideout-menu {
+  display: none;
+  background: #F24968;
+  z-index: 100;
+  position: fixed;
+  transition: 0.4s;
+  margin-top: 72px;
+  width: 100%;
+  text-align: center;
+  opacity:0;
+  pointer-events:none;
+}
+
+#slideout-menu ul {
+  list-style: none;
+  padding: 0 32px;
+}
+
+#slideout-menu ul li {
+  padding: 8px;
+}
+
+#slideout-menu a {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+#slideout-menu input {
+  width: 85%;
+  padding: 8px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* Sections */
+
+section {
+  display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
-  gap: var(--space-md);
-  color: var(--text-light);
-  font-size: 0.875rem;
 }
 
-/* ===== Responsive Design ===== */
+.section-heading {
+  font-size: 32px;
+  font-family: "Roboto Condensed", sans-serif;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  transition: all 0.4s;
+  display: inline-block;
+  padding: 4px 32px;
+}
 
-/* Tablet Styles (769px - 1024px) */
-@media (max-width: 1024px) and (min-width: 769px) {
-  :root {
-    --header-height: 90px;
-  }
-  .nav {
-    flex-wrap: wrap;
-    row-gap: 0.5rem;
-  }
-  .hero-content {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-2xl);
-    text-align: left;
-  }
-  
-  .hero-text {
-    order: 1;
-  }
-  
-  .hero-visual {
-    order: 2;
-  }
-  
-  .hero-stats {
-    justify-content: flex-start;
-  }
-  
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-lg);
-  }
-  
-  .feature-card {
-    padding: var(--space-xl);
-  }
-  
-  .footer-content {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-xl);
+.section-heading:hover {
+  padding: 4px 48px;
+  background: red;
+}
+
+/* Section Source */
+
+#section-source p {
+  padding: 8px;
+  text-align: center;
+}
+
+#section-source a {
+  margin: 8px;
+  text-align: center;
+}
+
+/* Card */
+
+.card-image {
+  transition: 0.4s;
+}
+
+.card-image:hover {
+  box-shadow: 0 10px 6px -6px #777;
+}
+
+.card .card-description {
+  padding: 0 8px;
+}
+
+.card-meta-blogpost{
+  color:#333;
+  font-size:14px;
+  padding: 16px;
+  font-family:'Roboto Slab', serif;
+}
+
+.card-meta-blogpost a{
+  color:#333;
+}
+
+/* Button Read more */
+
+.btn-readmore {
+  padding: 8px 24px;
+  border: 3px solid black;
+  transition: 0.4s;
+  display: inline-block;
+  margin-bottom: 24px;
+  margin-left: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  background: white;
+}
+
+.btn-readmore:hover {
+  background: red;
+  text-decoration: none;
+  padding: 8px 64px 8px 24px;
+  color: white;
+}
+
+/* Footer */
+
+footer {
+  background: #731224;
+  padding: 8px;
+  color: #eee;
+  display: flex;
+}
+
+footer a {
+  color: #eee;
+}
+
+footer #left-footer {
+  flex: 1;
+  border-right: 1px solid #ffbcc2;
+  padding-left: 32px;
+}
+
+footer #left-footer ul {
+  padding: 0;
+  list-style: none;
+  line-height: 1.5;
+}
+
+footer #right-footer {
+  flex: 2;
+  padding: 8px;
+  text-align: center;
+}
+
+/* Social Media Footer Styles */
+footer #social-media-footer ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  color: #eee;
+}
+
+footer #social-media-footer ul li {
+  font-size: 48px; /* Icon size */
+  padding: 16px;
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+footer #social-media-footer ul li a {
+  text-decoration: none;
+  color: white; /* Default icon color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.4s ease;
+}
+
+footer #social-media-footer ul li a i {
+  font-size: 48px; /* Adjust icon size */
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+/* Hover effects for each social icon */
+footer #social-media-footer ul li:hover i {
+  transform: scale(1.2); /* Enlarge icon on hover */
+}
+
+/* Specific hover colors for each social media platform */
+footer #social-media-footer ul li:nth-child(1):hover a i {
+  color: #0088cc; /* Telegram hover color */
+}
+
+footer #social-media-footer ul li:nth-child(2):hover a i {
+  color: #E4405F; /* Instagram hover color */
+}
+
+footer #social-media-footer ul li:nth-child(3):hover a i {
+  color: #FF0000; /* YouTube hover color */
+}
+
+footer #social-media-footer ul li:nth-child(4):hover a i {
+  color: #1DA1F2; /* Twitter (X) hover color */
+}
+
+footer #social-media-footer ul li:nth-child(5):hover a i {
+  color: #3b5998; /* Facebook hover color */
+}
+
+footer #social-media-footer ul li:nth-child(6):hover a i {
+  color: #e60023; /* Pinterest hover color */
+}
+
+/* Mobile view styling (change icon colors) footer */
+@media (max-width: 767px) {
+  footer #social-media-footer ul li a i {
+    color: #FFFFFF; /* Set all icons to white on mobile */
   }
 
-/* ===== Responsive Header (900px and below) ===== */
+  footer #social-media-footer ul li:hover a i {
+    /* Ensure hover effects are working as expected */
+    transform: scale(1.2);
+  }
+}
+
+
+/* Blog List page */
+
+.page-heading{
+  font-size:32px;
+  font-family:'Roboto Condensed', sans-serif;
+  border-left:3px solid black;
+  border-right:3px solid black;
+  transition: all 0.4s;
+  display:inline-block;
+  padding:4px 32px;
+  margin-top: 120px;
+}
+
+.page-heading:hover{
+  padding:4px 48px;
+  background:red;
+}
+
+.card-meta{
+  color:#333;
+  font-size: 14px;
+  padding-left:8px;
+  font-family:'Roboto Slab', serif;
+}
+
+.card-meta a{
+  color:#333;
+}
+
+/* Pagination */
+
+.pagination{
+  padding:8px;
+  text-align:center;
+  font-weight:bold;
+}
+
+.pagination a{
+  border-top: 3px solid white;
+  display: inline-block;
+  padding:8px 16px;
+  transition:0.4s;
+}
+
+.pagination a:hover{
+  text-decoration: none;
+  border-top:3px solid black;
+}
+
+/* Single Blogpost */
+
+#post-container{
+  display: flex;
+}
+
+#blogpost{
+  display: flex;
+  flex-direction:column;
+  width:70%;
+  border-left:1px solid #999;
+}
+
+#blogpost .card{
+  width:100%;
+}
+
+#blogpost .card-image:hover{
+  box-shadow: none;
+}
+
+/* Sidebar */
+
+#sidebar{
+  background:#333;
+  flex:1;
+  padding: 8px 16px;
+  color:white;
+  box-shadow: inset 27px 0 51px -18px rgba(0,0,0,0.75);
+}
+
+/* Comments section */
+
+#comments-section{
+  border-top: 2px solid #eee;
+  padding:8px;
+}
+
+
+/* Media Queries */
+
 @media (max-width: 900px) {
-  .nav-menu {
-    position: fixed;
-    top: var(--header-height);
-    left: -100%;
-    width: 100%;
-    height: calc(100vh - var(--header-height));
-    background: var(--bg-light);
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: var(--space-2xl);
-    transition: var(--transition-normal);
-    overflow-y: auto;
-    gap: var(--space-lg);
-  }
-
-  .nav-menu.active {
-    left: 0;
-  }
-
-  .nav-list {
-    flex-direction: column;
-    text-align: center;
-    gap: var(--space-md);
-  }
-
-  .nav-actions {
-    flex-direction: column;
-    gap: var(--space-md);
-    width: 100%;
-  }
-
-  .nav-toggle {
-    display: flex;
-  }
-
-  .nav {
-    justify-content: space-between;
-  }
-
-  /* Slightly reduce logo & font sizes for balance */
-  .logo {
-    font-size: 1.1rem;
-  }
-
-  .nav-link {
-    font-size: 1rem;
-    padding: var(--space-sm) 0;
-  }
-
-  .btn {
-    width: 100%;
-    max-width: 250px;
-    justify-content: center;
-  }
-}
-
-/* Large Phone / Tablet Styles (600px - 900px) */
-@media (min-width: 600px) and (max-width: 900px) {
-  .nav-link {
-    font-size: 0.9rem;
-    padding: 0.25rem 0.5rem;
-  }
-  .nav-list {
-    gap: 0.75rem;
-  }
-  .nav-actions .btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
-  }
-  .hero {
-    padding-top: calc(var(--header-height) + var(--space-2xl));
-  }
-
-  .hero-text {
-    margin-top: var(--space-lg);
-  }
-
-  .hero-title {
-    font-size: clamp(2rem, 4vw, 2.8rem);
-  }
-}
-
-
-  /* Adjust floating cards for tablet */
-  .floating-card {
-    position: relative;
-    display: inline-flex;
-    margin: 0 var(--space-sm) var(--space-sm) 0;
-    animation: none;
-  }
-  
-  .card-1, .card-2, .card-3 {
-    position: relative;
-    top: auto;
-    left: auto;
-    right: auto;
-    bottom: auto;
-  }
-  
-  .floating-elements {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: var(--space-lg);
-    gap: var(--space-sm);
-  }
-  
-  /* Better navigation for tablet */
-  .nav-list {
-    gap: var(--space-md);
-  }
-  
-  .nav-link {
-    padding: var(--space-sm);
-    font-size: 0.9rem;
-  }
-  
-  /* Improved typography for tablet */
-  .hero-title {
-    font-size: clamp(2rem, 4vw, 2.8rem);
-  }
-  
-  .hero-description {
-    font-size: 1.1rem;
-  }
-  
-  /* Tablet-specific button sizes */
-  .btn-large {
-    padding: var(--space-md) var(--space-lg);
-    font-size: 0.9rem;
-  }
-  
-  /* Improved spacing */
-  .hero {
-    padding: calc(var(--header-height) + var(--space-2xl)) 0 var(--space-2xl);
-  }
-  
-  .features {
-    padding: var(--space-2xl) 0;
-  }
-}
-
-/* Mobile Styles (768px and below) */
-@media (max-width: 768px) {
-  :root {
-    --header-height: 70px;
-    --section-spacing: 3rem;
-  }
-  
-  .hero-content {
-    grid-template-columns: 1fr;
-    gap: var(--space-2xl);
-    text-align: center;
-  }
-  
-  .hero-stats {
-    justify-content: center;
-  }
-  
-  .nav-menu {
-    position: fixed;
-    top: var(--header-height);
-    left: -100%;
-    width: 100%;
-    height: calc(100vh - var(--header-height));
-    background: var(--bg-light);
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: var(--space-2xl);
-    transition: var(--transition-normal);
-    overflow-y: auto;
-  }
-  
-  .nav-menu.active {
-    left: 0;
-  }
-  
-  .nav-list {
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-  }
-  
-  .nav-actions {
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  .nav-toggle {
-    display: flex;
-  }
-  
-  .nav-toggle.active .hamburger-bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-  }
-  
-  .nav-toggle.active .hamburger-bar:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .nav-toggle.active .hamburger-bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-  }
-  
-  .features-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .hero-actions {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .hero-actions .btn {
-    width: 100%;
-    max-width: 300px;
-    justify-content: center;
-  }
-  
-  .floating-card {
+  nav ul {
     display: none;
   }
-  
-  .footer-content {
-    grid-template-columns: 1fr;
+
+  #menu-icon {
+    display: flex;
   }
-  
-  .footer-bottom {
+
+  #slideout-menu {
+    display: block;
+  }
+
+  #searchbox {
+    display: none;
+  }
+
+  #blogpost{
+    width:100%;
+    border-left:0;
+  }
+
+  #sidebar{
+    display: none;
+  }
+}
+
+@media (max-width: 719px) {
+  main {
+    width: 95%;
+  }
+
+  section {
+    flex-direction: column;
+  }
+
+  .card,
+  .card .card-image img {
+    width: 100%;
+  }
+
+  footer {
     flex-direction: column;
     text-align: center;
   }
-}
 
-/* Small Mobile Styles (480px and below) */
-@media (max-width: 480px) {
-  .container {
-    padding: 0 var(--space-md);
-  }
-  
-  .hero-stats {
-    flex-direction: column;
-    gap: var(--space-lg);
-  }
-  
-  .cta-actions {
-    flex-direction: column;
-  }
-  
-  .cta-actions .btn {
-    width: 100%;
-    justify-content: center;
-  }
-  .hero-title {
-    font-size: clamp(1.8rem, 6vw, 2.2rem);
+  footer #left-footer {
+    flex: 1;
+    border-right: 0;
+    padding-left: 0;
   }
 
-  .hero-description {
-    font-size: 1rem;
-  }
-
-  .hero {
-    padding-top: calc(var(--header-height) + var(--space-2xl));
-  }
-}
-
-/* ===== Utility Classes ===== */
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
-
-.mt-0 { margin-top: 0; }
-.mb-0 { margin-bottom: 0; }
-.ml-0 { margin-left: 0; }
-.mr-0 { margin-right: 0; }
-
-.p-0 { padding: 0; }
-.p-1 { padding: var(--space-xs); }
-.p-2 { padding: var(--space-sm); }
-.p-3 { padding: var(--space-md); }
-.p-4 { padding: var(--space-lg); }
-.p-5 { padding: var(--space-xl); }
-
-/* ===== Print Styles ===== */
-@media print {
-  .header,
-  .footer,
-  .cta,
-  .floating-elements {
-    display: none;
-  }
-  
-  .hero {
-    padding: 2rem 0;
-  }
-  
-  .features {
-    padding: 2rem 0;
-  }
-  
-  body {
-    background: white;
+  footer #right-footer {
+    background: #eee;
     color: black;
   }
-}
 
-/* ===== Reduced Motion ===== */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  footer #right-footer a {
+    color: black;
   }
   
-  html {
-    scroll-behavior: auto;
+  footer #social-media-footer ul li a i {
+    font-size: 24px; /* Adjust icon size */
+    transition: transform 0.4s ease, color 0.4s ease;
+  }
+
+  footer #social-media-footer a .fa-telegram,
+  footer #social-media-footer a .fa-instagram,
+  footer #social-media-footer a .fa-youtube,
+  footer #social-media-footer a .fa-x-twitter,
+  footer #social-media-footer a .fa-facebook,
+  footer #social-media-footer a .fa-pinterest{
+    color: black;
+    transition: 0.4s;
   }
 }
 
-/* ===== High Contrast ===== */
-@media (prefers-contrast: high) {
-  :root {
-    --primary-color: #000000;
-    --text-primary: #000000;
-    --border-color: #000000;
+@media (max-width: 600px) {
+  main {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  #banner h3 {
+    font-size: 20px;
+  }
+
+  .card {
+    text-align: center;
+  }
+
+  #logo-img {
+    padding: 0;
+  }
+}
+
+@media (min-width: 720px) {
+  main {
+    width: 95%;
+  }
+  .card {
+    width: 45%;
+  }
+  .card .card-image img {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  main {
+    width: 85%;
   }
 }
 ================================================================================
 
-sw.js
-// Service Worker for Creative Biodata
-const CACHE_NAME = 'creative-biodata-v1.0.0';
-const STATIC_CACHE = 'static-v1';
-const DYNAMIC_CACHE = 'dynamic-v1';
+img\1.jpg
+# Binary or unreadable file
 
-// Assets to cache immediately
-const STATIC_ASSETS = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/main.js',
-  '/img/logo.webp',
-  '/img/favicon.ico',
-  'https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&family=Roboto+Slab&display=swap',
-  'https://kit.fontawesome.com/c13c5f9a3a.js'
-];
+================================================================================
 
-// Install event - cache static assets
-self.addEventListener('install', (event) => {
-  console.log('Service Worker installing...');
-  event.waitUntil(
-    caches.open(STATIC_CACHE)
-      .then(cache => {
-        console.log('Caching static assets');
-        return cache.addAll(STATIC_ASSETS);
-      })
-      .then(() => self.skipWaiting())
-  );
-});
+img\10.jpg
+# Binary or unreadable file
 
-// Activate event - cleanup old caches
-self.addEventListener('activate', (event) => {
-  console.log('Service Worker activating...');
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cache => {
-          if (cache !== STATIC_CACHE && cache !== DYNAMIC_CACHE) {
-            console.log('Deleting old cache:', cache);
-            return caches.delete(cache);
-          }
-        })
-      );
-    }).then(() => self.clients.claim())
-  );
-});
+================================================================================
 
-// Fetch event - serve from cache or network
-self.addEventListener('fetch', (event) => {
-  // Skip non-GET requests
-  if (event.request.method !== 'GET') return;
+img\11.jpg
+# Binary or unreadable file
 
-  event.respondWith(
-    caches.match(event.request)
-      .then(cachedResponse => {
-        // Return cached version if available
-        if (cachedResponse) {
-          return cachedResponse;
-        }
+================================================================================
 
-        // Otherwise fetch from network
-        return fetch(event.request)
-          .then(networkResponse => {
-            // Cache successful responses
-            if (networkResponse.status === 200) {
-              const responseToCache = networkResponse.clone();
-              caches.open(DYNAMIC_CACHE)
-                .then(cache => {
-                  cache.put(event.request, responseToCache);
-                });
-            }
-            return networkResponse;
-          })
-          .catch(error => {
-            // Fallback for failed requests
-            console.log('Fetch failed; returning offline page:', error);
-            
-            // For HTML requests, return offline page
-            if (event.request.headers.get('accept').includes('text/html')) {
-              return caches.match('/offline.html');
-            }
-          });
-      })
-  );
-});
+img\12.jpg
+# Binary or unreadable file
 
-// Background sync for offline actions
-self.addEventListener('sync', (event) => {
-  if (event.tag === 'background-sync') {
-    console.log('Background sync triggered');
-    event.waitUntil(doBackgroundSync());
-  }
-});
+================================================================================
 
-async function doBackgroundSync() {
-  // Implement background sync logic here
-  console.log('Performing background sync...');
-}
+img\13.jpg
+# Binary or unreadable file
+
+================================================================================
+
+img\2.jpg
+# Binary or unreadable file
+
+================================================================================
+
+img\3.jpg
+# Binary or unreadable file
+
+================================================================================
+
+img\3.png
+# Binary or unreadable file
+
+================================================================================
+
+img\33.jpg
+# Binary or unreadable file
+
+================================================================================
+
+img\4.jpg
+# Binary or unreadable file
+
+================================================================================
+
+img\5.jpg
+# Binary or unreadable file
+
+================================================================================
+
+img\6.jpg
+# Binary or unreadable file
+
+================================================================================
+
+img\7.jpg
+# Binary or unreadable file
+
+================================================================================
+
+img\8.jpg
+# Binary or unreadable file
+
+================================================================================
+
+img\9.jpg
+# Binary or unreadable file
+
+================================================================================
+
+img\code.jpg
+# Binary or unreadable file
+
+================================================================================
+
+img\logo.png
+# Binary or unreadable file
+
+================================================================================
+
+img\main-bg.jpg
+# Binary or unreadable file
+
+================================================================================
+
+img\main-bg1.jpg
+# Binary or unreadable file
+
+================================================================================
+
+img\search-icon.png
+# Binary or unreadable file
+
 ================================================================================
 

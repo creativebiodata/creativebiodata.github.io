@@ -1,500 +1,239 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Universal responsive website template for any business or personal use">
-    <meta name="keywords" content="responsive, template, website, business, portfolio">
-    <meta name="author" content="Your Name">
-
-    <!-- Preload critical resources -->
-    <!-- Main Styles -->
-    <link rel="preload" href="style.css" as="style">
-    <!-- Templates Section Styles -->
-    <link rel="stylesheet" href="templates.css">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-        as="style">
-
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://kit.fontawesome.com">
-
-    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/c13c5f9a3a.js" crossorigin="anonymous"></script>
-
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&family=Roboto+Slab&display=swap"
         rel="stylesheet">
-
-    <!-- Main Styles -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
-
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
-
-    <title>Universal - Responsive Website Template</title>
-
-    <style>
-        /* ===== CRITICAL CSS ===== */
-        /* Above-the-fold styles only */
-
-        /* Base layout */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #e9ecef;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-decoration: none;
-            color: #2b2d42;
-        }
-
-        /* Hero section - most critical */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 80px 2rem 2rem;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .hero-title {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            color: #2b2d42;
-        }
-
-        .hero-description {
-            font-size: 1.25rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-            color: #6c757d;
-            max-width: 600px;
-        }
-
-        /* Ensure content is visible while fonts load */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-
-        .fonts-loaded body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-    </style>
+    <title>Creative Marriage Biodata</title>
 </head>
 
 <body>
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="slideout-menu">
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="blogslist.html">Templates</a>
+            </li>
+            <li>
+                <a href="blogslist.html">Projects</a>
+            </li>
+            <li>
+                <a href="about.html">About</a>
+            </li>
+            <li>
+                <input type="text" placeholder="Search Here">
+            </li>
+        </ul>
+    </div>
 
-    <!-- Header & Navigation -->
-    <header class="header">
-        <nav class="nav" role="navigation">
-            <div class="nav-brand">
-                <a href="index.html" class="logo">
-                    <span class="logo-icon">🚀</span>
-                    <span class="logo-text">CreativeBiodata</span>
-                </a>
+    <nav>
+        <div id="logo-img">
+            <a href="#">
+                <img src="img/logo.png" alt="Creative Biodata Logo">
+            </a>
+        </div>
+        <div id="menu-icon">
+            <span class="material-icons">menu</span>
+        </div>
+        <ul>
+            <li>
+                <a class="active" href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="blogslist.html">Templates</a>
+            </li>
+            <li>
+                <a href="blogslist.html">Projects</a>
+            </li>
+            <li>
+                <a href="about.html">About</a>
+            </li>
+            <li>
+                <div id="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="searchbox">
+        <input type="text" placeholder="Search Here">
+    </div>
+
+    <div id="banner">
+        <h1>Personalize</h1>
+        <h3>Design Your Perfect Biodata</h3>
+    </div>
+
+    <main>
+        <a href="blogslist.html">
+            <h2 class="section-heading">All Blogs</h2>
+        </a>
+
+        <section>
+            <div class="card">
+                <div class="card-image">
+                    <a href="blogpost.html">
+                        <img src="img/1.jpg" alt="Card Image">
+                    </a>
+                </div>
+
+                <div class="card-description">
+                    <a href="blogpost.html">
+                        <h3>The Blog Title Here</h3>
+                    </a>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur
+                        eligendi sit accusamus tempora
+                        cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio
+                        nulla.
+                    </p>
+                    <a href="blogpost.html" class="btn-readmore">Read more</a>
+                </div>
             </div>
-            <div class="nav-menu" id="nav-menu">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link active" aria-current="page">Home</a>
+
+            <div class="card">
+                <div class="card-image">
+                    <a href="blogpost.html">
+                        <img src="img/2.jpg" alt="Card Image">
+                    </a>
+                </div>
+
+                <div class="card-description">
+                    <a href="blogpost.html">
+                        <h3>The Blog Title Here</h3>
+                    </a>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur
+                        eligendi sit accusamus tempora
+                        cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio
+                        nulla.
+                    </p>
+                    <a href="blogpost.html" class="btn-readmore">Read more</a>
+                </div>
+            </div>
+        </section>
+
+        <a href="blogslist.html">
+            <h2 class="section-heading">All Projects</h2>
+        </a>
+
+        <section>
+            <div class="card">
+                <div class="card-image">
+                    <a href="blogpost.html">
+                        <img src="img/3.jpg" alt="Card Image">
+                    </a>
+                </div>
+
+                <div class="card-description">
+                    <a href="blogpost.html">
+                        <h3>The Project Title Here</h3>
+                    </a>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur
+                        eligendi sit accusamus tempora
+                        cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio
+                        nulla.
+                    </p>
+                    <a href="blogpost.html" class="btn-readmore">Read more</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <a href="blogpost.html">
+                        <img src="img/4.jpg" alt="Card Image">
+                    </a>
+                </div>
+
+                <div class="card-description">
+                    <a href="blogpost.html">
+                        <h3>The Project Title Here</h3>
+                    </a>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur
+                        eligendi sit accusamus tempora
+                        cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio
+                        nulla.
+                    </p>
+                    <a href="blogpost.html" class="btn-readmore">Read more</a>
+                </div>
+            </div>
+        </section>
+
+        <h2 class="section-heading">Source Code</h2>
+
+        <section id="section-source">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum neque qui delectus ad dolor blanditiis
+                perferendis praesentium
+                consectetur aut sed provident obcaecati aspernatur perspiciatis, dolores nobis pariatur ipsum vel
+                corrupti!
+            </p>
+            <a href="#" class="btn-readmore">GitHub Profile</a>
+        </section>
+
+        <footer>
+            <div id="left-footer">
+                <h3>Direct Links</h3>
+                <p>
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="pages/templates.html" class="nav-link">Templates</a>
+                    <li>
+                        <a href="about.html">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="pages/services.html" class="nav-link">Services</a>
+                    <li>
+                        <a href="#">Privacy Policy</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="pages/about.html" class="nav-link">About</a>
+                    <li>
+                        <a href="blogslist.html">Blogs</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="pages/contact.html" class="nav-link">Contact</a>
+                    <li>
+                        <a href="blogslist.html">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
                     </li>
                 </ul>
-                <div class="nav-actions">
-                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-                        <i class="fas fa-moon" aria-hidden="true"></i>
-                    </button>
-                    <button class="btn btn-primary">Get Started</button>
-                </div>
-            </div>
-            <div class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-label="Toggle navigation menu">
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <span class="hero-badge">Trusted by Families</span>
-                    <h1 class="hero-title">
-                        Create Your Perfect
-                        <span class="text-gradient">Marriage Biodata</span>
-                        In Minutes
-                    </h1>
-                    <p class="hero-description">
-                        A secure, elegant, and easy-to-use biodata generator for individuals and families.
-                        Professionally formatted, fully customizable, and ready to share with prospective matches.
-                    </p>
-                    <div class="hero-actions">
-                        <button class="btn btn-primary btn-large">
-                            Create Your Free Biodata
-                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                        </button>
-                        <button class="btn btn-secondary btn-large">
-                            <i class="fas fa-file-alt" aria-hidden="true"></i>
-                            View Templates
-                        </button>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Customizable</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">5★</span>
-                            <span class="stat-label">Rated Templates</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">10,000+</span>
-                            <span class="stat-label">Users Satisfied</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="hero-image">
-                        <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            srcset="https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80 400w, 
-                                    https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 800w"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
-                            alt="Modern website dashboard interface showing responsive design" loading="eager"
-                            width="600" height="400">
-                    </div>
-                    <div class="floating-elements">
-                        <div class="floating-card card-1">
-                            <i class="fas fa-edit"></i>
-                            <span>Easy to Fill</span>
-                        </div>
-                        <div class="floating-card card-2">
-                            <i class="fas fa-paint-brush"></i>
-                            <span>Beautiful Designs</span>
-                        </div>
-                        <div class="floating-card card-3">
-                            <i class="fas fa-share-alt"></i>
-                            <span>Share Instantly</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Templates Section -->
-   
-<section class="templates-section">
-  <div class="section-header">
-    <h1 class="section-title">Explore Templates</h1>
-    <p class="section-subtitle">Choose a style that suits your story. Click any design to preview.</p>
-  </div>
-
-  <div class="tabs" id="tabs">
-    <button class="tab active" data-target="elegant">Elegant</button>
-    <button class="tab" data-target="royal">Royal</button>
-    <button class="tab" data-target="modern">Modern</button>
-    <button class="tab" data-target="creative">Creative</button>
-  </div>
-
-  <div class="carousel-stage" id="carouselStage">
-    <div id="elegant-wrapper" class="carousel-wrapper active" data-category="elegant">
-      <button class="arrow-btn arrow-left"><i data-lucide="chevron-left"></i></button>
-      <div id="elegant" class="carousel-container"></div>
-      <button class="arrow-btn arrow-right"><i data-lucide="chevron-right"></i></button>
-    </div>
-
-    <div id="royal-wrapper" class="carousel-wrapper" data-category="royal">
-      <button class="arrow-btn arrow-left"><i data-lucide="chevron-left"></i></button>
-      <div id="royal" class="carousel-container"></div>
-      <button class="arrow-btn arrow-right"><i data-lucide="chevron-right"></i></button>
-    </div>
-
-    <div id="modern-wrapper" class="carousel-wrapper" data-category="modern">
-      <button class="arrow-btn arrow-left"><i data-lucide="chevron-left"></i></button>
-      <div id="modern" class="carousel-container"></div>
-      <button class="arrow-btn arrow-right"><i data-lucide="chevron-right"></i></button>
-    </div>
-
-    <div id="creative-wrapper" class="carousel-wrapper" data-category="creative">
-      <button class="arrow-btn arrow-left"><i data-lucide="chevron-left"></i></button>
-      <div id="creative" class="carousel-container"></div>
-      <button class="arrow-btn arrow-right"><i data-lucide="chevron-right"></i></button>
-    </div>
-  </div>
-
-  <a href="/templates" class="view-all-btn">View All Templates</a>
-</section>
-
-<!-- Modal -->
-<div class="modal" id="previewModal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h3 id="modalTitle"></h3>
-      <button class="close-btn" id="closeModal"><i data-lucide="x"></i></button>
-    </div>
-    <div class="modal-body">
-      <div class="preview-container">
-        <img id="modalImage" src="" alt="Template Preview">
-        <div class="watermark">SAMPLE | CreativeBiodata.com</div>
-      </div>
-      <div class="modal-details">
-        <p id="modalDesc"></p>
-        <ul id="modalFeatures"></ul>
-        <div class="modal-actions">
-          <button class="action-btn use-btn" onclick="useTemplate()">Use This Template</button>
-          <button class="action-btn sample-btn" onclick="downloadSample()">Download Sample</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    <!-- Features Section -->
-    <section class="features" id="main-content">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Why Choose Us</span>
-                <h2 class="section-title">Perfect Biodata, Every Time</h2>
-                <p class="section-description">
-                    Create a professional, culturally appropriate marriage biodata in minutes — no design skills needed.
                 </p>
             </div>
-            <div class="features-grid">
-                <!-- Card 1 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-file-alt" aria-hidden="true"></i>
-                    </div>
-                    <h3>Ready-Made Templates</h3>
-                    <p>Choose from elegant, traditional, and modern biodata layouts.</p>
-                    <ul class="feature-list">
-                        <li>Hindu, Muslim, Christian styles</li>
-                        <li>Regional language support</li>
-                        <li>Print & digital optimized</li>
-                    </ul>
-                </div>
 
-                <!-- Card 2 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-lock" aria-hidden="true"></i>
-                    </div>
-                    <h3>100% Private</h3>
-                    <p>Your data never leaves your device. Nothing is stored or shared.</p>
-                    <ul class="feature-list">
-                        <li>No account required</li>
-                        <li>No cloud storage</li>
-                        <li>GDPR-compliant</li>
+            <div id="right-footer">
+                <h3>Discover More</h3>
+                <div id="social-media-footer">
+                    <ul>
+                        <li><a href="https://www.telegram.me/creativebiodata"><i
+                                    class="fa-brands fa-telegram"></i></span></a></li>
+                        <li><a href="https://www.instagram.com/creativebiodata"><i
+                                    class="fa-brands fa-instagram"></i></span></a></li>
+                        <li><a href="https://www.youtube.com/@creativebiodata"><i
+                                    class="fa-brands fa-youtube"></i></span></a></li>
+                        <li><a href="https://www.twitter.com/creativebiodata"><i
+                                    class="fa-brands fa-x-twitter"></i></span></a></li>
+                        <li><a href="https://www.facebook.com/creativebiodata"><i
+                                    class="fa-brands fa-facebook"></i></span></a></li>
+                        <li><a href="https://www.pinterest.com/creativebiodata"><i
+                                    class="fa-brands fa-pinterest"></i></span></a></li>
                     </ul>
                 </div>
-
-                <!-- Card 3 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-download" aria-hidden="true"></i>
-                    </div>
-                    <h3>Instant PDF & Image</h3>
-                    <p>Download high-quality PDF or share as image on WhatsApp.</p>
-                    <ul class="feature-list">
-                        <li>One-click export</li>
-                        <li>Print-ready format</li>
-                        <li>Mobile-friendly image</li>
-                    </ul>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-edit" aria-hidden="true"></i>
-                    </div>
-                    <h3>Easy to Fill</h3>
-                    <p>Simple form with smart fields — complete in under 2 minutes.</p>
-                    <ul class="feature-list">
-                        <li>Auto-suggestions</li>
-                        <li>Save & resume later</li>
-                        <li>Real-time preview</li>
-                    </ul>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt" aria-hidden="true"></i>
-                    </div>
-                    <h3>Works on Mobile</h3>
-                    <p>Fully responsive — create your biodata from any phone or tablet.</p>
-                    <ul class="feature-list">
-                        <li>No app install needed</li>
-                        <li>Works offline</li>
-                        <li>Fast on slow networks</li>
-                    </ul>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-heart" aria-hidden="true"></i>
-                    </div>
-                    <h3>Trusted by Families</h3>
-                    <p>Used by thousands of families across India, Middle East, and beyond.</p>
-                    <ul class="feature-list">
-                        <li>Culturally sensitive</li>
-                        <li>Family-approved format</li>
-                        <li>Free forever</li>
-                    </ul>
-                </div>
+                <p>Crafted with <span style="color: red;"><i class="fa-solid fa-heart"></i></span> by PARAM</p>
             </div>
-        </div>
-    </section>
+        </footer>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Create Your Biodata?</h2>
-                <p>Join thousands of families who’ve found their perfect match with our biodata tool</p>
-                <div class="cta-actions">
-                    <button class="btn btn-primary btn-large">Create Your Biodata</button>
-                    <button class="btn btn-secondary btn-large">View Sample</button>
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-brand">
-                        <a href="index.html" class="logo">
-                            <span class="logo-icon">🚀</span>
-                            <span class="logo-text">Creative Biodata</span>
-                        </a>
-                        <p class="footer-description">
-                            Create beautiful, culturally thoughtful marriage biodatas in minutes. Trusted by thousands
-                            of families across India and beyond.
-                        </p>
-                        <div class="social-links">
-                            <a href="https://www.telegram.me/creativebiodata" aria-label="Telegram"><i
-                                    class="fab fa-telegram"></i></a>
-                            <a href="https://www.instagram.com/creativebiodata" aria-label="Instagram"><i
-                                    class="fab fa-instagram"></i></a>
-                            <a href="https://www.youtube.com/@creativebiodata" aria-label="YouTube"><i
-                                    class="fab fa-youtube"></i></a>
-                            <a href="https://www.x.com/creativebiodata" aria-label="Twitter"><i
-                                    class="fab fa-twitter"></i></a>
-                            <a href="https://www.pinterest.com/creativebiodata" aria-label="Pinterest"><i
-                                    class="fab fa-pinterest"></i></a>
-                            <a href="https://www.facebook.com/creativebiodata" aria-label="Facebook"><i
-                                    class="fab fa-facebook"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="pages/templates.html">Templates</a></li>
-                        <li><a href="pages/services.html">Services</a></li>
-                        <li><a href="pages/about.html">About</a></li>
-                        <li><a href="pages/contact.html">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Resources</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">Tutorials</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Legal</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">License</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2025 Creative Biodata. All rights reserved.</p>
-                <div class="footer-meta">
-                    <span>Made with <i class="fas fa-heart" style="color: #e25555;"></i> for the web</span>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Global JS -->
-    <script src="main.js" defer></script>
-
-    <!-- Templates JS -->
-<script src="https://unpkg.com/lucide@latest"></script>
-<script src="templatesSection.js"></script>
-
+    <script src="main.js"></script>
 </body>
 
 </html>
