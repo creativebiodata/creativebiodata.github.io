@@ -1,239 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://kit.fontawesome.com/c13c5f9a3a.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&family=Roboto+Slab&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Creative Marriage Biodata</title>
+    <title>Under Maintenance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 500px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .icon {
+            font-size: 6rem;
+            margin-bottom: 1rem;
+            display: block;
+            animation: bounce 2s infinite;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255,255,255,0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 2rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .icon { font-size: 4rem; }
+        }
+    </style>
 </head>
-
 <body>
-    <div id="slideout-menu">
-        <ul>
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-            <li>
-                <a href="blogslist.html">Templates</a>
-            </li>
-            <li>
-                <a href="blogslist.html">Projects</a>
-            </li>
-            <li>
-                <a href="about.html">About</a>
-            </li>
-            <li>
-                <input type="text" placeholder="Search Here">
-            </li>
-        </ul>
+    <div class="container">
+        <div class="icon">🔧</div>
+        <h1>Under Maintenance</h1>
+        <p>We're making some improvements. We'll be back soon!</p>
+        <div class="spinner"></div>
     </div>
 
-    <nav>
-        <div id="logo-img">
-            <a href="#">
-                <img src="img/logo.png" alt="Creative Biodata Logo">
-            </a>
-        </div>
-        <div id="menu-icon">
-            <span class="material-icons">menu</span>
-        </div>
-        <ul>
-            <li>
-                <a class="active" href="index.html">Home</a>
-            </li>
-            <li>
-                <a href="blogslist.html">Templates</a>
-            </li>
-            <li>
-                <a href="blogslist.html">Projects</a>
-            </li>
-            <li>
-                <a href="about.html">About</a>
-            </li>
-            <li>
-                <div id="search-icon">
-                    <i class="fas fa-search"></i>
-                </div>
-            </li>
-        </ul>
-    </nav>
+    <script>
+        // Simple JS for a subtle background particle effect
+        function createParticles() {
+            const particles = [];
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'fixed';
+                particle.style.width = '2px';
+                particle.style.height = '2px';
+                particle.style.background = 'rgba(255,255,255,0.5)';
+                particle.style.borderRadius = '50%';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.pointerEvents = 'none';
+                particle.style.animation = `float ${Math.random() * 3 + 2}s infinite ease-in-out`;
+                document.body.appendChild(particle);
+                particles.push(particle);
+            }
+        }
 
-    <div id="searchbox">
-        <input type="text" placeholder="Search Here">
-    </div>
+        // Add floating animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.5; }
+                50% { transform: translateY(-10px) rotate(180deg); opacity: 1; }
+            }
+        `;
+        document.head.appendChild(style);
 
-    <div id="banner">
-        <h1>Personalize</h1>
-        <h3>Design Your Perfect Biodata</h3>
-    </div>
-
-    <main>
-        <a href="blogslist.html">
-            <h2 class="section-heading">All Blogs</h2>
-        </a>
-
-        <section>
-            <div class="card">
-                <div class="card-image">
-                    <a href="blogpost.html">
-                        <img src="img/1.jpg" alt="Card Image">
-                    </a>
-                </div>
-
-                <div class="card-description">
-                    <a href="blogpost.html">
-                        <h3>The Blog Title Here</h3>
-                    </a>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur
-                        eligendi sit accusamus tempora
-                        cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio
-                        nulla.
-                    </p>
-                    <a href="blogpost.html" class="btn-readmore">Read more</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image">
-                    <a href="blogpost.html">
-                        <img src="img/2.jpg" alt="Card Image">
-                    </a>
-                </div>
-
-                <div class="card-description">
-                    <a href="blogpost.html">
-                        <h3>The Blog Title Here</h3>
-                    </a>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur
-                        eligendi sit accusamus tempora
-                        cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio
-                        nulla.
-                    </p>
-                    <a href="blogpost.html" class="btn-readmore">Read more</a>
-                </div>
-            </div>
-        </section>
-
-        <a href="blogslist.html">
-            <h2 class="section-heading">All Projects</h2>
-        </a>
-
-        <section>
-            <div class="card">
-                <div class="card-image">
-                    <a href="blogpost.html">
-                        <img src="img/3.jpg" alt="Card Image">
-                    </a>
-                </div>
-
-                <div class="card-description">
-                    <a href="blogpost.html">
-                        <h3>The Project Title Here</h3>
-                    </a>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur
-                        eligendi sit accusamus tempora
-                        cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio
-                        nulla.
-                    </p>
-                    <a href="blogpost.html" class="btn-readmore">Read more</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image">
-                    <a href="blogpost.html">
-                        <img src="img/4.jpg" alt="Card Image">
-                    </a>
-                </div>
-
-                <div class="card-description">
-                    <a href="blogpost.html">
-                        <h3>The Project Title Here</h3>
-                    </a>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur
-                        eligendi sit accusamus tempora
-                        cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio
-                        nulla.
-                    </p>
-                    <a href="blogpost.html" class="btn-readmore">Read more</a>
-                </div>
-            </div>
-        </section>
-
-        <h2 class="section-heading">Source Code</h2>
-
-        <section id="section-source">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum neque qui delectus ad dolor blanditiis
-                perferendis praesentium
-                consectetur aut sed provident obcaecati aspernatur perspiciatis, dolores nobis pariatur ipsum vel
-                corrupti!
-            </p>
-            <a href="#" class="btn-readmore">GitHub Profile</a>
-        </section>
-
-        <footer>
-            <div id="left-footer">
-                <h3>Direct Links</h3>
-                <p>
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Privacy Policy</a>
-                    </li>
-                    <li>
-                        <a href="blogslist.html">Blogs</a>
-                    </li>
-                    <li>
-                        <a href="blogslist.html">Projects</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-                </p>
-            </div>
-
-            <div id="right-footer">
-                <h3>Discover More</h3>
-                <div id="social-media-footer">
-                    <ul>
-                        <li><a href="https://www.telegram.me/creativebiodata"><i
-                                    class="fa-brands fa-telegram"></i></span></a></li>
-                        <li><a href="https://www.instagram.com/creativebiodata"><i
-                                    class="fa-brands fa-instagram"></i></span></a></li>
-                        <li><a href="https://www.youtube.com/@creativebiodata"><i
-                                    class="fa-brands fa-youtube"></i></span></a></li>
-                        <li><a href="https://www.twitter.com/creativebiodata"><i
-                                    class="fa-brands fa-x-twitter"></i></span></a></li>
-                        <li><a href="https://www.facebook.com/creativebiodata"><i
-                                    class="fa-brands fa-facebook"></i></span></a></li>
-                        <li><a href="https://www.pinterest.com/creativebiodata"><i
-                                    class="fa-brands fa-pinterest"></i></span></a></li>
-                    </ul>
-                </div>
-                <p>Crafted with <span style="color: red;"><i class="fa-solid fa-heart"></i></span> by PARAM</p>
-            </div>
-        </footer>
-
-    </main>
-
-    <script src="main.js"></script>
+        // Initialize particles on load
+        window.addEventListener('load', createParticles);
+    </script>
 </body>
-
 </html>
