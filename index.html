@@ -25,50 +25,64 @@
     .btn-success { background: #2e7d32; }
     .btn-outline { background: transparent; border: 1px solid #1976d2; color: #1976d2; }
 
-    /* ✅ Responsive A4 Preview */
+    /* ✅ Mobile-first Biodata Preview & Export */
     .preview-container {
-      overflow: auto;
       margin: 0 auto;
       max-width: 100%;
-      background: #f1f3f5;
-      border-radius: 8px;
-      padding: 8px;
     }
-    @media (min-width: 900px) {
-      .preview-container {
-        background: transparent;
-        padding: 0;
-      }
-    }
-    .a4 {
-      max-width: 100%;
-      min-height: 297mm;
-      padding: 20mm;
+    .mobile-biodata {
+      width: 100%;
+      max-width: 210mm;
+      margin: 0 auto;
       background: white;
+      padding: 24px;
       box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-      font-size: 13px;
+      font-size: 14px;
       line-height: 1.6;
+      border-radius: 8px;
       box-sizing: border-box;
     }
-    @media (min-width: 900px) {
-      .a4 {
-        width: 210mm;
-        margin: 0 auto;
+    @media (max-width: 600px) {
+      .mobile-biodata {
+        padding: 16px;
+        font-size: 15px;
+      }
+      .info label {
+        flex: 0 0 110px;
+        font-size: 0.9em;
       }
     }
-    .section { margin: 18px 0; }
-    .section h3 { border-bottom: 2px solid #d32f2f; padding-bottom: 4px; color: #d32f2f; margin: 20px 0 10px; }
+
+    .section { margin: 20px 0; }
+    .section h3 { 
+      border-bottom: 2px solid #d32f2f; 
+      padding-bottom: 4px; 
+      color: #d32f2f; 
+      margin: 16px 0 12px; 
+      font-size: 1.2rem;
+    }
     .info { display: flex; margin: 6px 0; flex-wrap: wrap; }
-    .info label { flex: 0 0 150px; font-weight: 600; color: #2c3e50; }
-    .info span { flex: 1; min-width: 0; word-break: break-word; }
-    @media print { body { background: white; } .form, .btn-group { display: none; } }
+    .info label { 
+      flex: 0 0 130px; 
+      font-weight: 600; 
+      color: #2c3e50; 
+    }
+    .info span { 
+      flex: 1; 
+      min-width: 0; 
+      word-break: break-word; 
+    }
+    @media print { 
+      body { background: white; } 
+      .form, .btn-group { display: none; } 
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1><i class="fas fa-heart"></i> CREATIVEBIODATA.COM | Free Shaadi Biodata Maker</h1>
     <p class="tagline">
-      Biodata Generator for Marriage - Fill and downlaod instantly. Trusted by thousands. ✅ No signup. ✅ 100% free.
+      Biodata Generator for Marriage - Fill and download instantly. Trusted by thousands. ✅ No signup. ✅ 100% free.
     </p>
 
     <div class="form">
@@ -170,11 +184,11 @@
       <div class="grid">
         <div class="form-group">
           <label>Brothers</label>
-          <input id="brother" placeholder="e.g., 1 add one or more brother here">
+          <input id="brother" placeholder="e.g., 1 (Married)">
         </div>
         <div class="form-group">
           <label>Sisters</label>
-          <input id="sister" placeholder="e.g., 1 add one or more sister here">
+          <input id="sister" placeholder="e.g., 1 (Unmarried)">
         </div>
       </div>
 
@@ -196,9 +210,8 @@
 
     <!-- Preview & Export -->
     <div class="preview" id="previewSection" style="display:none;">
-      <!-- ✅ Responsive wrapper added -->
       <div class="preview-container">
-        <div class="a4" id="biodataOutput">
+        <div class="mobile-biodata" id="biodataOutput">
           <!-- Filled by JS -->
         </div>
       </div>
@@ -218,7 +231,7 @@
     function formatDate(dateStr) {
       if (!dateStr) return '';
       const d = new Date(dateStr);
-      return d.toLocaleDateString('en-GB'); // DD/MM/YYYY
+      return d.toLocaleDateString('en-GB');
     }
 
     function generatePreview() {
@@ -251,7 +264,6 @@
       let html = `<h2 style="text-align:center;color:#d32f2f;">Biodata</h2>`;
       if (data.name) html += `<h3 style="text-align:center;margin:10px 0;">${data.name}</h3>`;
 
-      // Personal
       html += `<div class="section"><h3>Personal Information</h3>`;
       if (data.dob || data.tob) {
         let dt = formatDate(data.dob);
@@ -272,7 +284,6 @@
       if (data.income) html += `<div class="info"><label>Annual Income:</label><span>${data.income}</span></div>`;
       html += `</div>`;
 
-      // Family
       html += `<div class="section"><h3>Family Details</h3>`;
       if (data.fatherName) html += `<div class="info"><label>Father's Name:</label><span>${data.fatherName}</span></div>`;
       if (data.fatherOcc) html += `<div class="info"><label>Father's Occupation:</label><span>${data.fatherOcc}</span></div>`;
@@ -282,14 +293,12 @@
       if (data.sister) html += `<div class="info"><label>Sisters:</label><span>${data.sister}</span></div>`;
       html += `</div>`;
 
-      // Contact
       html += `<div class="section"><h3>Contact Details</h3>`;
       if (data.address) html += `<div class="info"><label>Address:</label><span>${data.address.replace(/\n/g, '<br>')}</span></div>`;
       if (data.contact) html += `<div class="info"><label>Contact:</label><span>${data.contact}</span></div>`;
       html += `</div>`;
 
-      // ✅ WATERMARK — restored for branding & SEO
-      html += `<div style="text-align:center; font-size:0.8em; color:#999; margin-top:30px; line-height:1.4;">
+      html += `<div style="text-align:center; font-size:0.85em; color:#888; margin-top:24px; line-height:1.5;">
         <i class="fas fa-copyright"></i> Generated using 
         <a href="https://creativebiodata.com" target="_blank" style="color:#d32f2f; text-decoration:none; font-weight:600;">
           creativebiodata.com
@@ -302,7 +311,6 @@
       window.scrollTo({ top: document.getElementById('previewSection').offsetTop - 20, behavior: 'smooth' });
     }
 
-    // Export Functions
     async function downloadPNG() {
       const el = document.getElementById('biodataOutput');
       const canvas = await html2canvas(el, { scale: 2, backgroundColor: '#ffffff' });
@@ -319,14 +327,27 @@
       const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF('p', 'mm', 'a4');
       const imgWidth = 190;
+      const pageHeight = 297;
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
-      pdf.addImage(imgData, 'PNG', 10, 10, imgWidth, Math.min(imgHeight, 277));
-      pdf.save('matrimonial_biodata.pdf');
+      let heightLeft = imgHeight;
+      let position = 0;
+
+      pdf.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight + 10;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+
+      pdf.save(`${$('name') || 'biodata'}.pdf`);
     }
 
     function shareWhatsApp() {
       const name = $('name') || 'My';
-      const msg = `📄 *${name}'s Matrimonial Biodata*\n\nCreated using: https://creativebiodata.com\n\n👉 Best free biodata maker for shaadi in India.`;
+      const msg = `📄 *${name}'s Matrimonial Biodata*\n\nGenerated using: https://creativebiodata.com\n\n✅ Professional • Free • Instant`;
       const url = `https://wa.me/?text=${encodeURIComponent(msg)}`;
       window.open(url, '_blank');
     }
