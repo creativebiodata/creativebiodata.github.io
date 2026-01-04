@@ -1,137 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Maintenance</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Shaadi Biodata Maker | Biodata Generator – creativebiodata.com</title>
+  <meta name="description" content="Create professional Indian matrimonial biodata instantly. Free biodata maker for shaadi — include horoscope, family, contact. Download PDF or PNG.">
+  <meta name="keywords" content="shaadi biodata, biodata maker, biodata generator, marriage biodata, creativebiodata.com, indian biodata, free biodata online, rashi manglik biodata, matrimonial biodata pdf">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 16px; background: #f8f9fc; color: #333; }
+    .container { max-width: 800px; margin: 0 auto; }
+    h1 { text-align: center; margin: 16px 0; color: #d32f2f; font-size: 1.6rem; }
+    .tagline { text-align: center; color: #666; margin-bottom: 20px; font-size: 0.95rem; }
+    .form, .preview { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 3px 12px rgba(0,0,0,0.08); margin-bottom: 24px; }
+    .form-group { margin: 12px 0; }
+    label { display: block; font-weight: 600; margin-bottom: 5px; font-size: 0.9em; color: #2c3e50; }
+    input, select, textarea { width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-family: inherit; }
+    textarea { height: 60px; resize: vertical; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+    .btn { background: #d32f2f; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-weight: 600; margin-top: 10px; display: inline-flex; align-items: center; gap: 6px; }
+    .btn:hover { background: #b71c1c; }
+    .btn-success { background: #2e7d32; }
+    .btn-outline { background: transparent; border: 1px solid #1976d2; color: #1976d2; }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .container {
-            text-align: center;
-            max-width: 500px;
-            padding: 2rem;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: pulse 2s infinite;
-        }
-
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .icon {
-            font-size: 6rem;
-            margin-bottom: 1rem;
-            display: block;
-            animation: bounce 2s infinite;
-        }
-
-        .spinner {
-            border: 4px solid rgba(255,255,255,0.3);
-            border-top: 4px solid white;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 2rem;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .icon { font-size: 4rem; }
-        }
-    </style>
+    /* ✅ Responsive A4 Preview */
+    .preview-container {
+      overflow: auto;
+      margin: 0 auto;
+      max-width: 100%;
+      background: #f1f3f5;
+      border-radius: 8px;
+      padding: 8px;
+    }
+    @media (min-width: 900px) {
+      .preview-container {
+        background: transparent;
+        padding: 0;
+      }
+    }
+    .a4 {
+      max-width: 100%;
+      min-height: 297mm;
+      padding: 20mm;
+      background: white;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      font-size: 13px;
+      line-height: 1.6;
+      box-sizing: border-box;
+    }
+    @media (min-width: 900px) {
+      .a4 {
+        width: 210mm;
+        margin: 0 auto;
+      }
+    }
+    .section { margin: 18px 0; }
+    .section h3 { border-bottom: 2px solid #d32f2f; padding-bottom: 4px; color: #d32f2f; margin: 20px 0 10px; }
+    .info { display: flex; margin: 6px 0; flex-wrap: wrap; }
+    .info label { flex: 0 0 150px; font-weight: 600; color: #2c3e50; }
+    .info span { flex: 1; min-width: 0; word-break: break-word; }
+    @media print { body { background: white; } .form, .btn-group { display: none; } }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="icon">🔧</div>
-        <h1>Under Maintenance</h1>
-        <p>We're making some improvements. We'll be back soon!</p>
-        <div class="spinner"></div>
+  <div class="container">
+    <h1><i class="fas fa-heart"></i> CREATIVEBIODATA.COM | Free Shaadi Biodata Maker</h1>
+    <p class="tagline">
+      Biodata Generator for Marriage - Fill and downlaod instantly. Trusted by thousands. ✅ No signup. ✅ 100% free.
+    </p>
+
+    <div class="form">
+      <!-- Personal -->
+      <h3 style="color:#d32f2f;margin:10px 0;font-size:1.2rem;">Personal Information</h3>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input id="name" placeholder="e.g., Anjali Verma">
+      </div>
+      <div class="grid">
+        <div class="form-group">
+          <label>Date of Birth</label>
+          <input type="date" id="dob">
+        </div>
+        <div class="form-group">
+          <label>Time of Birth</label>
+          <input type="time" id="tob">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Place of Birth</label>
+        <input id="pob" placeholder="e.g., Lucknow, Uttar Pradesh">
+      </div>
+      <div class="grid">
+        <div class="form-group">
+          <label>Rashi / Nakshatra</label>
+          <input id="rashi" placeholder="e.g., Kumbh / Shatabhisha">
+        </div>
+        <div class="form-group">
+          <label>Manglik</label>
+          <select id="manglik">
+            <option value="">Select</option>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="form-group">
+          <label>Religion</label>
+          <input id="religion" placeholder="e.g., Hindu">
+        </div>
+        <div class="form-group">
+          <label>Caste / Subcaste</label>
+          <input id="caste" placeholder="e.g., Kayastha">
+        </div>
+      </div>
+      <div class="grid">
+        <div class="form-group">
+          <label>Height</label>
+          <input id="height" placeholder="e.g., 5'4&quot;">
+        </div>
+        <div class="form-group">
+          <label>Weight</label>
+          <input id="weight" placeholder="e.g., 54 kg">
+        </div>
+      </div>
+      <div class="grid">
+        <div class="form-group">
+          <label>Blood Group</label>
+          <input id="blood" placeholder="e.g., B+">
+        </div>
+        <div class="form-group">
+          <label>Complexion</label>
+          <input id="complexion" placeholder="e.g., Fair">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Education</label>
+        <input id="education" placeholder="e.g., B.Com, CA">
+      </div>
+      <div class="form-group">
+        <label>Occupation</label>
+        <input id="occupation" placeholder="e.g., Chartered Accountant">
+      </div>
+      <div class="form-group">
+        <label>Annual Income</label>
+        <input id="income" placeholder="e.g., ₹12 LPA">
+      </div>
+
+      <!-- Family -->
+      <h3 style="color:#d32f2f;margin:20px 0 10px;font-size:1.2rem;">Family Details</h3>
+      <div class="form-group">
+        <label>Father's Name</label>
+        <input id="fatherName" placeholder="e.g., Ramesh Verma">
+      </div>
+      <div class="form-group">
+        <label>Father's Occupation</label>
+        <input id="fatherOcc" placeholder="e.g., Retired Bank Manager">
+      </div>
+      <div class="form-group">
+        <label>Mother's Name</label>
+        <input id="motherName" placeholder="e.g., Sunita Verma">
+      </div>
+      <div class="form-group">
+        <label>Mother's Occupation</label>
+        <input id="motherOcc" placeholder="e.g., Homemaker">
+      </div>
+      <div class="grid">
+        <div class="form-group">
+          <label>Brothers</label>
+          <input id="brother" placeholder="e.g., 1 add one or more brother here">
+        </div>
+        <div class="form-group">
+          <label>Sisters</label>
+          <input id="sister" placeholder="e.g., 1 add one or more sister here">
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <h3 style="color:#d32f2f;margin:20px 0 10px;font-size:1.2rem;">Contact Details</h3>
+      <div class="form-group">
+        <label>Address</label>
+        <textarea id="address" placeholder="House No., Street, City, State, PIN"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Contact Number</label>
+        <input id="contact" placeholder="e.g., +91 98765 43210">
+      </div>
+
+      <button class="btn" onclick="generatePreview()">
+        <i class="fas fa-file-export"></i> Generate & Preview Biodata
+      </button>
     </div>
 
-    <script>
-        // Simple JS for a subtle background particle effect
-        function createParticles() {
-            const particles = [];
-            for (let i = 0; i < 50; i++) {
-                const particle = document.createElement('div');
-                particle.style.position = 'fixed';
-                particle.style.width = '2px';
-                particle.style.height = '2px';
-                particle.style.background = 'rgba(255,255,255,0.5)';
-                particle.style.borderRadius = '50%';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                particle.style.pointerEvents = 'none';
-                particle.style.animation = `float ${Math.random() * 3 + 2}s infinite ease-in-out`;
-                document.body.appendChild(particle);
-                particles.push(particle);
-            }
-        }
+    <!-- Preview & Export -->
+    <div class="preview" id="previewSection" style="display:none;">
+      <!-- ✅ Responsive wrapper added -->
+      <div class="preview-container">
+        <div class="a4" id="biodataOutput">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:20px;">
+        <button class="btn" onclick="downloadPDF()"><i class="fas fa-file-pdf"></i> Download PDF</button>
+        <button class="btn btn-success" onclick="downloadPNG()"><i class="fas fa-image"></i> Download PNG</button>
+        <button class="btn btn-outline" onclick="shareWhatsApp()"><i class="fab fa-whatsapp"></i> Share on WhatsApp</button>
+      </div>
+    </div>
+  </div>
 
-        // Add floating animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes float {
-                0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.5; }
-                50% { transform: translateY(-10px) rotate(180deg); opacity: 1; }
-            }
-        `;
-        document.head.appendChild(style);
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    const $ = id => document.getElementById(id)?.value?.trim() || '';
 
-        // Initialize particles on load
-        window.addEventListener('load', createParticles);
-    </script>
+    function formatDate(dateStr) {
+      if (!dateStr) return '';
+      const d = new Date(dateStr);
+      return d.toLocaleDateString('en-GB'); // DD/MM/YYYY
+    }
+
+    function generatePreview() {
+      const data = {
+        name: $('name'),
+        dob: $('dob'),
+        tob: $('tob'),
+        pob: $('pob'),
+        rashi: $('rashi'),
+        manglik: $('manglik'),
+        religion: $('religion'),
+        caste: $('caste'),
+        height: $('height'),
+        weight: $('weight'),
+        blood: $('blood'),
+        complexion: $('complexion'),
+        education: $('education'),
+        occupation: $('occupation'),
+        income: $('income'),
+        fatherName: $('fatherName'),
+        fatherOcc: $('fatherOcc'),
+        motherName: $('motherName'),
+        motherOcc: $('motherOcc'),
+        brother: $('brother'),
+        sister: $('sister'),
+        address: $('address'),
+        contact: $('contact')
+      };
+
+      let html = `<h2 style="text-align:center;color:#d32f2f;">Biodata</h2>`;
+      if (data.name) html += `<h3 style="text-align:center;margin:10px 0;">${data.name}</h3>`;
+
+      // Personal
+      html += `<div class="section"><h3>Personal Information</h3>`;
+      if (data.dob || data.tob) {
+        let dt = formatDate(data.dob);
+        if (data.tob) dt += (dt ? ', ' : '') + data.tob;
+        html += `<div class="info"><label>Date & Time of Birth:</label><span>${dt}</span></div>`;
+      }
+      if (data.pob) html += `<div class="info"><label>Place of Birth:</label><span>${data.pob}</span></div>`;
+      if (data.rashi) html += `<div class="info"><label>Rashi / Nakshatra:</label><span>${data.rashi}</span></div>`;
+      if (data.manglik) html += `<div class="info"><label>Manglik:</label><span>${data.manglik}</span></div>`;
+      if (data.religion) html += `<div class="info"><label>Religion:</label><span>${data.religion}</span></div>`;
+      if (data.caste) html += `<div class="info"><label>Caste:</label><span>${data.caste}</span></div>`;
+      if (data.height) html += `<div class="info"><label>Height:</label><span>${data.height}</span></div>`;
+      if (data.weight) html += `<div class="info"><label>Weight:</label><span>${data.weight}</span></div>`;
+      if (data.blood) html += `<div class="info"><label>Blood Group:</label><span>${data.blood}</span></div>`;
+      if (data.complexion) html += `<div class="info"><label>Complexion:</label><span>${data.complexion}</span></div>`;
+      if (data.education) html += `<div class="info"><label>Education:</label><span>${data.education}</span></div>`;
+      if (data.occupation) html += `<div class="info"><label>Occupation:</label><span>${data.occupation}</span></div>`;
+      if (data.income) html += `<div class="info"><label>Annual Income:</label><span>${data.income}</span></div>`;
+      html += `</div>`;
+
+      // Family
+      html += `<div class="section"><h3>Family Details</h3>`;
+      if (data.fatherName) html += `<div class="info"><label>Father's Name:</label><span>${data.fatherName}</span></div>`;
+      if (data.fatherOcc) html += `<div class="info"><label>Father's Occupation:</label><span>${data.fatherOcc}</span></div>`;
+      if (data.motherName) html += `<div class="info"><label>Mother's Name:</label><span>${data.motherName}</span></div>`;
+      if (data.motherOcc) html += `<div class="info"><label>Mother's Occupation:</label><span>${data.motherOcc}</span></div>`;
+      if (data.brother) html += `<div class="info"><label>Brothers:</label><span>${data.brother}</span></div>`;
+      if (data.sister) html += `<div class="info"><label>Sisters:</label><span>${data.sister}</span></div>`;
+      html += `</div>`;
+
+      // Contact
+      html += `<div class="section"><h3>Contact Details</h3>`;
+      if (data.address) html += `<div class="info"><label>Address:</label><span>${data.address.replace(/\n/g, '<br>')}</span></div>`;
+      if (data.contact) html += `<div class="info"><label>Contact:</label><span>${data.contact}</span></div>`;
+      html += `</div>`;
+
+      // ✅ WATERMARK — restored for branding & SEO
+      html += `<div style="text-align:center; font-size:0.8em; color:#999; margin-top:30px; line-height:1.4;">
+        <i class="fas fa-copyright"></i> Generated using 
+        <a href="https://creativebiodata.com" target="_blank" style="color:#d32f2f; text-decoration:none; font-weight:600;">
+          creativebiodata.com
+        </a><br>
+        Free Shaadi Biodata Maker • 100% Online • No Signup
+      </div>`;
+
+      document.getElementById('biodataOutput').innerHTML = html;
+      document.getElementById('previewSection').style.display = 'block';
+      window.scrollTo({ top: document.getElementById('previewSection').offsetTop - 20, behavior: 'smooth' });
+    }
+
+    // Export Functions
+    async function downloadPNG() {
+      const el = document.getElementById('biodataOutput');
+      const canvas = await html2canvas(el, { scale: 2, backgroundColor: '#ffffff' });
+      const link = document.createElement('a');
+      link.download = 'biodata.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+
+    async function downloadPDF() {
+      const { jsPDF } = window.jspdf;
+      const el = document.getElementById('biodataOutput');
+      const canvas = await html2canvas(el, { scale: 2, backgroundColor: '#ffffff' });
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const imgWidth = 190;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      pdf.addImage(imgData, 'PNG', 10, 10, imgWidth, Math.min(imgHeight, 277));
+      pdf.save('matrimonial_biodata.pdf');
+    }
+
+    function shareWhatsApp() {
+      const name = $('name') || 'My';
+      const msg = `📄 *${name}'s Matrimonial Biodata*\n\nCreated using: https://creativebiodata.com\n\n👉 Best free biodata maker for shaadi in India.`;
+      const url = `https://wa.me/?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank');
+    }
+  </script>
 </body>
 </html>
